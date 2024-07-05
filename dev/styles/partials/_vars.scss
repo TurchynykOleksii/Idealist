@@ -1,13 +1,17 @@
 //===========================
 // Основные цвета
 //===========================
-$bgColor: #fff;
+$colorWhite: #fff;
+$colorLightGreen: #7c7e71;
+$colorMainGreen: #162a24;
+$colorGrey: #b6b6b6;
+$colorGreen: #41655a;
+$colorDarkGrey: #3b3b3b;
+$colorBlack: #000;
+
 $bttnColor: rgb(72 74 89);
 $bttnSecondColor: rgb(210, 59, 59);
-$mainColor: #000;
 
-$red: #b5143b;
-$black: #191919;
 
 
 //===========================
@@ -42,4 +46,7 @@ $i5: 320px;
 // 600 - 320 Моб
 
 // Fonts
+$fontInter: "Inter Tight", sans-serif;
+$fontHaviland: "Mr De Haviland", sans-serif;
+$fontMontserrat: "Montserrat", sans-serif;
 $minFontSize: 1.4rem; // 14px
