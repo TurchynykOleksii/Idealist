@@ -1,21 +1,49 @@
 @font-face {
-	font-family: Golos;
+	font-family: InterRegular;
 	font-display: swap;
-	src: url("../fonts/Golos-regular.woff2") format("woff2"), url("../fonts/Golos-regular.woff") format("woff");
+	src: url("../fonts/InterTight-Regular.woff2") format("woff2"), url("../fonts/InterTight-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
-	font-family: Golos;
+	font-family: InterMedium;
 	font-display: swap;
-	src: url("../fonts/Golos-medium.woff2") format("woff2"), url("../fonts/Golos-medium.woff") format("woff");
+	src: url("../fonts/InterTight-Medium.woff2") format("woff2"), url("../fonts/InterTight-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
-	font-family: Golos;
+	font-family: InterBold;
 	font-display: swap;
-	src: url("../fonts/Golos-bold.woff2") format("woff2"), url("../fonts/Golos-bold.woff") format("woff");
+	src: url("../fonts/InterTight-Bold.woff2") format("woff2"), url("../fonts/InterTight-Bold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: InterSemiBold;
+	font-display: swap;
+	src: url("../fonts/InterTight-Back.woff2") format("woff2"), url("../fonts/InterTight-Black.woff") format("woff");
 	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: MontserratRegular;
+	font-display: swap;
+	src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: MontserratBold;
+	font-display: swap;
+	src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: HavilandRegular;
+	font-display: swap;
+	src: url("../fonts/MrDeHaviland-Regular.woff2") format("woff2"), url("../fonts/MrDeHaviland-Regular.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }

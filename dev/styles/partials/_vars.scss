@@ -46,7 +46,13 @@ $i5: 320px;
 // 600 - 320 Моб
 
 // Fonts
-$fontInter: "Inter Tight", sans-serif;
-$fontHaviland: "Mr De Haviland", sans-serif;
-$fontMontserrat: "Montserrat", sans-serif;
+$fontInter: InterRegular, sans-serif;
+$fontInterMedium: InterMedium, sans-serif;
+$fontInterBold: InterBold, sans-serif;
+$fontInterSemiBold: InterSemiBold, sans-serif;
+
+$fontHaviland: HavilandRegular, sans-serif;
+
+$fontMontserrat: MontserratRegular, sans-serif;
+$fontMontserratBold: MontserratBold, sans-serif;
 $minFontSize: 1.4rem; // 14px
