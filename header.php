@@ -19,7 +19,7 @@
 <header class="header">
 	<div class="container">
 		<?php $home_url = apply_filters( 'wpml_home_url', get_option( 'home' ) ); ?>
-		<a href="<?php=$home_url; ?>" class="header__logo"><?php bloginfo( 'name' ); ?></a>
+		<a href="<?= $home_url; ?>" class="header__logo"><?php bloginfo( 'name' ); ?></a>
 
 		<div class="header__menu">
 			<?php wp_nav_menu(array(
