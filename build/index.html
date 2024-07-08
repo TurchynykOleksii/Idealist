@@ -2,40 +2,102 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Idealist</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.ico" />
 
-	<link rel="stylesheet" href="css/libs/swiper.css">
+    <link rel="stylesheet" href="css/libs/swiper.css">
 </head>
 
 <body>
 
-<!-- Add autoHide class to automatically hide the header on scroll -->
-<header class="header">
-	<div class="container">
-        <div class="header__inner">
-            <h1>header</h1>
-        </div>
-	</div>
-</header>
+    <!-- Add autoHide class to automatically hide the header on scroll -->
+    <div class="header-banner">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="/" class="header__logo">
+                        <img src="../img/icons/logo.svg" alt="лого Idealist">
+                    </a>
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__item"><a href="#">Послуги</a></li>
+                            <li class="header__item"><a href="#">про нас </a></li>
+                            <li class="header__item"><a href="#">контакти</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__lang-switch">
+                        <span class="header__ukr">Укр</span>
+                        <span>/</span>
+                        <span class="header__eng">Eng</span>
+                    </div>
+                </div>
+            </div>
 
-<main class="main">
-
-<section class="banner">
+        </header>
+        <section class="banner">
     <div class="container">
         <div class="banner__inner">
-            <h6>banner</h6>
+            <div class="banner__wrap">
+                <div class="banner__info-left">
+                    <h1 class="banner__title-left">Юридичний захист</h1>
+                    <p class="banner__subtitle-left">Гарантуємо спокій та впевненість у кожному рішенні</p>
+                    <div class="banner__rating">
+                        <img src="../img/icons/google-ic.svg" alt="google images">
+                        <div class="banner__rating-info">
+                            <p class="banner__rating-text">Оцінка: 4,9</p>
+                            <img src="../img/icons/stars.svg" alt="rating stars">
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__info-right">
+                    <div class="banner__info-wrap">
+                        <h2 class="banner__title-right"><span>Власників</span> <span>бізнесу</span></h2>
+                        <p class="banner__subtitle-right"><span>Ви будуєте</span> свій бізнес,
+                            а <span>ми захищаємо</span> Ваші інтереси</p>
+                    </div>
+                    <button class="banner__btn">Записатись на консультацію</button>
+                </div>
+            </div>
+            <div class="banner__company">
+                <p class="banner__slogan">нам довіряють</p>
+                <ul class="banner__list">
+                    <li class="banner__item">
+                        <img src="../img/icons/parallel.svg" alt="company icons">
+                    </li>
+                    <li class="banner__item">
+                        <img src="../img/icons/pbc.svg" alt="company icons">
+                    </li>
+                    <li class="banner__item">
+                        <img src="../img/icons/kykil.svg" alt="company icons">
+                    </li>
+                    <li class="banner__item">
+                        <img src="../img/icons/ercy.svg" alt="company icons">
+                    </li>
+                    <li class="banner__item">
+                        <img src="../img/icons/ngn.svg" alt="company icons">
+                    </li>
+                    <li class="banner__item">
+                        <img src="../img/icons/way.svg" alt="company icons">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
+    </div>
+    <main class="main">
+
 <section class="slogan">
     <div class="container">
         <div class="slogan__inner">
-            <h6>slogan</h6>
+            <h6 class="hidden">Слоган</h6>
+            <div class="slogan__text"><div class="slogan__slag">slag</div><span>Розуміємо виклики</span>, з якими стикаються власники <span>малого та середнього бізнесу</span>, і
+                готові
+                допомогти зробити ваш бізнес кращим</p>
         </div>
     </div>
 </section>
@@ -53,13 +115,6 @@
         </div>
     </div>
 </section>
-<section class="consultations">
-    <div class="container">
-        <div class="consultations__inner">
-            <h6>consultations</h6>
-        </div>
-    </div>
-</section>
 <section class="meet">
     <div class="container">
         <div class="meet__inner">
@@ -70,7 +125,13 @@
 <section class="ready">
     <div class="container">
         <div class="ready__inner">
-            <h6>ready</h6>
+            <h6 class="hidden">Що ми готові</h6>
+            <div class="ready__info">
+                <p class="ready__text">
+                    Ми готові показати вам, як зробити юридичні питання простими і зрозумілими
+                </p>
+                <button class="ready__consultation">Отримати консультацію</button>
+            </div>
         </div>
     </div>
 </section>

@@ -2,25 +2,42 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>@@title</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@@title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.ico" />
 
-	<link rel="stylesheet" href="css/libs/swiper.css">
+    <link rel="stylesheet" href="css/libs/swiper.css">
 </head>
 
 <body>
 
-<!-- Add autoHide class to automatically hide the header on scroll -->
-<header class="header">
-	<div class="container">
-        <div class="header__inner">
-            <h1>header</h1>
-        </div>
-	</div>
-</header>
+    <!-- Add autoHide class to automatically hide the header on scroll -->
+    <div class="header-banner">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="/" class="header__logo">
+                        <img src="../img/icons/logo.svg" alt="лого Idealist">
+                    </a>
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__item"><a href="#">Послуги</a></li>
+                            <li class="header__item"><a href="#">про нас </a></li>
+                            <li class="header__item"><a href="#">контакти</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__lang-switch">
+                        <span class="header__ukr">Укр</span>
+                        <span>/</span>
+                        <span class="header__eng">Eng</span>
+                    </div>
+                </div>
+            </div>
 
-<main class="main">
+        </header>
+        @@include('banner.html')
+    </div>
+    <main class="main">

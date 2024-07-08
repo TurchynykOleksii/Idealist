@@ -12,10 +12,8 @@ $colorBlack: #000;
 $bttnColor: rgb(72 74 89);
 $bttnSecondColor: rgb(210, 59, 59);
 
-
-
 //===========================
-// Настройки адаптивной сетки 
+// Настройки адаптивной сетки
 //===========================
 
 $minWidth: 320; // Минимальная ширина страницы
@@ -32,12 +30,11 @@ $gridMinSize: 450; // Минимальная ширина для 2 колоно�
 $uhd: 2160px;
 $fhd: 1900px;
 $lg: 1400px;
-$pc: $containerWidth+px;
+$pc: $containerWidth + px;
 $sm-pc: 992px;
 $tablet: 768px;
 $mob: 576px;
 $i5: 320px;
-
 
 // Подсказка:
 // 2560 - 992 ПК, ноутбуки
@@ -46,10 +43,7 @@ $i5: 320px;
 // 600 - 320 Моб
 
 // Fonts
-$fontInter: InterRegular, sans-serif;
-$fontInterMedium: InterMedium, sans-serif;
-$fontInterBold: InterBold, sans-serif;
-$fontInterSemiBold: InterSemiBold, sans-serif;
+$fontInter: Inter, sans-serif;
 
 $fontHaviland: HavilandRegular, sans-serif;
 

@@ -1,0 +1,138 @@
+.banner__wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1px, 5.99vw, 115px);
+}
+.banner__title-left, .banner__title-right, .banner__title-right > span {
+  font-weight: 500;
+  font-size: clamp(1px, 6.979vw, 134px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.banner__title-left {
+  width: clamp(1px, 44.167vw, 848px);
+}
+.banner__info-wrap {
+  position: relative;
+}
+.banner__title-right {
+  position: relative;
+  margin-top: clamp(1px, 7.135vw, 137px);
+  width: clamp(1px, 42.188vw, 810px);
+}
+.banner__title-right span {
+  display: block;
+  width: max-content;
+}
+.banner__title-right span:last-child {
+  margin-left: auto;
+}
+.banner__subtitle-left, .banner__subtitle-right {
+  color: #b6b6b6;
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+  line-height: 1.2;
+}
+.banner__subtitle-left span, .banner__subtitle-right span {
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(1px, 1.25vw, 24px);
+}
+.banner__subtitle-left {
+  margin-bottom: clamp(1px, 6.563vw, 126px);
+  width: clamp(1px, 16.51vw, 317px);
+}
+.banner__subtitle-right {
+  position: absolute;
+  bottom: clamp(1px, 2.604vw, 50px);
+  width: clamp(1px, 13.802vw, 265px);
+}
+.banner__rating img {
+  width: clamp(1px, 13.802vw, 265px);
+}
+.banner__rating-info {
+  margin-top: clamp(1px, 1.354vw, 26px);
+  display: flex;
+  align-items: center;
+  gap: clamp(1px, 0.729vw, 14px);
+}
+.banner__rating-info > img {
+  width: clamp(1px, 6.406vw, 123px);
+}
+.banner__rating-text {
+  color: #fff;
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+  line-height: 1.2;
+}
+.banner__btn {
+  margin-top: clamp(1px, 7.396vw, 142px);
+  margin-bottom: clamp(1px, 6.979vw, 134px);
+  padding: clamp(1px, 1.302vw, 25px) clamp(1px, 6.25vw, 120px);
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  border: none;
+}
+.banner__company {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner__slogan {
+  position: relative;
+  padding: 27px clamp(1px, 4.167vw, 80px);
+  font-weight: 500;
+  font-size: clamp(1px, 1.042vw, 20px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.banner__slogan:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "(";
+  font-family: HavilandRegular, sans-serif;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+.banner__slogan:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: ")";
+  font-family: HavilandRegular, sans-serif;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+.banner__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1px, 3.802vw, 73px);
+}
+.banner__item img {
+  max-width: 100%;
+}
+.banner__item:first-child {
+  width: clamp(1px, 7.813vw, 150px);
+}
+.banner__item:nth-child(2) {
+  width: clamp(1px, 3.802vw, 73px);
+}
+.banner__item:nth-child(3) {
+  width: clamp(1px, 7.813vw, 150px);
+}
+.banner__item:nth-child(4) {
+  width: clamp(1px, 5.156vw, 99px);
+}
+.banner__item:nth-child(5) {
+  width: clamp(1px, 5.781vw, 111px);
+}
+.banner__item:last-child {
+  width: clamp(1px, 5vw, 96px);
+}
