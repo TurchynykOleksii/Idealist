@@ -54,4 +54,10 @@
 			-webkit-text-fill-color: transparent;
 		}
 	}
+	&__ukr,
+	&__eng {
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

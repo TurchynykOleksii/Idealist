@@ -42,3 +42,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.header__ukr:hover, .header__eng:hover {
+  cursor: pointer;
+}

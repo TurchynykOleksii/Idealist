@@ -1,2 +1,150 @@
-@import "../core";
+@import '../core';
 
+.footer {
+	padding-top: clamp(1px, 5.208vw, 100px);
+	padding-bottom: clamp(1px, 2.083vw, 40px);
+	background-color: $colorMainGreen;
+	& * {
+		color: $colorWhite;
+	}
+	&__menus {
+		margin-bottom: clamp(1px, 6.771vw, 130px);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 40px;
+	}
+	&__logo {
+		img {
+			width: clamp(1px, 12.969vw, 249px);
+			height: clamp(1px, 6.146vw, 118px);
+		}
+	}
+	&__social,
+	&__menu {
+		display: flex;
+		align-items: center;
+		gap: clamp(1px, 1.25vw, 24px);
+	}
+	&__info {
+		margin-bottom: clamp(1px, 3.75vw, 72px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__adress {
+		margin-bottom: clamp(1px, 2.083vw, 40px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(1px, 2.083vw, 40px);
+	}
+	&__adress-item {
+		a {
+			font-weight: 500;
+			font-size: clamp(1px, 1.25vw, 24px);
+			line-height: 1.2;
+			text-align: center;
+		}
+	}
+	&__btn {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		background-color: transparent;
+		border: none;
+		font-weight: 500;
+		font-size: clamp(1px, 1.042vw, 20px);
+		line-height: 1.2;
+		text-align: center;
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			background-image: url('../../img/icons/arrow-down.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: clamp(1px, 1.667vw, 32px);
+			height: clamp(1px, 1.667vw, 32px);
+		}
+	}
+	&__copy {
+		display: flex;
+		justify-content: space-between;
+		a,
+		p {
+			font-weight: 500;
+			font-size: clamp(1px, 1.042vw, 20px);
+			color: $colorLightGreen;
+		}
+		p {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			& > a {
+				text-decoration: underline;
+			}
+		}
+		& > a {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: clamp(1px, 1.042vw, 20px);
+			&:after {
+				content: '';
+				display: block;
+				background-image: url('../../img/icons/arrow-up.svg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				width: clamp(1px, 1.667vw, 32px);
+				height: clamp(1px, 1.667vw, 32px);
+			}
+		}
+	}
+	&__slogan {
+		margin-bottom: clamp(1px, 3.073vw, 59px);
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1px, 1.146vw, 22px);
+	}
+	&__slogan-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+        flex-shrink: 0;
+		gap: clamp(1px, 1.6vw, 36px);
+		p {
+			font-weight: 600;
+			font-size: clamp(1px, 8.75vw, 168px);
+			letter-spacing: -0.04em;
+			line-height: 1;
+		}
+	}
+	&__slogan-img-first {
+		img {
+			width: clamp(1px, 29.948vw, 575px);
+			height: clamp(1px, 6.458vw, 124px);
+		}
+	}
+	&__slogan-img-second {
+		img {
+			width: clamp(1px, 13.177vw, 253px);
+			height: clamp(1px, 6.458vw, 124px);
+		}
+	}
+	&__slogan-img-second-two {
+		img {
+			width: clamp(1px, 23.438vw, 450px);
+			height: clamp(1px, 6.458vw, 124px);
+		}
+	}
+	&__slogan-img-third {
+		img {
+			width: clamp(1px, 47.031vw, 903px);
+			height: clamp(1px, 6.458vw, 124px);
+		}
+	}
+}

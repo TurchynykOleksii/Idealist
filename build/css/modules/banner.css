@@ -12,7 +12,21 @@
   color: #fff;
 }
 .banner__title-left {
+  position: relative;
   width: clamp(1px, 44.167vw, 848px);
+  line-height: 1;
+}
+.banner__title-left:after {
+  content: "";
+  position: absolute;
+  bottom: clamp(1px, 1.042vw, 20px);
+  right: clamp(1px, 2.5vw, 30px);
+  display: block;
+  background-image: url("../../img/icons/logo-s.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: clamp(1px, 4.792vw, 90px);
+  height: clamp(1px, 4.375vw, 84px);
 }
 .banner__info-wrap {
   position: relative;
@@ -27,6 +41,7 @@
   width: max-content;
 }
 .banner__title-right span:last-child {
+  margin-top: clamp(-20px, -1.042vw, 1px);
   margin-left: auto;
 }
 .banner__subtitle-left, .banner__subtitle-right {
