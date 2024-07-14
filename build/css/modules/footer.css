@@ -115,6 +115,7 @@
   font-size: clamp(1px, 8.75vw, 168px);
   letter-spacing: -0.04em;
   line-height: 1;
+  white-space: nowrap;
 }
 .footer__slogan-img-first img {
   width: clamp(1px, 29.948vw, 575px);

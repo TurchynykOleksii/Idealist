@@ -111,19 +111,21 @@
 }
 .banner__slogan:before {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   content: "(";
   font-family: HavilandRegular, sans-serif;
   font-size: clamp(1px, 3.125vw, 60px);
+  transform: translateY(-50%);
 }
 .banner__slogan:after {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
   content: ")";
   font-family: HavilandRegular, sans-serif;
   font-size: clamp(1px, 3.125vw, 60px);
+  transform: translateY(-50%);
 }
 .banner__list {
   display: flex;
