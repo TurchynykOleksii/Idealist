@@ -1,5 +1,6 @@
 .ready {
   padding: clamp(1px, 10.417vw, 200px) 0;
+  background-color: #fff;
 }
 .ready__info {
   display: flex;
