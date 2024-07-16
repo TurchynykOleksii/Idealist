@@ -1,5 +1,5 @@
 // JS fragment import example
-import * as functions from "./modules/functions.js";
+import * as functions from './modules/functions.js';
 functions.isWebp();
 /* Добавление loaded для HTML после полной загрузки страницы */
 functions.addLoadedClass();
@@ -26,116 +26,116 @@ functions.addLoadedClass();
 // Документация: https://github.com/FreelancerLifeStyle/dynamic_adapt#readme
 //import './libs/dynamicAdapt.js';
 
-let isDesk = $("body").hasClass("desktop"),
-  menuOpen = false;
+let isDesk = $('body').hasClass('desktop'),
+	menuOpen = false;
 
 let scrollTop = $(window).scrollTop(),
-  lastScrollTop = scrollTop;
+	lastScrollTop = scrollTop;
 
-var mobile = window.matchMedia("(min-width: 0px) and (max-width: 768px)");
-var tablet = window.matchMedia("(min-width: 769px) and (max-width: 1023px)");
-var desktop = window.matchMedia("(min-width: 1023px) and (max-width: 1279px)"); // Enable (for mobile)
-var desktop_pc = window.matchMedia("(min-width: 1280px)");
+var mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+var tablet = window.matchMedia('(min-width: 769px) and (max-width: 1023px)');
+var desktop = window.matchMedia('(min-width: 1023px) and (max-width: 1279px)'); // Enable (for mobile)
+var desktop_pc = window.matchMedia('(min-width: 1280px)');
 
-if ($("header").hasClass("autoHide")) {
-  if (mobile.matches && scrollTop > 200) {
-    $("header").addClass("header--scrolled");
-  } else if (scrollTop > 800) {
-    $("header").addClass("header--scrolled");
-  }
+if ($('header').hasClass('autoHide')) {
+	if (mobile.matches && scrollTop > 200) {
+		$('header').addClass('header--scrolled');
+	} else if (scrollTop > 800) {
+		$('header').addClass('header--scrolled');
+	}
 }
 
 function throttle(fn, wait) {
-  var time = Date.now();
-  return function () {
-    if (time + wait - Date.now() < 0) {
-      fn();
-      time = Date.now();
-    }
-  };
+	var time = Date.now();
+	return function () {
+		if (time + wait - Date.now() < 0) {
+			fn();
+			time = Date.now();
+		}
+	};
 }
 
-window.addEventListener("scroll", throttle(DocumentScroll, 100));
+window.addEventListener('scroll', throttle(DocumentScroll, 100));
 
 function DocumentScroll() {
-  scrollTop = $(window).scrollTop();
+	scrollTop = $(window).scrollTop();
 
-  if ($("header").hasClass("autoHide")) {
-    if (scrollTop < lastScrollTop || scrollTop < 200) {
-      // scroll UP
-      $("header").removeClass("header--hide");
-    } else if (scrollTop > 200) {
-      // scroll DOWN
-      $("header").addClass("header--hide");
-    }
-  }
+	if ($('header').hasClass('autoHide')) {
+		if (scrollTop < lastScrollTop || scrollTop < 200) {
+			// scroll UP
+			$('header').removeClass('header--hide');
+		} else if (scrollTop > 200) {
+			// scroll DOWN
+			$('header').addClass('header--hide');
+		}
+	}
 
-  if (mobile.matches) {
-    scrollTop > 200
-      ? $("header").addClass("header--scrolled")
-      : $("header").removeClass("header--scrolled");
-  } else {
-    scrollTop > 800
-      ? $("header").addClass("header--scrolled")
-      : $("header").removeClass("header--scrolled");
-  }
+	if (mobile.matches) {
+		scrollTop > 200
+			? $('header').addClass('header--scrolled')
+			: $('header').removeClass('header--scrolled');
+	} else {
+		scrollTop > 800
+			? $('header').addClass('header--scrolled')
+			: $('header').removeClass('header--scrolled');
+	}
 
-  lastScrollTop = scrollTop;
+	lastScrollTop = scrollTop;
 }
 
 $(document).ready(function () {
-  const urlParams = window.location.search
-    .replace("?", "")
-    .split("&")
-    .reduce(function (p, e) {
-      var a = e.split("=");
-      p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
-      return p;
-    }, {});
+	const urlParams = window.location.search
+		.replace('?', '')
+		.split('&')
+		.reduce(function (p, e) {
+			var a = e.split('=');
+			p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+			return p;
+		}, {});
 
-  if (urlParams["thank-you"]) {
-    const url = new URL(document.location);
-    const searchParams = url.searchParams;
-    searchParams.delete("thank-you");
-    window.history.pushState({}, "", url.toString());
-  }
+	if (urlParams['thank-you']) {
+		const url = new URL(document.location);
+		const searchParams = url.searchParams;
+		searchParams.delete('thank-you');
+		window.history.pushState({}, '', url.toString());
+	}
 
-  $(".header__burger").on("click", function () {
-    if (!$("body").hasClass("menu-open")) {
-      $("body").addClass("menu-open");
-    } else {
-      $("body").removeClass("menu-open");
-    }
-  });
+	$('.header__burger').on('click', function () {
+		if (!$('body').hasClass('menu-open')) {
+			$('body').addClass('menu-open');
+		} else {
+			$('body').removeClass('menu-open');
+		}
+	});
 
-  $(".header__menu-liscrollTop a").on("click", function () {
-    $(".header__burger").removeClass("active");
-    $("body").removeClass("menu-open");
-  });
+	$('.header__menu-liscrollTop a').on('click', function () {
+		$('.header__burger').removeClass('active');
+		$('body').removeClass('menu-open');
+	});
 
-  document.addEventListener(
-    "wpcf7mailsent",
-    function (event) {
-      event.preventDefault();
-      const formID = event.detail.contactFormId;
-      const $popupThanks = $(".popup--thanks");
+	document.addEventListener(
+		'wpcf7mailsent',
+		function (event) {
+			event.preventDefault();
+			const formID = event.detail.contactFormId;
+			const $popupThanks = $('.popup--thanks');
 
-      if ($popupThanks) {
-        $(".popup").hide();
-        $("body").addClass("scroll-disable");
-        $popupThanks.parent().addClass("show").hide().fadeIn(200);
-        $popupThanks.hide().fadeIn(200);
-      }
+			if ($popupThanks) {
+				$('.popup').hide();
+				$('body').addClass('scroll-disable');
+				$popupThanks.parent().addClass('show').hide().fadeIn(200);
+				$popupThanks.hide().fadeIn(200);
+			}
 
-      if ($('input[value="' + formID + '"]')) {
-        const formName = $('input[value="' + formID + '"]').val();
-        window.history.pushState("1", "Thank-you", "?thank-you=" + formName);
-      } else {
-        window.history.pushState("1", "Thank-you", "?thank-you=" + formID);
-      }
-    },
-    false
-  );
+			if ($('input[value="' + formID + '"]')) {
+				const formName = $('input[value="' + formID + '"]').val();
+				window.history.pushState('1', 'Thank-you', '?thank-you=' + formName);
+			} else {
+				window.history.pushState('1', 'Thank-you', '?thank-you=' + formID);
+			}
+		},
+		false
+	);
 });
 
 // const observer = new IntersectionObserver((entries) => {
@@ -159,44 +159,42 @@ $(document).ready(function () {
 
 // Create the observer like the examples above
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        return;
-      }
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('in-view');
+				return;
+			}
 
-      entry.target.classList.remove("in-view");
-    });
-  },
-  { threshold: 1.0 }
+			entry.target.classList.remove('in-view');
+		});
+	},
+	{threshold: 1.0}
 );
 
 // Get multiple elements instead of a single one using "querySelectorAll"
-const targets = document.querySelectorAll(".services__area-item");
+const targets = document.querySelectorAll('.services__area-item');
 
 // Loop over the elements and add each one to the observer
 targets.forEach((element) => observer.observe(element));
-observer.observe(document.querySelector(".services__title"));
+observer.observe(document.querySelector('.services__title'));
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
+import * as gsap from './libs/gsap-core.js';
+import * as ScrollTrigger from './libs/ScrollTrigger.js';
+import * as Observer from './libs/Observer.js';
 
-gsap.registerPlugin(ScrollTrigger);
+const splitTypes = document.querySelector('.slogan__text');
 
-const splitTypes = document.querySelector(".slogan__text");
-
-const text = new SplitType(splitTypes, { types: "chars" });
+const text = new SplitType(splitTypes, {types: 'chars'});
 
 gsap.from(text.chars, {
-  scrollTrigger: {
-    trigger: char,
-    start: "top 80%",
-    end: "top 20%",
-    scrub: true,
-    markers: false,
-  },
-  opacity: 0.2,
-  stagger: 0.05,
+	scrollTrigger: {
+		trigger: char,
+		start: 'top 80%',
+		end: 'top 20%',
+		scrub: true,
+		markers: false,
+	},
+	opacity: 0.2,
+	stagger: 0.05,
 });

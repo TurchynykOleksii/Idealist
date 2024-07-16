@@ -1,6 +1,6 @@
 var $anchor = $('.anchor');
 var anchorHeight = $anchor.height();
-var anchorTop = $anchor.offset().top;
+var anchorTop = $anchor?.offset()?.top;
 var headerHeight = $('.header').outerHeight();
 var headerHide = $('.header').hasClass('header--hide');
 var fixedTop = 0;
