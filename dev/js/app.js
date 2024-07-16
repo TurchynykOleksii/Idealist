@@ -178,3 +178,25 @@ const targets = document.querySelectorAll(".services__area-item");
 // Loop over the elements and add each one to the observer
 targets.forEach((element) => observer.observe(element));
 observer.observe(document.querySelector(".services__title"));
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const splitTypes = document.querySelector(".slogan__text");
+
+const text = new SplitType(splitTypes, { types: "chars" });
+
+gsap.from(text.chars, {
+  scrollTrigger: {
+    trigger: char,
+    start: "top 80%",
+    end: "top 20%",
+    scrub: true,
+    markers: false,
+  },
+  opacity: 0.2,
+  stagger: 0.05,
+});
