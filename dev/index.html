@@ -18,14 +18,28 @@
 <script src="js/libs/split-tyme.min.js"></script>
 <script>
     
-const splitTypes = document.querySelector(".slogan__text");
-const text = new SplitType(splitTypes, { types: 'words, chars' });
+const sloganEl = document.querySelector(".slogan__text");
+const aboutEl = document.querySelector('.about__info')
+const sloganText = new SplitType(sloganEl, { types: 'words, chars' });
+const aboutText = new SplitType(aboutEl, { types: 'words, chars' });
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(text.chars, {
+gsap.from(sloganText.chars, {
   scrollTrigger: {
-    trigger: splitTypes,
+    trigger: sloganEl,
+    start: "top 60%",
+    end: "top 20%",
+    scrub: true,
+    markers: false,
+  },
+  opacity: 0.2,
+  stagger: 0.05
+});
+
+gsap.from(aboutText.chars, {
+  scrollTrigger: {
+    trigger: aboutEl,
     start: "top 60%",
     end: "top 20%",
     scrub: true,
