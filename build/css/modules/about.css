@@ -151,12 +151,14 @@
     width: 100%;
   }
 }
-.about__info, .about__info span {
+.about__info,
+.about__info span {
   font-weight: 500;
   font-size: clamp(1px, 3.125vw, 60px);
 }
 @media only screen and (max-width: 992px) {
-  .about__info, .about__info span {
+  .about__info,
+  .about__info span {
     font-weight: 400;
     font-size: clamp(28px, 8.75vw, 8.75vw);
   }
@@ -335,7 +337,8 @@
   }
 }
 
-.char, .word {
+.char,
+.word {
   opacity: 1;
   color: inherit;
   font-size: inherit;
