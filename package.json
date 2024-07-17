@@ -15,9 +15,7 @@
 	"author": "Tyrchynyk Oleksii",
 	"license": "MIT",
 	"dependencies": {
-		"gsap": "^3.12.5",
-		"gulp-cli": "^2.3.0",
-		"split-type": "^0.3.4"
+		"gulp-cli": "^2.3.0"
 	},
 	"devDependencies": {
 		"browser-sync": "latest",

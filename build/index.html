@@ -96,17 +96,17 @@
     <div class="slogan__inner">
       <h6 class="hidden">Слоган</h6>
       <div class="slogan__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur
-        quam reprehenderit illum culpa a quod saepe, ipsum quisquam vitae nemo
-        numquam magni? Sit vitae aspernatur doloremque unde voluptates optio.
+        <div class="slogan__slag">slag</div>
+        <span>Розуміємо виклики</span> , з якими <br class="desc-br" />
+        стикаються власники
+        <span>малого та </span>
+        <span>середнього</span>
+        <span>бізнесу</span>
+        , і готові допомогти зробити ваш бізнес кращим
       </div>
     </div>
   </div>
 </section>
-
-<!-- <div class="slogan__slag">slag</div><span>Розуміємо виклики</span>, з якими стикаються власники <span>малого та середнього бізнесу</span>, і
-                готові
-                допомогти зробити ваш бізнес кращим</p> -->
 
 <section class="services">
   <div class="container">
@@ -384,7 +384,30 @@
 <script src="js/modules/video.js"></script>
 <script src="js/modules/anchor.js"></script>
 <script src="js/modules/slider.js"></script>
+<script src="js/libs/gsap.min.js"></script>
+<script src="js/libs/ScrollTrigger.min.js"></script>
+<script src="js/libs/split-tyme.min.js"></script>
+<script>
+    
+const splitTypes = document.querySelector(".slogan__text");
+const text = new SplitType(splitTypes, { types: 'words, chars' });
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(text.chars, {
+  scrollTrigger: {
+    trigger: splitTypes,
+    start: "top 60%",
+    end: "top 20%",
+    scrub: true,
+    markers: false,
+  },
+  opacity: 0.2,
+  stagger: 0.05
+});
+
+
+</script>
 </body>
 
 </html>
