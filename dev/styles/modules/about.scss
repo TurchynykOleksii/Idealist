@@ -1,6 +1,7 @@
 @import '../core';
 
 .about {
+    padding-top: clamp(1px, 10.417vw, 200px);
     padding-bottom: clamp(1px,5.469vw,105px);
 	& * {
 		color: $colorWhite;

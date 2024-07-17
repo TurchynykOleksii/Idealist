@@ -1,6 +1,7 @@
 const swiper = new Swiper('.swiper', {
 	slidesPerView: "auto",
 	watchOverflow: true,
+    effect: "fade",
 	loop: true,
 	pagination: {
 		el: '.swiper-pagination',
@@ -11,13 +12,6 @@ const swiper = new Swiper('.swiper', {
 	},
 	spaceBetween: 20,
 	autoHeight: true,
-	breakpoints: {
-		// when window width is >= 992px
-		992: {
-			slidesPerView: 4,
-			spaceBetween: 40
-		}
-  }
 });
 
 

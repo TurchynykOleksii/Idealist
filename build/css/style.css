@@ -802,6 +802,7 @@ form label {
 }
 
 .about {
+  padding-top: clamp(1px, 10.417vw, 200px);
   padding-bottom: clamp(1px, 5.469vw, 105px);
 }
 .about * {
@@ -949,6 +950,130 @@ form label {
 
 .meet {
   padding-top: clamp(1px, 5.469vw, 105px);
+  padding-bottom: clamp(1px, 10.417vw, 200px);
+}
+.meet * {
+  color: #fff;
+}
+.meet .swiper-slide {
+  position: relative;
+}
+.meet__title {
+  margin-bottom: clamp(1px, 2.083vw, 40px);
+  font-weight: 500;
+  font-size: clamp(1px, 1.042vw, 20px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.meet__subtitle {
+  padding-left: clamp(1px, 3.646vw, 70px);
+  position: relative;
+  margin-bottom: clamp(1px, 5.208vw, 100px);
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+.meet__subtitle:before {
+  position: absolute;
+  left: 0;
+  font-size: clamp(1px, 3.125vw, 60px);
+  content: "-";
+}
+.meet__photo {
+  width: clamp(1px, 65.573vw, 1259px);
+  height: clamp(1px, 59.844vw, 1149px);
+  overflow: hidden;
+}
+.meet__photo img {
+  width: 100%;
+}
+.meet__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1px, 14.74vw, 283px);
+  padding: clamp(1px, 2.917vw, 56px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(1px, 54.375vw, 1024px);
+  height: clamp(1px, 39.375vw, 756px);
+  background-color: #fff;
+}
+.meet__item {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(1px, 1.25vw, 24px);
+}
+.meet__item p {
+  color: #000;
+}
+.meet__persone {
+  margin-bottom: clamp(1px, 0.625vw, 12px);
+  width: clamp(1px, 13.333vw, 256px);
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+  line-height: 1.1;
+}
+.meet__persone-info {
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+}
+.meet__xp {
+  width: clamp(1px, 6.615vw, 127px);
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+  text-align: right;
+}
+.meet__educating p, .meet__intrest p {
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+}
+.meet__intrest {
+  display: flex;
+  align-items: end;
+}
+.meet__line {
+  width: 3px;
+  height: clamp(1px, 7.813vw, 150px);
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
+  transform: rotate(30deg);
+}
+.meet__navigation {
+  width: clamp(1px, 10.313vw, 198px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1px, 1.563vw, 30px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.meet__navigation .swiper-button-prev,
+.meet__navigation .swiper-button-next {
+  margin: 0;
+  position: static;
+  width: clamp(1px, 3.125vw, 60px);
+  height: clamp(1px, 3.125vw, 60px);
+}
+.meet__navigation .swiper-button-prev:after,
+.meet__navigation .swiper-button-next:after {
+  display: none;
+}
+.meet__navigation .swiper-button-prev img,
+.meet__navigation .swiper-button-next img {
+  width: clamp(1px, 3.125vw, 60px);
+  height: clamp(1px, 3.125vw, 60px);
+}
+.meet__navigation .swiper-button-prev:hover,
+.meet__navigation .swiper-button-next:hover {
+  cursor: pointer;
+}
+.meet__navigation .swiper-button-prev {
+  align-self: baseline;
+}
+.meet__navigation .swiper-button-next {
+  align-self: flex-end;
 }
 
 .ready {
