@@ -13,7 +13,30 @@
 <script src="js/modules/video.js"></script>
 <script src="js/modules/anchor.js"></script>
 <script src="js/modules/slider.js"></script>
+<script src="js/libs/gsap.min.js"></script>
+<script src="js/libs/ScrollTrigger.min.js"></script>
+<script src="js/libs/split-tyme.min.js"></script>
+<script>
+    
+const splitTypes = document.querySelector(".slogan__text");
+const text = new SplitType(splitTypes, { types: 'words, chars' });
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(text.chars, {
+  scrollTrigger: {
+    trigger: splitTypes,
+    start: "top 60%",
+    end: "top 20%",
+    scrub: true,
+    markers: false,
+  },
+  opacity: 0.2,
+  stagger: 0.05
+});
+
+
+</script>
 </body>
 
 </html>
