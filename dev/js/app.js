@@ -174,7 +174,10 @@ const observer = new IntersectionObserver(
 
 // Get multiple elements instead of a single one using "querySelectorAll"
 const targets = document.querySelectorAll(".services__area-item");
+const targets2 = document.querySelectorAll(".about__anim-line");
 
 // Loop over the elements and add each one to the observer
 targets.forEach((element) => observer.observe(element));
+targets2.forEach((element) => observer.observe(element));
 observer.observe(document.querySelector(".services__title"));
+observer.observe(document.querySelector(".about__title"));
