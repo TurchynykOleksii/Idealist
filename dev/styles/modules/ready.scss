@@ -1,8 +1,12 @@
 @import '../core';
 
 .ready {
-    padding: clamp(1px, 10.417vw, 200px) 0;
-    background-color: $colorWhite;
+	padding: clamp(1px, 10.417vw, 200px) 0;
+	background-color: $colorWhite;
+	@include maxw($sm-pc) {
+		padding: clamp(130px, 40.625vw, 40.625vw) 0;
+	}
+
 	&__info {
 		display: flex;
 		flex-direction: column;
@@ -15,6 +19,11 @@
 		font-size: clamp(1px, 3.125vw, 60px);
 		text-align: center;
 		line-height: 1.4;
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(80px, 25vw, 25vw);
+			width: clamp(288px, 90vw, 90vw);
+			font-size: clamp(28px, 8.75vw, 8.75vw);
+		}
 	}
 	&__consultation {
 		padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.99vw, 115px);
@@ -22,9 +31,14 @@
 		font-size: clamp(1px, 1.25vw, 24px);
 		letter-spacing: -0.02em;
 		text-align: center;
-        color: $colorWhite;
-        background: $colorBlack;
+		color: $colorWhite;
+		background: $colorBlack;
 		border: none;
+		@include maxw($sm-pc) {
+			padding: clamp(16px, 5vw, 5vw) clamp(41px, 12.812vw, 12.812vw);
+
+			margin-bottom: clamp(80px, 25vw, 25vw);
+			font-size: clamp(16px, 5vw, 5vw);
+		}
 	}
-    
 }

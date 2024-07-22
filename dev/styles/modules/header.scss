@@ -16,13 +16,25 @@
 		align-items: center;
 		justify-content: space-between;
 	}
-
+	&__logo {
+		img {
+			width: clamp(1px, 7.5vw, 144px);
+			height: clamp(1px, 3.542vw, 68px);
+			@include maxw($sm-pc) {
+				width: clamp(101px, 31.563vw, 31.563vw);
+				height: clamp(48px, 15vw, 15vw);
+			}
+		}
+	}
 	&__list {
 		display: flex;
 		gap: clamp(1px, 1.042vw, 20px);
 	}
 	&__nav {
 		margin-left: auto;
+		@include maxw($sm-pc) {
+			display: none;
+		}
 	}
 	&__item {
 		a {
@@ -34,8 +46,34 @@
 			color: $colorWhite;
 		}
 	}
+	&__burger-menu {
+		display: none;
+		svg {
+			width: clamp(32px, 10vw, 10vw);
+			height: clamp(32px, 10vw, 10vw);
+		}
+		path {
+			transition: stroke 350ms ease-in;
+		}
+
+		&:hover {
+			cursor: pointer;
+			path {
+				stroke: white;
+			}
+		}
+
+		@include maxw($sm-pc) {
+			display: block;
+			border: none;
+			background-color: transparent;
+		}
+	}
 	&__lang-switch {
 		margin-left: clamp(1px, 2.969vw, 57px);
+		@include maxw($sm-pc) {
+			display: none;
+		}
 		span {
 			font-weight: 700;
 			font-size: clamp(16px, 1.042vw, 20px);

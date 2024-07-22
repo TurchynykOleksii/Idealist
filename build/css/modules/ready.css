@@ -2,6 +2,11 @@
   padding: clamp(1px, 10.417vw, 200px) 0;
   background-color: #fff;
 }
+@media only screen and (max-width: 992px) {
+  .ready {
+    padding: clamp(130px, 40.625vw, 40.625vw) 0;
+  }
+}
 .ready__info {
   display: flex;
   flex-direction: column;
@@ -15,6 +20,13 @@
   text-align: center;
   line-height: 1.4;
 }
+@media only screen and (max-width: 992px) {
+  .ready__text {
+    margin-bottom: clamp(80px, 25vw, 25vw);
+    width: clamp(288px, 90vw, 90vw);
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+  }
+}
 .ready__consultation {
   padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.99vw, 115px);
   font-weight: 500;
@@ -24,4 +36,11 @@
   color: #fff;
   background: #000;
   border: none;
+}
+@media only screen and (max-width: 992px) {
+  .ready__consultation {
+    padding: clamp(16px, 5vw, 5vw) clamp(41px, 12.812vw, 12.812vw);
+    margin-bottom: clamp(80px, 25vw, 25vw);
+    font-size: clamp(16px, 5vw, 5vw);
+  }
 }
