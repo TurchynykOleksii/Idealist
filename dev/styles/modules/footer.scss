@@ -4,6 +4,10 @@
 	padding-top: clamp(1px, 5.208vw, 100px);
 	padding-bottom: clamp(1px, 2.083vw, 40px);
 	background-color: $colorMainGreen;
+	@include maxw($sm-pc) {
+		padding-top: clamp(60px, 18.75vw, 18.75vw);
+		padding-bottom: clamp(16px, 5vw, 5vw);
+	}
 	& * {
 		color: $colorWhite;
 	}
@@ -13,24 +17,54 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 40px;
+		@include maxw($sm-pc) {
+			flex-direction: column;
+		}
 	}
 	&__logo {
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(44px, 13.75vw, 13.75vw);
+		}
 		img {
 			width: clamp(1px, 12.969vw, 249px);
 			height: clamp(1px, 6.146vw, 118px);
+			@include maxw($sm-pc) {
+				width: clamp(125px, 39.063vw, 39.063vw);
+				height: clamp(60px, 18.75vw, 18.75vw);
+			}
 		}
 	}
+
 	&__social,
 	&__menu {
 		display: flex;
 		align-items: center;
 		gap: clamp(1px, 1.25vw, 24px);
 	}
+	&__social {
+		@include maxw($sm-pc) {
+			display: none;
+		}
+	}
+	&__menu {
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(44px, 13.75vw, 13.75vw);
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			a {
+				font-size: clamp(16px, 5vw, 5vw);
+			}
+		}
+	}
 	&__info {
 		margin-bottom: clamp(1px, 3.75vw, 72px);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(30px, 9.375vw, 9.375vw);
+		}
 	}
 	&__adress {
 		margin-bottom: clamp(1px, 2.083vw, 40px);
@@ -38,6 +72,10 @@
 		flex-direction: column;
 		align-items: center;
 		gap: clamp(1px, 2.083vw, 40px);
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(60px, 18.75vw, 18.75vw);
+			gap: clamp(30px, 9.375vw, 9.375vw);
+		}
 	}
 	&__adress-item {
 		a {
@@ -45,6 +83,11 @@
 			font-size: clamp(1px, 1.25vw, 24px);
 			line-height: 1.2;
 			text-align: center;
+			@include maxw($sm-pc) {
+				font-size: clamp(16px, 5vw, 5vw);
+				font-weight: 400;
+				display: block;
+			}
 		}
 	}
 	&__btn {
@@ -57,6 +100,29 @@
 		font-size: clamp(1px, 1.042vw, 20px);
 		line-height: 1.2;
 		text-align: center;
+		@include maxw($sm-pc) {
+			padding-bottom: clamp(14px, 4.375vw, 4.375vw);
+			position: relative;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			font-size: clamp(16px, 5vw, 5vw);
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: clamp(1px, 0.313vw, 0.313vw);
+				background: linear-gradient(
+					57deg,
+					#d0c0aa 0%,
+					#d1c2ac 27.5%,
+					#b7a58b 56.5%,
+					#8a775a 85%,
+					#6e5e41 100%
+				);
+			}
+		}
 		&:hover {
 			cursor: pointer;
 		}
@@ -69,16 +135,30 @@
 			background-size: cover;
 			width: clamp(1px, 1.667vw, 32px);
 			height: clamp(1px, 1.667vw, 32px);
+			@include maxw($sm-pc) {
+				width: clamp(24px, 7.5vw, 7.5vw);
+				height: clamp(24px, 7.5vw, 7.5vw);
+			}
 		}
 	}
 	&__copy {
 		display: flex;
 		justify-content: space-between;
+		@include maxw($sm-pc) {
+			flex-direction: column;
+			align-items: center;
+
+			gap: clamp(20px, 6.25vw, 6.25vw);
+		}
 		a,
+		span,
 		p {
 			font-weight: 500;
 			font-size: clamp(1px, 1.042vw, 20px);
 			color: $colorLightGreen;
+			@include maxw($sm-pc) {
+				font-size: clamp(12px, 3.75vw, 3.75vw);
+			}
 		}
 		p {
 			display: flex;
@@ -93,6 +173,9 @@
 			display: flex;
 			align-items: center;
 			gap: clamp(1px, 1.042vw, 20px);
+			@include maxw($sm-pc) {
+				display: none;
+			}
 			&:after {
 				content: '';
 				display: block;
@@ -104,48 +187,84 @@
 			}
 		}
 	}
+	&__policy {
+		@include maxw($sm-pc) {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 	&__slogan {
 		margin-bottom: clamp(1px, 3.073vw, 59px);
 		display: flex;
 		flex-direction: column;
 		gap: clamp(1px, 1.146vw, 22px);
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(20px, 6.25vw, 6.25vw);
+		}
 	}
 	&__slogan-item {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-        flex-shrink: 0;
+		flex-shrink: 0;
 		gap: clamp(1px, 1.6vw, 36px);
 		p {
 			font-weight: 600;
 			font-size: clamp(1px, 8.75vw, 168px);
 			letter-spacing: -0.04em;
 			line-height: 1;
-            white-space: nowrap;
+			white-space: nowrap;
+			@include maxw($sm-pc) {
+				font-size: clamp(28px, 8.75vw, 8.75vw);
+			}
 		}
 	}
 	&__slogan-img-first {
 		img {
 			width: clamp(1px, 29.948vw, 575px);
 			height: clamp(1px, 6.458vw, 124px);
+			@include maxw($sm-pc) {
+				width: clamp(90px, 28.125vw, 28.125vw);
+				height: clamp(20px, 6.25vw, 6.25vw);
+			}
 		}
 	}
 	&__slogan-img-second {
 		img {
 			width: clamp(1px, 13.177vw, 253px);
 			height: clamp(1px, 6.458vw, 124px);
+			@include maxw($sm-pc) {
+				width: clamp(40px, 12.5vw, 12.5vw);
+				height: clamp(20px, 6.25vw, 6.25vw);
+			}
 		}
 	}
 	&__slogan-img-second-two {
 		img {
 			width: clamp(1px, 23.438vw, 450px);
 			height: clamp(1px, 6.458vw, 124px);
+			@include maxw($sm-pc) {
+				width: clamp(68px, 21.25vw, 21.25vw);
+				height: clamp(20px, 6.25vw, 6.25vw);
+			}
 		}
 	}
 	&__slogan-img-third {
 		img {
 			width: clamp(1px, 47.031vw, 903px);
 			height: clamp(1px, 6.458vw, 124px);
+			@include maxw($sm-pc) {
+				width: clamp(140px, 43.75vw, 43.75vw);
+				height: clamp(20px, 6.25vw, 6.25vw);
+			}
 		}
+	}
+}
+
+.hide__pc {
+	display: none;
+	@include maxw($sm-pc) {
+		display: block;
 	}
 }
