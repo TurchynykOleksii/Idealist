@@ -7,10 +7,19 @@
 		url('../../img/general/banner-bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+    @include maxw($sm-pc) {
+        padding-bottom: 0;
+    }
 }
 
 .header {
 	margin-bottom: clamp(1px, 9.167vw, 176px);
+    z-index: 3;
+    @include maxw($sm-pc) {
+        // position: fixed;
+        // width: 100%;
+        margin-bottom: clamp(113px,35.313vw,35.313vw);
+    }
 	&__inner {
 		display: flex;
 		align-items: center;

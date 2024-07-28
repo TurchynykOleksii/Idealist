@@ -8,6 +8,12 @@
 .meet .swiper-slide {
   position: relative;
 }
+@media only screen and (max-width: 992px) {
+  .meet .swiper-slide {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .meet__title {
   margin-bottom: clamp(1px, 2.083vw, 40px);
   font-weight: 500;
@@ -16,6 +22,12 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 992px) {
+  .meet__title {
+    margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+    font-size: clamp(14px, 4.375vw, 4.375vw);
+  }
+}
 .meet__subtitle {
   padding-left: clamp(1px, 3.646vw, 70px);
   position: relative;
@@ -23,16 +35,59 @@
   font-weight: 600;
   font-size: clamp(1px, 3.125vw, 60px);
 }
+.meet__subtitle p {
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__subtitle p {
+    margin-left: clamp(40px, 12.5vw, 12.5vw);
+    max-width: fit-content;
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+    font-weight: 400;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .meet__subtitle {
+    margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+    padding-left: 0;
+    line-height: 1.2;
+    font-weight: 400;
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+  }
+}
 .meet__subtitle:before {
   position: absolute;
   left: 0;
   font-size: clamp(1px, 3.125vw, 60px);
   content: "-";
 }
+@media only screen and (max-width: 992px) {
+  .meet__subtitle:before {
+    top: clamp(5px, 1.563vw, 1.563vw);
+    font-size: clamp(33px, 10.313vw, 10.313vw);
+  }
+}
+.meet__bcsp {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .meet__bcsp {
+    display: block;
+    max-width: 50px;
+    width: 100%;
+  }
+}
 .meet__photo {
   width: clamp(1px, 65.573vw, 1259px);
   height: clamp(1px, 59.844vw, 1149px);
   overflow: hidden;
+}
+@media only screen and (max-width: 992px) {
+  .meet__photo {
+    width: clamp(288px, 90vw, 90vw);
+    height: clamp(262px, 81.875vw, 81.875vw);
+  }
 }
 .meet__photo img {
   width: 100%;
@@ -49,6 +104,17 @@
   height: clamp(1px, 39.375vw, 756px);
   background-color: #fff;
 }
+@media only screen and (max-width: 992px) {
+  .meet__list {
+    position: static;
+  }
+}
+@media only screen and (max-width: 992px) and (max-width: 992px) {
+  .meet__list {
+    width: clamp(288px, 90vw, 90vw);
+    height: clamp(309px, 96.563vw, 96.563vw);
+  }
+}
 .meet__item {
   display: flex;
   justify-content: space-between;
@@ -64,15 +130,35 @@
   font-size: clamp(1px, 3.125vw, 60px);
   line-height: 1.1;
 }
+@media only screen and (max-width: 992px) {
+  .meet__persone {
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+  }
+}
 .meet__persone-info {
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__persone-info {
+    display: none;
+  }
 }
 .meet__xp {
   width: clamp(1px, 6.615vw, 127px);
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
   text-align: right;
+}
+@media only screen and (max-width: 992px) {
+  .meet__xp {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .meet__educating, .meet__intrest {
+    display: none;
+  }
 }
 .meet__educating p, .meet__intrest p {
   font-weight: 500;
@@ -82,11 +168,21 @@
   display: flex;
   align-items: end;
 }
+@media only screen and (max-width: 992px) {
+  .meet__intrest {
+    display: none;
+  }
+}
 .meet__line {
   width: 3px;
   height: clamp(1px, 7.813vw, 150px);
   background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
   transform: rotate(30deg);
+}
+@media only screen and (max-width: 992px) {
+  .meet__line {
+    display: none;
+  }
 }
 .meet__navigation {
   width: clamp(1px, 10.313vw, 198px);
@@ -99,12 +195,26 @@
   top: 0;
   right: 0;
 }
+@media only screen and (max-width: 992px) {
+  .meet__navigation {
+    width: 100%;
+    top: clamp(121px, 37.813vw, 37.813vw);
+    justify-content: space-between;
+  }
+}
 .meet__navigation .swiper-button-prev,
 .meet__navigation .swiper-button-next {
   margin: 0;
   position: static;
   width: clamp(1px, 3.125vw, 60px);
   height: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__navigation .swiper-button-prev,
+.meet__navigation .swiper-button-next {
+    width: clamp(32px, 10vw, 10vw);
+    height: clamp(32px, 10vw, 10vw);
+  }
 }
 .meet__navigation .swiper-button-prev:after,
 .meet__navigation .swiper-button-next:after {
@@ -114,6 +224,13 @@
 .meet__navigation .swiper-button-next img {
   width: clamp(1px, 3.125vw, 60px);
   height: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__navigation .swiper-button-prev img,
+.meet__navigation .swiper-button-next img {
+    width: clamp(32px, 10vw, 10vw);
+    height: clamp(32px, 10vw, 10vw);
+  }
 }
 .meet__navigation .swiper-button-prev:hover,
 .meet__navigation .swiper-button-next:hover {

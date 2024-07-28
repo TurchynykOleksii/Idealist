@@ -5,9 +5,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (max-width: 992px) {
+  .header-banner {
+    padding-bottom: 0;
+  }
+}
 
 .header {
   margin-bottom: clamp(1px, 9.167vw, 176px);
+  z-index: 3;
+}
+@media only screen and (max-width: 992px) {
+  .header {
+    margin-bottom: clamp(113px, 35.313vw, 35.313vw);
+  }
 }
 .header__inner {
   display: flex;
