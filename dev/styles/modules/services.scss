@@ -1,268 +1,368 @@
-@import "../core";
+@import '../core';
 
 .services {
-    padding: clamp(1px, 10.417vw, 200px) 0;
-    background: $colorWhite;
-    overflow: clip;
+	padding: clamp(1px, 10.417vw, 200px) 0;
+	background: $colorWhite;
+	overflow: clip;
 
-    @include maxw($sm-pc) {
-        padding: clamp(100px, 31.2vw, 31.2vw) 0;
-    }
+	@include maxw($sm-pc) {
+		padding: clamp(100px, 31.2vw, 31.2vw) 0;
+	}
 
-    &__inner {
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
+	&__inner {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
 
-        @include maxw($sm-pc) {
-            display: block;
-        }
-    }
+		@include maxw($sm-pc) {
+			display: block;
+		}
+	}
+	&__left-wrap {
+		width: clamp(1px, 16.5625vw, 318px);
+		flex-shrink: 0;
+		position: sticky;
+		top: clamp(1px, 5.2vw, 99.84px);
 
-    &__left-wrap {
-        width: clamp(1px, 16.5625vw, 318px);
-        flex-shrink: 0;
-        position: sticky;
-        top: clamp(1px, 5.2vw, 99.84px);
+		@include maxw($sm-pc) {
+			position: static;
+			width: 100%;
+			margin-bottom: clamp(80px, 25vw, 25vw);
+		}
+	}
 
-        @include maxw($sm-pc) {
-            position: static;
-            width: 100%;
-            margin-bottom: clamp(80px, 25vw, 25vw);
-        }
-    }
+	&__title {
+		display: flex;
+		align-items: center;
+		width: 30%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: clamp(1px, 9.375vw, 180px);
+		color: $colorLightGreen;
+		font-size: clamp(1px, 1.0417vw, 20px);
+		text-transform: uppercase;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		justify-content: space-between;
+		transition: width 300ms ease-in-out 600ms;
 
-    &__title {
-        display: flex;
-        align-items: center;
-        width: 30%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: clamp(1px, 9.375vw, 180px);
-        color: $colorLightGreen;
-        font-size: clamp(1px, 1.0417vw, 20px);
-        text-transform: uppercase;
-        font-weight: 500;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        justify-content: space-between;
-        transition: width 300ms ease-in-out 600ms;
-
-        @include maxw($sm-pc) {
-            margin-bottom: clamp(20px, 6.25vw, 6.25vw);
-            font-size: clamp(14px, 4.375vw, 4.375vw);
-            letter-spacing: -0.04em;
-        }
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(20px, 6.25vw, 6.25vw);
+			font-size: clamp(14px, 4.375vw, 4.375vw);
+			letter-spacing: -0.04em;
+		}
 		&:before {
-            font-weight: 400;
-            line-height: normal;
-            display: block;
+			font-weight: 400;
+			line-height: normal;
+			display: block;
 			content: '(';
 			font-family: $fontHaviland;
 			font-size: clamp(1px, 3.125vw, 60px);
 
-            @include maxw($sm-pc) {
-                font-size: clamp(50px, 15.625vw, 15.625vw);
-            }
+			@include maxw($sm-pc) {
+				font-size: clamp(50px, 15.625vw, 15.625vw);
+			}
 		}
 		&:after {
-            font-weight: 400;
-            line-height: normal;   
-            display: block;
+			font-weight: 400;
+			line-height: normal;
+			display: block;
 			content: ')';
 			font-family: $fontHaviland;
 			font-size: clamp(1px, 3.125vw, 60px);
-            
-            @include maxw($sm-pc) {
-                font-size: clamp(50px, 15.625vw, 15.625vw);
-            }
-		}        
-        &.in-view {
-            width: 100%;
-            transition: width 300ms ease-in-out 300ms;
-            & .services__title-animation {
-                transition: opacity 300ms ease-in-out 600ms, width 0ms ease-in-out 600ms;
-                width: 100%;
-                opacity: 1;
-            }
-        }
-    }
 
-    &__title-animation {
+			@include maxw($sm-pc) {
+				font-size: clamp(50px, 15.625vw, 15.625vw);
+			}
+		}
+		&.in-view {
+			width: 100%;
+			transition: width 300ms ease-in-out 300ms;
+			& .services__title-animation {
+				transition: opacity 300ms ease-in-out 600ms, width 0ms ease-in-out 600ms;
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
 
-        transition: opacity 300ms ease-in-out 300ms, width 0ms ease-in-out 600ms;
-        font-size: inherit;
-        color: inherit;
-        text-align: center;
-        width: 0;
-        opacity: 0;
+	&__title-animation {
+		transition: opacity 300ms ease-in-out 300ms, width 0ms ease-in-out 600ms;
+		font-size: inherit;
+		color: inherit;
+		text-align: center;
+		width: 0;
+		opacity: 0;
+	}
 
-    }
+	&__slogan {
+		margin-bottom: clamp(1px, 11.5vw, 220.8px);
+		font-size: clamp(1px, 1.25vw, 24px);
+		color: $colorLightGreen;
+		text-align: justify;
+		font-weight: 500;
+		line-height: 1.2;
 
-    &__slogan {
-        margin-bottom: clamp(1px, 11.5vw, 220.8px);
-        font-size: clamp(1px, 1.25vw, 24px);
-        color: $colorLightGreen;
-        text-align: justify;
-        font-weight: 500;
-        line-height: 1.2;
+		@include maxw($sm-pc) {
+			width: clamp(230px, 72vw, 72vw);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0;
+			font-weight: 400;
+			font-size: clamp(16px, 5vw, 5vw);
+		}
+	}
 
-        @include maxw($sm-pc) {
-            width: clamp(230px, 72vw, 72vw);
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0;
-            font-weight: 400;
-            font-size: clamp(16px, 5vw, 5vw);
-        }
-    }
+	&__btn {
+		width: 100%;
+		padding: clamp(1px, 1.25vw, 24px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border: none;
+		background: $colorBlack;
+		color: $colorWhite;
+		font-size: clamp(1px, 1.25vw, 24px);
+		letter-spacing: -0.02;
+		transition: gap 300ms ease-in-out;
+		gap: 0;
 
-    &__btn {
-        width: 100%;
-        padding: clamp(1px, 1.25vw, 24px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        border: none;
-        background: $colorBlack;
-        color: $colorWhite;
-        font-size: clamp(1px, 1.25vw, 24px);
-        letter-spacing: -0.02;
-        transition: gap 300ms ease-in-out;
-        gap: 0;
+		@include maxw($sm-pc) {
+			display: none;
+		}
 
-        @include maxw($sm-pc) {
-            display: none;
-        }
+		&:hover {
+			gap: clamp(1px, 1.25vw, 24px);
+			&::after {
+				opacity: 1;
+			}
+		}
 
-        &:hover {
-            gap: clamp(1px, 1.25vw, 24px);
-            &::after{
-                opacity: 1;
-            }
-        }
+		&::after {
+			transition: opacity 300ms;
+			opacity: 0;
+			font-size: clamp(1px, 1.875vw, 36px);
+			content: '+';
+		}
+	}
 
-        &::after {
-            transition: opacity 300ms;
-            opacity: 0;
-            font-size: clamp(1px, 1.875vw, 36px);
-            content: '+';
-        }
-    }
+	&__right-wrap {
+		width: clamp(1px, 66.25vw, 1272px);
 
-    &__right-wrap {
-        width: clamp(1px, 66.25vw, 1272px);
+		@include maxw($sm-pc) {
+			width: 100%;
+		}
+	}
 
-        @include maxw($sm-pc) {
-            width: 100%;
-        }
-    }
+	&__areas-list {
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(60px, 18.75vw, 18.75vw);
+		}
+	}
+	&__accordion-item {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 250ms, padding-top 250ms ease;
+		& * {
+			overflow: hidden;
+		}
+		&.services__accordion {
+			grid-template-rows: 1fr;
+			padding-top: clamp(1px, 5.208vw, 100px);
+		}
+	}
 
-    &__areas-list {
-        @include maxw($sm-pc) {
-            margin-bottom: clamp(60px, 18.75vw, 18.75vw);
-        }
-    }
+	&__area-item {
+		margin-bottom: clamp(1px, 2.08333vw, 40px);
+		overflow: hidden;
 
-    &__area-item {
-        margin-bottom: clamp(1px, 2.08333vw, 40px);
-        overflow: hidden;
+		&:hover {
+			cursor: pointer;
+		}
 
-        @include maxw($sm-pc) {
-            margin-bottom: clamp(40px, 12.5vw, 12.5vw);
-        }
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+		}
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-        &.in-view::after {
-            transform: translateX(0);
-        }
+		&.in-view::after {
+			transform: translateX(0);
+		}
 
-        &::after {
-            content: '';
-            display: block;
-            height: 1px;
-            background-color: $colorLightGreen;
-            transform: translateX(-100%);
-            transition: transform 600ms ease-in-out 300ms;
-        }
-    }
+		&::after {
+			content: '';
+			display: block;
+			height: 1px;
+			background-color: $colorLightGreen;
+			transform: translateX(-100%);
+			transition: transform 600ms ease-in-out 300ms;
+		}
+	}
 
-    &__area-title {
-        margin-bottom: clamp(1px, 1.0417vw, 20px);
-        color: $colorBlack;
-        font-weight: 600;
-        font-size: clamp(1px, 3.125vw, 60px);
-        line-height: normal;
+	&__icon {
+		width: clamp(1px, 2.5vw, 48px);
+		height: clamp(1px, 2.5vw, 48px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 250ms ease;
+		@include maxw($sm-pc) {
+			width: clamp(32px, 10vw, 10vw);
+			height: clamp(32px, 10vw, 10vw);
+		}
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		&.services__icon-up {
+			transform: rotateX(180deg);
+		}
+	}
+	&__info-list {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1px, 1.667vw, 32px);
+		max-width: clamp(1px, 24.271vw, 466px);
+		width: 100%;
+		li {
+			position: relative;
+			display: flex;
+			gap: 5px;
+			font-weight: 500;
+			font-size: clamp(1px, 1.25vw, 24px);
+			line-height: 1.2;
+			color: $colorDarkGrey;
 
-        @include maxw($sm-pc) {
-            margin-bottom: clamp(12px, 3.75vw, 3.75vw);
-            font-size: clamp(28px, 8.75vw, 8.75vw);
-        }
-    }
+			&:before {
+				content: '';
+				display: inline-block;
+				background-image: url('../../img/icons/icon-ok.svg');
+				background-repeat: no-repeat;
+				width: clamp(1px, 1.25vw, 24px);
+				height: clamp(1px, 1.25vw, 24px);
+				background-position: center;
+				background-size: cover;
+			}
+		}
+	}
+	&__accordion-list {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1px, 4.167vw, 80px);
+	}
+	&__info-item {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		gap: clamp(1px, 5.208vw, 100px);
+		overflow: visible;
+		&:last-of-type {
+			&:before {
+				display: none;
+			}
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: clamp(-40px, -2.083vw, 1px);
+			background-color: rgba(81, 81, 81, 0.5);
+			display: block;
+			width: 100%;
+			height: 1px;
+		}
+	}
+	&__info-headline {
+		font-weight: 600;
+		font-size: clamp(1px, 1.667vw, 32px);
+		color: $colorBlack;
+	}
+	&__area-title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include maxw($sm-pc) {
+			align-items: start;
+		}
+		p {
+			margin-bottom: clamp(1px, 1.0417vw, 20px);
+			color: $colorBlack;
+			font-weight: 600;
+			font-size: clamp(1px, 3.125vw, 60px);
+			line-height: normal;
 
-    &__subareas-list{
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(1px, 0.625vw, 12px);    
-        padding-bottom: clamp(1px, 2.08333vw, 40px);
+			@include maxw($sm-pc) {
+				margin-bottom: clamp(12px, 3.75vw, 3.75vw);
+				font-size: clamp(28px, 8.75vw, 8.75vw);
+				max-width: clamp(255px, 79.688vw, 79.688vw);
+			}
+		}
+	}
 
-        @include maxw($sm-pc) {
-            gap: clamp(8px, 2.5vw, 2.5vw);
-            padding-bottom: clamp(40px, 12.5vw, 12.5vw);
-        }
-    }
+	&__subareas-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: clamp(1px, 0.625vw, 12px);
+		padding-bottom: clamp(1px, 2.08333vw, 40px);
 
-    &__subarea-item {
-        display: flex;
-        align-items: center;
-        gap: clamp(1px, 0.625vw, 12px);
-        color: $colorDarkGrey;
+		@include maxw($sm-pc) {
+			gap: clamp(8px, 2.5vw, 2.5vw);
+			padding-bottom: clamp(40px, 12.5vw, 12.5vw);
+		}
+	}
 
-        @include maxw($sm-pc) {
-            gap: clamp(8px, 2.5vw, 2.5vw);
-        }
+	&__subarea-item {
+		display: flex;
+		align-items: center;
+		gap: clamp(1px, 0.625vw, 12px);
+		color: $colorDarkGrey;
 
-        &:not(:last-child)::after {
-            content: "/";
-            display: block;
-            font-size: clamp(1px, 1.0417vw, 20px);
-            font-weight: 600;
-            line-height: normal;
+		@include maxw($sm-pc) {
+			gap: clamp(8px, 2.5vw, 2.5vw);
+		}
 
-            @include maxw($sm-pc) {
-                font-size: clamp(14px, 4.375vw, 4.375vw);
-                font-weight: 500;
-            }
-        }
-    }
+		&:not(:last-child)::after {
+			content: '/';
+			display: block;
+			font-size: clamp(1px, 1.0417vw, 20px);
+			font-weight: 600;
+			line-height: normal;
 
-    &__subarea-title{
-        font-size: clamp(1px, 1.0417vw, 20px);
-        font-weight: 500;
-        line-height: normal;
+			@include maxw($sm-pc) {
+				font-size: clamp(14px, 4.375vw, 4.375vw);
+				font-weight: 500;
+			}
+		}
+	}
 
-        @include maxw($sm-pc) {
-            font-size: clamp(14px, 4.375vw, 4.375vw);
-            font-weight: 400;
-        }
-    }
+	&__subarea-title {
+		font-size: clamp(1px, 1.0417vw, 20px);
+		font-weight: 500;
+		line-height: normal;
 
-    &__btn-mob {
-        display: none;
+		@include maxw($sm-pc) {
+			font-size: clamp(14px, 4.375vw, 4.375vw);
+			font-weight: 400;
+		}
+	}
 
-        @include maxw($sm-pc) {
-            display: block;
-            width: 100%;
-            padding: clamp(16px, 5vw, 5vw);
-            border: none;
-            background-color: $colorBlack;
-            color: $colorWhite;
-            font-size: clamp(16px, 5vw, 5vw);
-            font-weight: 500;
-        }
-    }
+	&__btn-mob {
+		display: none;
+
+		@include maxw($sm-pc) {
+			display: block;
+			width: 100%;
+			padding: clamp(16px, 5vw, 5vw);
+			border: none;
+			background-color: $colorBlack;
+			color: $colorWhite;
+			font-size: clamp(16px, 5vw, 5vw);
+			font-weight: 500;
+		}
+	}
 }

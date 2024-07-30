@@ -215,7 +215,8 @@ targets.forEach((item) => {
 });
 
 accordionItems.forEach((item) => {
-	item.addEventListener('click', () =>
-		item.querySelector('.services__info').style.maxHeight = '1000px'
-	);
+	item.addEventListener('click', () => {
+		item.querySelector('.services__accordion-item').classList.toggle('services__accordion');
+		item.querySelector('.services__icon').classList.toggle('services__icon-up');
+	});
 });
