@@ -135,7 +135,7 @@
 		}
 
 		a {
-			font-weight: 700;
+			font-weight: 600;
 			line-height: normal;
 			font-size: clamp(1px, 1.042vw, 20px);
 
@@ -164,7 +164,7 @@
 		}
 	}
 	&__info span {
-		font-weight: 700;
+		font-weight: 600;
 	}
 	&__info {
 		margin-bottom: clamp(1px, 46.875vw, 150px);
@@ -295,6 +295,7 @@
 		strong {
 			display: inline-block;
 			font-size: clamp(1px, 1.25vw, 24px);
+			font-weight: 600;
 			line-height: normal;
 
 			@include maxw($sm-pc) {

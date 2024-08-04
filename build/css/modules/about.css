@@ -133,7 +133,7 @@
   }
 }
 .about__social a {
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   font-size: clamp(1px, 1.042vw, 20px);
 }
@@ -151,20 +151,18 @@
     width: 100%;
   }
 }
-.about__info,
-.about__info span {
+.about__info, .about__info span {
   font-weight: 500;
   font-size: clamp(1px, 3.125vw, 60px);
 }
 @media only screen and (max-width: 992px) {
-  .about__info,
-  .about__info span {
+  .about__info, .about__info span {
     font-weight: 400;
     font-size: clamp(28px, 8.75vw, 8.75vw);
   }
 }
 .about__info span {
-  font-weight: 700;
+  font-weight: 600;
 }
 .about__info {
   margin-bottom: clamp(1px, 46.875vw, 150px);
@@ -291,6 +289,7 @@
 .about__item-head strong {
   display: inline-block;
   font-size: clamp(1px, 1.25vw, 24px);
+  font-weight: 600;
   line-height: normal;
 }
 @media only screen and (max-width: 992px) {
@@ -337,8 +336,7 @@
   }
 }
 
-.char,
-.word {
+.char, .word {
   opacity: 1;
   color: inherit;
   font-size: inherit;

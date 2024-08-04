@@ -1,56 +1,49 @@
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/InterTight-Regular.woff2") format("woff2"),
-    url("../fonts/InterTight-Regular.woff") format("woff");
+  src: url("../fonts/InterTight-Regular.woff2") format("woff2"), url("../fonts/InterTight-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/InterTight-Medium.woff2") format("woff2"),
-    url("../fonts/InterTight-Medium.woff") format("woff");
+  src: url("../fonts/InterTight-Medium.woff2") format("woff2"), url("../fonts/InterTight-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/InterTight-Bold.woff2") format("woff2"),
-    url("../fonts/InterTight-Bold.woff") format("woff");
+  src: url("../fonts/InterTight-Bold.woff2") format("woff2"), url("../fonts/InterTight-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/InterTight-Back.woff2") format("woff2"),
-    url("../fonts/InterTight-Black.woff") format("woff");
+  src: url("../fonts/InterTight-Black.woff2") format("woff2"), url("../fonts/InterTight-Black.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: MontserratRegular;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
-    url("../fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: MontserratBold;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
-    url("../fonts/Montserrat-Bold.woff") format("woff");
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: HavilandRegular;
   font-display: swap;
-  src: url("../fonts/MrDeHaviland-Regular.woff2") format("woff2"),
-    url("../fonts/MrDeHaviland-Regular.woff") format("woff");
+  src: url("../fonts/MrDeHaviland-Regular.woff2") format("woff2"), url("../fonts/MrDeHaviland-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -99,14 +92,12 @@ a {
   text-decoration: none;
 }
 
-ul,
-ol,
-li {
+ul, ol, li {
   list-style-type: none;
 }
 
 .container,
-[class*="__container"] {
+[class*=__container] {
   margin: 0 auto;
   max-width: 1920px;
   padding: 0 clamp(1px, 3.125vw, 60px);
@@ -117,7 +108,7 @@ li {
   visibility: hidden !important;
 }
 
-[class*="grid"] + [class*="grid"] {
+[class*=grid] + [class*=grid] {
   margin-top: 2rem;
 }
 
@@ -149,13 +140,13 @@ h1 {
 }
 @media only screen and (min-width: 576px) {
   .h1,
-  h1 {
+h1 {
     font-size: calc(3.2rem + 8 * (100vw - 375px) / 625);
   }
 }
 @media only screen and (min-width: 992px) {
   .h1,
-  h1 {
+h1 {
     font-size: 5.6rem;
   }
 }
@@ -167,13 +158,13 @@ h2 {
 }
 @media only screen and (min-width: 576px) {
   .h2,
-  h2 {
+h2 {
     font-size: calc(2.8rem + 8 * (100vw - 375px) / 625);
   }
 }
 @media only screen and (min-width: 992px) {
   .h2,
-  h2 {
+h2 {
     font-size: 3.2rem;
   }
 }
@@ -187,17 +178,17 @@ h4 {
 }
 @media only screen and (min-width: 576px) {
   .h3,
-  h3,
-  .h4,
-  h4 {
+h3,
+.h4,
+h4 {
     font-size: calc(2rem + 4 * (100vw - 375px) / 625);
   }
 }
 @media only screen and (min-width: 992px) {
   .h3,
-  h3,
-  .h4,
-  h4 {
+h3,
+.h4,
+h4 {
     font-size: 2.4rem;
   }
 }
@@ -295,8 +286,7 @@ form label {
 .header-banner {
   padding-top: 20px;
   padding-bottom: clamp(1px, 4.479vw, 86px);
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    url("../../img/general/banner-bg.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../../img/general/banner-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -332,20 +322,12 @@ form label {
   font-size: clamp(16px, 1.042vw, 20px);
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  background: linear-gradient(
-    57deg,
-    #d0c0aa 0%,
-    #d1c2ac 27.5%,
-    #b7a58b 56.5%,
-    #8a775a 85%,
-    #6e5e41 100%
-  );
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.header__ukr:hover,
-.header__eng:hover {
+.header__ukr:hover, .header__eng:hover {
   cursor: pointer;
 }
 
@@ -354,9 +336,7 @@ form label {
   align-items: flex-start;
   gap: clamp(1px, 5.99vw, 115px);
 }
-.banner__title-left,
-.banner__title-right,
-.banner__title-right > span {
+.banner__title-left, .banner__title-right, .banner__title-right > span {
   font-weight: 500;
   font-size: clamp(1px, 6.979vw, 134px);
   line-height: 1.2;
@@ -397,15 +377,13 @@ form label {
   margin-top: clamp(-20px, -1.042vw, 1px);
   margin-left: auto;
 }
-.banner__subtitle-left,
-.banner__subtitle-right {
+.banner__subtitle-left, .banner__subtitle-right {
   color: #b6b6b6;
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
   line-height: 1.2;
 }
-.banner__subtitle-left span,
-.banner__subtitle-right span {
+.banner__subtitle-left span, .banner__subtitle-right span {
   font-weight: 700;
   color: #fff;
   font-size: clamp(1px, 1.25vw, 24px);
@@ -441,14 +419,7 @@ form label {
   margin-top: clamp(1px, 7.396vw, 142px);
   margin-bottom: clamp(1px, 6.979vw, 134px);
   padding: clamp(1px, 1.302vw, 25px) clamp(1px, 6.25vw, 120px);
-  background: linear-gradient(
-    57deg,
-    #d0c0aa 0%,
-    #d1c2ac 27.5%,
-    #b7a58b 56.5%,
-    #8a775a 85%,
-    #6e5e41 100%
-  );
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
   letter-spacing: -0.02em;
@@ -525,8 +496,7 @@ form label {
     padding: clamp(120px, 37.5vw, 375.5vw) 0;
   }
 }
-.slogan__text,
-.slogan__text span {
+.slogan__text, .slogan__text span {
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: clamp(1px, 4.166vw, 80px);
@@ -534,8 +504,7 @@ form label {
   text-align: justify;
 }
 @media only screen and (max-width: 992px) {
-  .slogan__text,
-  .slogan__text span {
+  .slogan__text, .slogan__text span {
     font-size: clamp(28px, 8.75vw, 8.75vw);
     text-align: start;
   }
@@ -565,8 +534,7 @@ form label {
   }
 }
 
-.char,
-.word {
+.char, .word {
   opacity: 1;
   color: inherit;
   font-size: inherit;
@@ -968,7 +936,7 @@ form label {
   }
 }
 .about__social a {
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   font-size: clamp(1px, 1.042vw, 20px);
 }
@@ -986,20 +954,18 @@ form label {
     width: 100%;
   }
 }
-.about__info,
-.about__info span {
+.about__info, .about__info span {
   font-weight: 500;
   font-size: clamp(1px, 3.125vw, 60px);
 }
 @media only screen and (max-width: 992px) {
-  .about__info,
-  .about__info span {
+  .about__info, .about__info span {
     font-weight: 400;
     font-size: clamp(28px, 8.75vw, 8.75vw);
   }
 }
 .about__info span {
-  font-weight: 700;
+  font-weight: 600;
 }
 .about__info {
   margin-bottom: clamp(1px, 46.875vw, 150px);
@@ -1126,6 +1092,7 @@ form label {
 .about__item-head strong {
   display: inline-block;
   font-size: clamp(1px, 1.25vw, 24px);
+  font-weight: 600;
   line-height: normal;
 }
 @media only screen and (max-width: 992px) {
@@ -1172,8 +1139,7 @@ form label {
   }
 }
 
-.char,
-.word {
+.char, .word {
   opacity: 1;
   color: inherit;
   font-size: inherit;
@@ -1255,8 +1221,7 @@ form label {
   font-size: clamp(1px, 1.25vw, 24px);
   text-align: right;
 }
-.meet__educating p,
-.meet__intrest p {
+.meet__educating p, .meet__intrest p {
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
 }
@@ -1267,14 +1232,7 @@ form label {
 .meet__line {
   width: 3px;
   height: clamp(1px, 7.813vw, 150px);
-  background: linear-gradient(
-    57deg,
-    #d0c0aa 0%,
-    #d1c2ac 27.5%,
-    #b7a58b 56.5%,
-    #8a775a 85%,
-    #6e5e41 100%
-  );
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
   transform: rotate(30deg);
 }
 .meet__navigation {
@@ -1355,18 +1313,21 @@ form label {
   margin-bottom: clamp(1px, 6.771vw, 130px);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   gap: 40px;
 }
 .footer__logo img {
   width: clamp(1px, 12.969vw, 249px);
   height: clamp(1px, 6.146vw, 118px);
 }
-.footer__social,
-.footer__menu {
+.footer__social, .footer__menu {
   display: flex;
   align-items: center;
-  gap: clamp(1px, 1.25vw, 24px);
+  gap: clamp(1px, 2.083vw, 40px);
+  padding-bottom: clamp(1px, 1vw, 19px);
+}
+.footer__item {
+  padding: clamp(1px, 0.833vw, 16px) clamp(1px, 0.417vw, 8px);
 }
 .footer__info {
   margin-bottom: clamp(1px, 3.75vw, 72px);
@@ -1375,7 +1336,7 @@ form label {
   align-items: center;
 }
 .footer__adress {
-  margin-bottom: clamp(1px, 2.083vw, 40px);
+  margin-bottom: clamp(1px, 3.333vw, 64px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1384,22 +1345,27 @@ form label {
 .footer__adress-item a {
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
-  line-height: 1.2;
+  line-height: normal;
   text-align: center;
 }
 .footer__btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(1px, 0.417vw, 8px);
+  padding: clamp(1px, 0.625vw, 12px);
+  padding-top: 0;
   background-color: transparent;
   border: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(1px, 1.042vw, 20px);
-  line-height: 1.2;
+  line-height: normal;
   text-align: center;
 }
 .footer__btn:hover {
   cursor: pointer;
+}
+.footer__btn:hover::after {
+  transform: rotateZ(-45deg);
 }
 .footer__btn:after {
   content: "";
@@ -1409,6 +1375,7 @@ form label {
   background-size: cover;
   width: clamp(1px, 1.667vw, 32px);
   height: clamp(1px, 1.667vw, 32px);
+  transition: transform 300ms ease-in-out;
 }
 .footer__copy {
   display: flex;
@@ -1444,24 +1411,33 @@ form label {
   height: clamp(1px, 1.667vw, 32px);
 }
 .footer__slogan {
-  margin-bottom: clamp(1px, 3.073vw, 59px);
+  margin-bottom: clamp(1px, 1.042vw, 20px);
   display: flex;
   flex-direction: column;
-  gap: clamp(1px, 1.146vw, 22px);
 }
 .footer__slogan-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
-  gap: clamp(1px, 1.6vw, 36px);
+  gap: clamp(1px, 1.875vw, 36px);
+}
+.footer__slogan-item:not(:last-child) {
+  margin-bottom: clamp(-18px, -0.9375vw, -0.9375vw);
 }
 .footer__slogan-item p {
+  display: flex;
+  gap: clamp(1px, 4.17vw, 80px);
   font-weight: 600;
   font-size: clamp(1px, 8.75vw, 168px);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: normal;
   white-space: nowrap;
+}
+.footer__slogan-item p span {
+  flex-shrink: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 .footer__slogan-img-first img {
   width: clamp(1px, 29.948vw, 575px);
@@ -1474,6 +1450,10 @@ form label {
 .footer__slogan-img-second-two img {
   width: clamp(1px, 23.438vw, 450px);
   height: clamp(1px, 6.458vw, 124px);
+}
+.footer__slogan-img-third {
+  width: clamp(1px, 46.875vw, 900px);
+  overflow: hidden;
 }
 .footer__slogan-img-third img {
   width: clamp(1px, 47.031vw, 903px);
