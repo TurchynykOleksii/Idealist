@@ -164,7 +164,7 @@
 	&__accordion-item {
 		display: grid;
 		grid-template-rows: 0fr;
-		transition: grid-template-rows 250ms, padding-top 250ms ease;
+		transition: grid-template-rows 250ms ease-in-out, padding-top 250ms ease-in-out;
 		& * {
 			overflow: hidden;
 		}
@@ -229,6 +229,10 @@
 		gap: clamp(1px, 1.667vw, 32px);
 		max-width: clamp(1px, 24.271vw, 466px);
 		width: 100%;
+        @include maxw($sm-pc) {
+            max-width: none;
+        }
+        
 		li {
 			position: relative;
 			display: flex;
@@ -237,7 +241,9 @@
 			font-size: clamp(1px, 1.25vw, 24px);
 			line-height: 1.2;
 			color: $colorDarkGrey;
-
+            @include maxw($sm-pc) {
+                font-size: clamp(14px, 4.375vw, 4.375vw);
+            }
 			&:before {
 				content: '';
 				display: inline-block;
@@ -247,6 +253,11 @@
 				height: clamp(1px, 1.25vw, 24px);
 				background-position: center;
 				background-size: cover;
+                @include maxw($sm-pc) {
+                    flex-shrink: 0;
+                    width: clamp(14px, 4.375vw, 4.375vw);
+                    height: clamp(14px, 4.375vw, 4.375vw);
+                }
 			}
 		}
 	}
@@ -261,6 +272,9 @@
 		justify-content: space-between;
 		gap: clamp(1px, 5.208vw, 100px);
 		overflow: visible;
+        @include maxw($sm-pc) {
+            flex-direction: column;
+        }
 		&:last-of-type {
 			&:before {
 				display: none;
@@ -281,6 +295,9 @@
 		font-weight: 600;
 		font-size: clamp(1px, 1.667vw, 32px);
 		color: $colorBlack;
+        @include maxw($sm-pc) {
+            font-size: clamp(16px, 5vw, 5vw);
+        }
 	}
 	&__area-title {
 		display: flex;

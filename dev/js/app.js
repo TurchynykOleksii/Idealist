@@ -216,7 +216,28 @@ targets.forEach((item) => {
 
 accordionItems.forEach((item) => {
 	item.addEventListener('click', () => {
-		item.querySelector('.services__accordion-item').classList.toggle('services__accordion');
+		item
+			.querySelector('.services__accordion-item')
+			.classList.toggle('services__accordion');
 		item.querySelector('.services__icon').classList.toggle('services__icon-up');
 	});
 });
+
+const poppupServiceEl = document.querySelector('.poppup__form-service');
+const poppupFormatParentEl = document.querySelector('.poppup__format');
+const poppupServiceParentEl = document.querySelector('.poppup__service');
+const poppupFormatEl = document.querySelector('.poppup__form-format');
+const poppupFormatTitleEl = document.querySelector('.poppup__service-format');
+const poppupServiceTitleEl = document.querySelector('.poppup__service-service');
+
+
+function visibleAccordion(accordionParent) {
+	accordionParent.classList.toggle('show__accordion');
+}
+
+poppupFormatTitleEl.addEventListener('click', () => {
+	visibleAccordion(poppupFormatEl);
+});
+poppupServiceTitleEl.addEventListener('click', () =>
+	visibleAccordion(poppupServiceEl)
+);
