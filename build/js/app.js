@@ -270,17 +270,17 @@ poppupCloseEl.addEventListener('click', () => {
 });
 
 const hoursEl = document.querySelector('.details__hours');
-const coastEl = document.querySelector('.details__coasts')
-const detailsCross = document.querySelectorAll('.details__close-icon')
+const coastEl = document.querySelector('.details__coasts');
+const detailsCross = document.querySelectorAll('.details__close-icon');
 
-hoursEl.addEventListener('click',()=>{
-    hoursEl.nextElementSibling.style.opacity = '1'
-    hoursEl.nextElementSibling.style.zIndex = '3'
-})
-coastEl.addEventListener('click',()=>{
-    coastEl.nextElementSibling.style.opacity = '1'
-    coastEl.nextElementSibling.style.zIndex = '3'
-})
+function hoverTextSHow (el){
+    el.nextElementSibling.style.opacity = '1'
+    el.nextElementSibling.style.zIndex = '3'
+}
+
+hoursEl.addEventListener('click',()=>hoverTextSHow(hoursEl));
+coastEl.addEventListener('click',()=>hoverTextSHow(coastEl));
+
 detailsCross.forEach(cross => {
     cross.addEventListener('click',()=>{
         hoursEl.nextElementSibling.style.opacity = '0'
