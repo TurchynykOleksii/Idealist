@@ -13,7 +13,7 @@ function my_assets()
 
     //wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/build/js/app.min.js',  array('jquery'), '1.0', true);
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/build/js/app.js',  array('jquery'), '1.0', true);
 
     $page_template =  mb_substr(get_page_template_slug(), 0, -4); // get template file name and cut last 4 symbols
     $css_file_path = get_template_directory_uri() . '/build/css/pages/' . $page_template . '.css';
