@@ -12,6 +12,7 @@
   .meet .swiper-slide {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }
 .meet__title {
@@ -95,7 +96,7 @@
 .meet__list {
   display: flex;
   flex-direction: column;
-  gap: clamp(1px, 14.74vw, 283px);
+  gap: clamp(1px, 5.365vw, 103px);
   padding: clamp(1px, 2.917vw, 56px);
   position: absolute;
   right: 0;
@@ -107,12 +108,9 @@
 @media only screen and (max-width: 992px) {
   .meet__list {
     position: static;
-  }
-}
-@media only screen and (max-width: 992px) and (max-width: 992px) {
-  .meet__list {
     width: clamp(288px, 90vw, 90vw);
     height: clamp(309px, 96.563vw, 96.563vw);
+    gap: unset;
   }
 }
 .meet__item {
@@ -120,8 +118,55 @@
   justify-content: space-between;
   gap: clamp(1px, 1.25vw, 24px);
 }
+@media only screen and (max-width: 992px) {
+  .meet__item:first-child {
+    flex-direction: column;
+  }
+}
+.meet__item:nth-child(2) {
+  margin-top: clamp(46px, 5vw, 5vw);
+  margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+}
 .meet__item p {
   color: #000;
+}
+.meet__item strong {
+  color: black;
+}
+.meet__slogan {
+  padding-left: 30px;
+  max-width: clamp(1px, 33.229vw, 638px);
+  font-size: clamp(1px, 1.25vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media only screen and (max-width: 992px) {
+  .meet__slogan {
+    max-width: fit-content;
+  }
+}
+.meet__slogan p {
+  line-height: 120%;
+}
+.meet__slogan strong {
+  font-weight: 600;
+}
+.meet__slogan:before {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  content: '"';
+  color: black;
+  font-size: clamp(1px, 3.125vw, 60px);
+  max-width: fit-content;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+@media only screen and (max-width: 992px) {
+  .meet__slogan:before {
+    font-size: clamp(28px, 3.043vw, 3.043vw);
+  }
 }
 .meet__persone {
   margin-bottom: clamp(1px, 0.625vw, 12px);
@@ -145,33 +190,46 @@
   }
 }
 .meet__xp {
-  width: clamp(1px, 6.615vw, 127px);
+  width: clamp(1px, 13.542vw, 260px);
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
   text-align: right;
 }
-@media only screen and (max-width: 992px) {
-  .meet__xp {
-    display: none;
-  }
+.meet__xp strong {
+  display: block;
+  color: black;
 }
 @media only screen and (max-width: 992px) {
-  .meet__educating, .meet__intrest {
-    display: none;
+  .meet__xp {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(14px, 4.375vw, 4.375vw);
+    width: 100%;
   }
 }
 .meet__educating p, .meet__intrest p {
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
 }
+@media only screen and (max-width: 992px) {
+  .meet__educating p, .meet__intrest p {
+    font-size: clamp(14px, 1.411vw, 1.411vw);
+  }
+}
+.meet__educating p {
+  color: #7c7e71;
+}
 .meet__intrest {
-  display: flex;
-  align-items: end;
+  max-width: clamp(1px, 19.375vw, 375px);
 }
 @media only screen and (max-width: 992px) {
   .meet__intrest {
-    display: none;
+    max-width: clamp(250px, 27.174vw, 27.174vw);
   }
+}
+.meet__intrest p {
+  text-align: right;
 }
 .meet__line {
   width: 3px;

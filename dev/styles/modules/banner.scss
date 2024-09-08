@@ -168,6 +168,9 @@
 		text-align: center;
 		color: $colorBlack;
 		border: none;
+        &:hover{
+            cursor: pointer;
+        }
 		@include maxw($sm-pc) {
 			display: block;
 			margin: 0 auto;

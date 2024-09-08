@@ -11,6 +11,7 @@
 		@include maxw($sm-pc) {
 			display: flex;
 			flex-direction: column;
+            align-items: center;
 		}
 	}
 	&__title {
@@ -42,7 +43,7 @@
 			}
 		}
 		@include maxw($sm-pc) {
-            margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+			margin-bottom: clamp(40px, 12.5vw, 12.5vw);
 			padding-left: 0;
 			line-height: 1.2;
 			font-weight: 400;
@@ -82,7 +83,7 @@
 	&__list {
 		display: flex;
 		flex-direction: column;
-		gap: clamp(1px, 14.74vw, 283px);
+		gap: clamp(1px, 5.365vw, 103px);
 		padding: clamp(1px, 2.917vw, 56px);
 		position: absolute;
 		right: 0;
@@ -92,18 +93,60 @@
 		background-color: $colorWhite;
 		@include maxw($sm-pc) {
 			position: static;
-			@include maxw($sm-pc) {
-				width: clamp(288px, 90vw, 90vw);
-				height: clamp(309px, 96.563vw, 96.563vw);
-			}
+			width: clamp(288px, 90vw, 90vw);
+			height: clamp(309px, 96.563vw, 96.563vw);
+			gap: unset;
 		}
 	}
 	&__item {
 		display: flex;
 		justify-content: space-between;
 		gap: clamp(1px, 1.25vw, 24px);
+		&:first-child {
+			@include maxw($sm-pc) {
+				flex-direction: column;
+			}
+		}
+		&:nth-child(2) {
+			margin-top: clamp(46px, 5vw, 5vw);
+			margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+		}
 		p {
 			color: $colorBlack;
+		}
+		strong {
+			color: black;
+		}
+	}
+	&__slogan {
+		padding-left: 30px;
+		max-width: clamp(1px, 33.229vw, 638px);
+		font-size: clamp(1px, 1.25vw, 24px);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		@include maxw($sm-pc) {
+			max-width: fit-content;
+		}
+		p {
+			line-height: 120%;
+		}
+		strong {
+			font-weight: 600;
+		}
+		&:before {
+			position: absolute;
+			top: -40px;
+			left: 0;
+			content: '"';
+			color: black;
+			font-size: clamp(1px, 3.125vw, 60px);
+			max-width: fit-content;
+			transform: rotate(180deg);
+			line-height: 1;
+			@include maxw($sm-pc) {
+				font-size: clamp(28px, 3.043vw, 3.043vw);
+			}
 		}
 	}
 	&__persone {
@@ -124,29 +167,45 @@
 		}
 	}
 	&__xp {
-		width: clamp(1px, 6.615vw, 127px);
+		width: clamp(1px, 13.542vw, 260px);
 		font-weight: 500;
 		font-size: clamp(1px, 1.25vw, 24px);
 		text-align: right;
+		strong {
+			display: block;
+			color: black;
+		}
 		@include maxw($sm-pc) {
-			display: none;
+			margin-top: 12px;
+			display: flex;
+			justify-content: space-between;
+			font-size: clamp(14px, 4.375vw, 4.375vw);
+			width: 100%;
 		}
 	}
+
 	&__educating,
 	&__intrest {
-		@include maxw($sm-pc) {
-			display: none;
-		}
 		p {
 			font-weight: 500;
 			font-size: clamp(1px, 1.25vw, 24px);
+			@include maxw($sm-pc) {
+				font-size: clamp(14px, 1.411vw, 1.411vw);
+			}
+		}
+	}
+	&__educating {
+		p {
+			color: #7c7e71;
 		}
 	}
 	&__intrest {
-		display: flex;
-		align-items: end;
-		@include maxw($sm-pc) {
-			display: none;
+		max-width: clamp(1px, 19.375vw, 375px);
+        @include maxw($sm-pc) {
+            max-width: clamp(250px, 27.174vw, 27.174vw);
+        }
+		p {
+			text-align: right;
 		}
 	}
 	&__line {
@@ -161,9 +220,9 @@
 			#6e5e41 100%
 		);
 		transform: rotate(30deg);
-        @include maxw($sm-pc) {
-            display: none;
-        }
+		@include maxw($sm-pc) {
+			display: none;
+		}
 	}
 	&__navigation {
 		width: clamp(1px, 10.313vw, 198px);
@@ -175,31 +234,31 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-        @include maxw($sm-pc) {
-            width: 100%;
-            top: clamp(121px,37.813vw,37.813vw);
-            justify-content: space-between;
-        }
+		@include maxw($sm-pc) {
+			width: 100%;
+			top: clamp(121px, 37.813vw, 37.813vw);
+			justify-content: space-between;
+		}
 		.swiper-button-prev,
 		.swiper-button-next {
 			margin: 0;
 			position: static;
 			width: clamp(1px, 3.125vw, 60px);
 			height: clamp(1px, 3.125vw, 60px);
-            @include maxw($sm-pc) {
-                width: clamp(32px,10vw,10vw);
-                height: clamp(32px,10vw,10vw);
-            }
+			@include maxw($sm-pc) {
+				width: clamp(32px, 10vw, 10vw);
+				height: clamp(32px, 10vw, 10vw);
+			}
 			&:after {
 				display: none;
 			}
 			img {
 				width: clamp(1px, 3.125vw, 60px);
 				height: clamp(1px, 3.125vw, 60px);
-                @include maxw($sm-pc) {
-                    width: clamp(32px,10vw,10vw);
-                    height: clamp(32px,10vw,10vw);
-                }
+				@include maxw($sm-pc) {
+					width: clamp(32px, 10vw, 10vw);
+					height: clamp(32px, 10vw, 10vw);
+				}
 			}
 			&:hover {
 				cursor: pointer;

@@ -224,12 +224,9 @@ accordionItems.forEach((item) => {
 });
 
 const poppupServiceEl = document.querySelector('.poppup__form-service');
-const poppupFormatParentEl = document.querySelector('.poppup__format');
-const poppupServiceParentEl = document.querySelector('.poppup__service');
 const poppupFormatEl = document.querySelector('.poppup__form-format');
 const poppupFormatTitleEl = document.querySelector('.poppup__service-format');
 const poppupServiceTitleEl = document.querySelector('.poppup__service-service');
-
 
 function visibleAccordion(accordionParent) {
 	accordionParent.classList.toggle('show__accordion');
@@ -241,3 +238,33 @@ poppupFormatTitleEl.addEventListener('click', () => {
 poppupServiceTitleEl.addEventListener('click', () =>
 	visibleAccordion(poppupServiceEl)
 );
+
+const bannerBtnEl = document.querySelector('.banner__btn');
+const overlayEl = document.querySelector('.overlay');
+const poppupEl = document.querySelector('.poppup');
+const poppupCloseEl = document.querySelector('.poppup__close');
+
+bannerBtnEl.addEventListener('click', () => {
+	if (overlayEl.classList.contains('overlay__hide')) {
+		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+	} else {
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+
+	overlayEl.classList.toggle('overlay__hide');
+	poppupEl.classList.toggle('poppup__hide');
+});
+
+overlayEl.addEventListener('click', (e) => {
+	if (e.currentTarget === e.target) {
+		overlayEl.classList.add('overlay__hide');
+		poppupEl.classList.add('poppup__hide');
+        document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+});
+
+poppupCloseEl.addEventListener('click', () => {
+	overlayEl.classList.add('overlay__hide');
+	poppupEl.classList.add('poppup__hide');
+    document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+});
