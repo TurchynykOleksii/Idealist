@@ -11,7 +11,7 @@
 		@include maxw($sm-pc) {
 			display: flex;
 			flex-direction: column;
-            align-items: center;
+			align-items: center;
 		}
 	}
 	&__title {
@@ -23,7 +23,7 @@
 		text-transform: uppercase;
 		@include maxw($sm-pc) {
 			margin-bottom: clamp(40px, 12.5vw, 12.5vw);
-			font-size: clamp(14px, 4.375vw, 4.375vw);
+			font-size: clamp(14px, 1.522vw, 1.522vw);
 		}
 	}
 	&__subtitle {
@@ -108,8 +108,10 @@
 			}
 		}
 		&:nth-child(2) {
-			margin-top: clamp(46px, 5vw, 5vw);
-			margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+			@include maxw($sm-pc) {
+				margin-top: clamp(46px, 5vw, 5vw);
+				margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+			}
 		}
 		p {
 			color: $colorBlack;
@@ -201,9 +203,9 @@
 	}
 	&__intrest {
 		max-width: clamp(1px, 19.375vw, 375px);
-        @include maxw($sm-pc) {
-            max-width: clamp(250px, 27.174vw, 27.174vw);
-        }
+		@include maxw($sm-pc) {
+			max-width: clamp(250px, 27.174vw, 27.174vw);
+		}
 		p {
 			text-align: right;
 		}

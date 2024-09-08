@@ -1550,7 +1550,7 @@ form label {
 @media only screen and (max-width: 992px) {
   .meet__title {
     margin-bottom: clamp(40px, 12.5vw, 12.5vw);
-    font-size: clamp(14px, 4.375vw, 4.375vw);
+    font-size: clamp(14px, 1.522vw, 1.522vw);
   }
 }
 .meet__subtitle {
@@ -1647,9 +1647,11 @@ form label {
     flex-direction: column;
   }
 }
-.meet__item:nth-child(2) {
-  margin-top: clamp(46px, 5vw, 5vw);
-  margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+@media only screen and (max-width: 992px) {
+  .meet__item:nth-child(2) {
+    margin-top: clamp(46px, 5vw, 5vw);
+    margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+  }
 }
 .meet__item p {
   color: #000;
@@ -2521,11 +2523,21 @@ form label {
   font-size: clamp(1px, 1.25vw, 24px);
   resize: none;
 }
+@media only screen and (max-width: 992px) {
+  .poppup__textarea textarea {
+    padding: clamp(6px, 0.652vw, 0.652vw);
+  }
+}
 .poppup__textarea textarea::placeholder {
   color: #7c7e71;
   font-weight: 500;
   font-size: clamp(1px, 1.042vw, 20px);
   font-family: Inter, sans-serif;
+}
+@media only screen and (max-width: 992px) {
+  .poppup__textarea textarea::placeholder {
+    font-size: clamp(14px, 1.522vw, 1.522vw);
+  }
 }
 .poppup__group-title {
   position: static;
@@ -2604,6 +2616,43 @@ form label {
     gap: clamp(7px, 0.706vw, 0.706vw);
   }
 }
+.details__hover-text {
+  padding: 8px;
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 35px);
+  opacity: 0;
+  width: clamp(1px, 17.188vw, 330px);
+  font-size: clamp(1px, 1.042vw, 20px);
+  border: 1px solid #7c7e71;
+  background-color: #fff;
+  z-index: 3;
+}
+@media only screen and (max-width: 992px) {
+  .details__hover-text {
+    padding: clamp(38px, 3.478vw, 3.478vw) 8px;
+    width: clamp(269px, 29.239vw, 29.239vw);
+    font-size: clamp(14px, 4.375vw, 4.375vw);
+    top: 100%;
+    right: auto;
+    left: 0;
+    z-index: -1;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .details__close-icon {
+    width: clamp(24px, 2.419vw, 2.419vw);
+    height: clamp(24px, 2.419vw, 2.419vw);
+    top: 8px;
+    right: 8px;
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .details__close-icon {
+    display: none;
+  }
+}
 .details__hours, .details__coasts {
   display: flex;
   justify-content: space-between;
@@ -2611,6 +2660,12 @@ form label {
   font-weight: 500;
   font-size: clamp(1px, 1.25vw, 24px);
   line-height: 120%;
+}
+.details__hours:hover, .details__coasts:hover {
+  cursor: pointer;
+}
+.details__hours:hover + .details__hover-text, .details__coasts:hover + .details__hover-text {
+  opacity: 1;
 }
 @media only screen and (max-width: 992px) {
   .details__hours, .details__coasts {

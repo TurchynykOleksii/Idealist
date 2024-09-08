@@ -268,3 +268,24 @@ poppupCloseEl.addEventListener('click', () => {
 	poppupEl.classList.add('poppup__hide');
     document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
 });
+
+const hoursEl = document.querySelector('.details__hours');
+const coastEl = document.querySelector('.details__coasts')
+const detailsCross = document.querySelectorAll('.details__close-icon')
+
+hoursEl.addEventListener('click',()=>{
+    hoursEl.nextElementSibling.style.opacity = '1'
+    hoursEl.nextElementSibling.style.zIndex = '3'
+})
+coastEl.addEventListener('click',()=>{
+    coastEl.nextElementSibling.style.opacity = '1'
+    coastEl.nextElementSibling.style.zIndex = '3'
+})
+detailsCross.forEach(cross => {
+    cross.addEventListener('click',()=>{
+        hoursEl.nextElementSibling.style.opacity = '0'
+        coastEl.nextElementSibling.style.opacity = '0'
+        coastEl.nextElementSibling.style.zIndex = '-2'
+        hoursEl.nextElementSibling.style.zIndex = '-2'
+    })
+})

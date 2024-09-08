@@ -26,7 +26,7 @@
 @media only screen and (max-width: 992px) {
   .meet__title {
     margin-bottom: clamp(40px, 12.5vw, 12.5vw);
-    font-size: clamp(14px, 4.375vw, 4.375vw);
+    font-size: clamp(14px, 1.522vw, 1.522vw);
   }
 }
 .meet__subtitle {
@@ -123,9 +123,11 @@
     flex-direction: column;
   }
 }
-.meet__item:nth-child(2) {
-  margin-top: clamp(46px, 5vw, 5vw);
-  margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+@media only screen and (max-width: 992px) {
+  .meet__item:nth-child(2) {
+    margin-top: clamp(46px, 5vw, 5vw);
+    margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+  }
 }
 .meet__item p {
   color: #000;
