@@ -1,4 +1,37 @@
+const sloganEl = document.querySelector('.slogan__text');
+const aboutEl = document.querySelector('.about__info');
+const sloganText = new SplitType(sloganEl, {
+	types: 'words, chars',
+});
+const aboutText = new SplitType(aboutEl, {
+	types: 'words, chars',
+});
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(sloganText.chars, {
+	scrollTrigger: {
+		trigger: sloganEl,
+		start: 'top 60%',
+		end: 'top 20%',
+		scrub: true,
+		markers: false,
+	},
+	opacity: 0.2,
+	stagger: 0.05,
+});
+
+gsap.from(aboutText.chars, {
+	scrollTrigger: {
+		trigger: aboutEl,
+		start: 'top 60%',
+		end: 'top 20%',
+		scrub: true,
+		markers: false,
+	},
+	opacity: 0.2,
+	stagger: 0.05,
+});
 
 let isDesk = $('body').hasClass('desktop'),
 	menuOpen = false;
@@ -202,21 +235,63 @@ const poppupFormatEl = document.querySelector('.poppup__form-format');
 const poppupFormatTitleEl = document.querySelector('.poppup__service-format');
 const poppupServiceTitleEl = document.querySelector('.poppup__service-service');
 
-function visibleAccordion(accordionParent) {
+function visibleAccordion(accordionParent, rotate) {
 	accordionParent.classList.toggle('show__accordion');
+	if (!accordionParent.classList.contains('show__accordion')) {
+		rotate.querySelector('.poppup__rotate').style.transform = 'rotate(0)';
+	} else {
+		rotate.querySelector('.poppup__rotate').style.transform = 'rotate(180deg)';
+	}
 }
 
 poppupFormatTitleEl.addEventListener('click', () => {
-	visibleAccordion(poppupFormatEl);
+	visibleAccordion(poppupFormatEl, poppupFormatTitleEl);
 });
-poppupServiceTitleEl.addEventListener('click', () =>
-	visibleAccordion(poppupServiceEl)
-);
+poppupServiceTitleEl.addEventListener('click', () => {
+	visibleAccordion(poppupServiceEl, poppupServiceTitleEl);
+});
 
 const bannerBtnEl = document.querySelector('.banner__btn');
 const overlayEl = document.querySelector('.overlay');
 const poppupEl = document.querySelector('.poppup');
 const poppupCloseEl = document.querySelector('.poppup__close');
+
+const writeBtnEl = document.querySelector('.services__btn-mob');
+const getConsultation = document.querySelector('.ready__consultation');
+const footerConsultation = document.querySelector('.footer__btn');
+
+footerConsultation.addEventListener('click', () => {
+	if (overlayEl.classList.contains('overlay__hide')) {
+		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+	} else {
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+
+	overlayEl.classList.toggle('overlay__hide');
+	poppupEl.classList.toggle('poppup__hide');
+});
+
+getConsultation.addEventListener('click', () => {
+	if (overlayEl.classList.contains('overlay__hide')) {
+		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+	} else {
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+
+	overlayEl.classList.toggle('overlay__hide');
+	poppupEl.classList.toggle('poppup__hide');
+});
+
+writeBtnEl.addEventListener('click', () => {
+	if (overlayEl.classList.contains('overlay__hide')) {
+		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+	} else {
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+
+	overlayEl.classList.toggle('overlay__hide');
+	poppupEl.classList.toggle('poppup__hide');
+});
 
 bannerBtnEl.addEventListener('click', () => {
 	if (overlayEl.classList.contains('overlay__hide')) {
@@ -233,33 +308,74 @@ overlayEl.addEventListener('click', (e) => {
 	if (e.currentTarget === e.target) {
 		overlayEl.classList.add('overlay__hide');
 		poppupEl.classList.add('poppup__hide');
-        document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
 	}
 });
 
 poppupCloseEl.addEventListener('click', () => {
 	overlayEl.classList.add('overlay__hide');
 	poppupEl.classList.add('poppup__hide');
-    document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
 });
 
 const hoursEl = document.querySelector('.details__hours');
 const coastEl = document.querySelector('.details__coasts');
 const detailsCross = document.querySelectorAll('.details__close-icon');
 
-function hoverTextSHow (el){
-    el.nextElementSibling.style.opacity = '1'
-    el.nextElementSibling.style.zIndex = '3'
+function hoverTextSHow(el) {
+	el.nextElementSibling.style.opacity = '1';
+	el.nextElementSibling.style.zIndex = '3';
 }
 
-hoursEl.addEventListener('click',()=>hoverTextSHow(hoursEl));
-coastEl.addEventListener('click',()=>hoverTextSHow(coastEl));
+hoursEl.addEventListener('click', () => hoverTextSHow(hoursEl));
+coastEl.addEventListener('click', () => hoverTextSHow(coastEl));
 
-detailsCross.forEach(cross => {
-    cross.addEventListener('click',()=>{
-        hoursEl.nextElementSibling.style.opacity = '0'
-        coastEl.nextElementSibling.style.opacity = '0'
-        coastEl.nextElementSibling.style.zIndex = '-2'
-        hoursEl.nextElementSibling.style.zIndex = '-2'
-    })
-})
+detailsCross.forEach((cross) => {
+	cross.addEventListener('click', () => {
+		hoursEl.nextElementSibling.style.opacity = '0';
+		coastEl.nextElementSibling.style.opacity = '0';
+		coastEl.nextElementSibling.style.zIndex = '-2';
+		hoursEl.nextElementSibling.style.zIndex = '-2';
+	});
+});
+
+const nameErrorEl = document.querySelector('.poppup__name-error');
+const mailErrorEl = document.querySelector('.poppup__mail-error');
+const telErrorEl = document.querySelector('.poppup__tel-error');
+
+const nameInputEl = document.querySelector('.form__input-name');
+const telInputEl = document.querySelector('.form__input-tel');
+const emailInputEl = document.querySelector('.form__input-mail');
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const telPattern = /^\+380\d{9}$/;
+
+const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
+
+nameInputEl.addEventListener('blur', () => {
+	if (
+		nameInputEl.value.length < 2 ||
+		!namePattern.test(nameInputEl.value.trim())
+	) {
+		nameErrorEl.classList.add('show-error');
+	} else {
+		nameErrorEl.classList.remove('show-error');
+	}
+});
+
+telInputEl.addEventListener('blur', () => {
+	if (!telPattern.test(telInputEl.value.trim())) {
+		telErrorEl.classList.add('show-error');
+	} else {
+		telErrorEl.classList.remove('show-error');
+	}
+});
+
+emailInputEl.addEventListener('blur', () => {
+	if (!emailPattern.test(emailInputEl.value.trim())) {
+		mailErrorEl.classList.add('show-error');
+	} else {
+		mailErrorEl.classList.remove('show-error');
+	}
+});

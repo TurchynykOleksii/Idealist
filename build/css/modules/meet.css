@@ -1,0 +1,304 @@
+.meet {
+  padding-top: clamp(1px, 5.469vw, 105px);
+  padding-bottom: clamp(1px, 10.417vw, 200px);
+}
+.meet * {
+  color: #fff;
+}
+.meet .swiper-slide {
+  position: relative;
+}
+@media only screen and (max-width: 992px) {
+  .meet .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.meet__title {
+  margin-bottom: clamp(1px, 2.083vw, 40px);
+  font-weight: 500;
+  font-size: clamp(1px, 1.042vw, 20px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 992px) {
+  .meet__title {
+    margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+    font-size: clamp(14px, 1.522vw, 1.522vw);
+  }
+}
+.meet__subtitle {
+  padding-left: clamp(1px, 3.646vw, 70px);
+  position: relative;
+  margin-bottom: clamp(1px, 5.208vw, 100px);
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+.meet__subtitle p {
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__subtitle p {
+    margin-left: clamp(40px, 12.5vw, 12.5vw);
+    max-width: fit-content;
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+    font-weight: 400;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .meet__subtitle {
+    margin-bottom: clamp(40px, 12.5vw, 12.5vw);
+    padding-left: 0;
+    line-height: 1.2;
+    font-weight: 400;
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+  }
+}
+.meet__subtitle:before {
+  position: absolute;
+  left: 0;
+  font-size: clamp(1px, 3.125vw, 60px);
+  content: "-";
+}
+@media only screen and (max-width: 992px) {
+  .meet__subtitle:before {
+    top: clamp(5px, 1.563vw, 1.563vw);
+    font-size: clamp(33px, 10.313vw, 10.313vw);
+  }
+}
+.meet__bcsp {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .meet__bcsp {
+    display: block;
+    max-width: 50px;
+    width: 100%;
+  }
+}
+.meet__photo {
+  width: clamp(1px, 65.573vw, 1259px);
+  height: clamp(1px, 59.844vw, 1149px);
+  overflow: hidden;
+}
+@media only screen and (max-width: 992px) {
+  .meet__photo {
+    width: clamp(288px, 90vw, 90vw);
+    height: clamp(262px, 81.875vw, 81.875vw);
+  }
+}
+.meet__photo img {
+  width: 100%;
+}
+.meet__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1px, 5.365vw, 103px);
+  padding: clamp(1px, 2.917vw, 56px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(1px, 54.375vw, 1024px);
+  height: clamp(1px, 39.375vw, 756px);
+  background-color: #fff;
+}
+@media only screen and (max-width: 992px) {
+  .meet__list {
+    position: static;
+    width: clamp(288px, 90vw, 90vw);
+    height: clamp(309px, 96.563vw, 96.563vw);
+    gap: unset;
+  }
+}
+.meet__item {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(1px, 1.25vw, 24px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__item:first-child {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .meet__item:nth-child(2) {
+    margin-top: clamp(46px, 5vw, 5vw);
+    margin-bottom: clamp(16px, 1.739vw, 1.739vw);
+  }
+}
+.meet__item p {
+  color: #000;
+}
+.meet__item strong {
+  color: black;
+}
+.meet__slogan {
+  padding-left: 30px;
+  max-width: clamp(1px, 33.229vw, 638px);
+  font-size: clamp(1px, 1.25vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media only screen and (max-width: 992px) {
+  .meet__slogan {
+    max-width: fit-content;
+  }
+}
+.meet__slogan p {
+  line-height: 120%;
+}
+.meet__slogan strong {
+  font-weight: 600;
+}
+.meet__slogan:before {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  content: '"';
+  color: black;
+  font-size: clamp(1px, 3.125vw, 60px);
+  max-width: fit-content;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+@media only screen and (max-width: 992px) {
+  .meet__slogan:before {
+    font-size: clamp(28px, 3.043vw, 3.043vw);
+  }
+}
+.meet__persone {
+  margin-bottom: clamp(1px, 0.625vw, 12px);
+  width: clamp(1px, 13.333vw, 256px);
+  font-weight: 600;
+  font-size: clamp(1px, 3.125vw, 60px);
+  line-height: 1.1;
+}
+@media only screen and (max-width: 992px) {
+  .meet__persone {
+    font-size: clamp(28px, 8.75vw, 8.75vw);
+  }
+}
+.meet__persone-info {
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__persone-info {
+    display: none;
+  }
+}
+.meet__xp {
+  width: clamp(1px, 13.542vw, 260px);
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+  text-align: right;
+}
+.meet__xp strong {
+  display: block;
+  color: black;
+}
+@media only screen and (max-width: 992px) {
+  .meet__xp {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(14px, 4.375vw, 4.375vw);
+    width: 100%;
+  }
+}
+.meet__educating p, .meet__intrest p {
+  font-weight: 500;
+  font-size: clamp(1px, 1.25vw, 24px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__educating p, .meet__intrest p {
+    font-size: clamp(14px, 1.411vw, 1.411vw);
+  }
+}
+.meet__educating p {
+  color: #7c7e71;
+}
+.meet__intrest {
+  max-width: clamp(1px, 19.375vw, 375px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__intrest {
+    max-width: clamp(250px, 27.174vw, 27.174vw);
+  }
+}
+.meet__intrest p {
+  text-align: right;
+}
+.meet__line {
+  width: 3px;
+  height: clamp(1px, 7.813vw, 150px);
+  background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
+  transform: rotate(30deg);
+}
+@media only screen and (max-width: 992px) {
+  .meet__line {
+    display: none;
+  }
+}
+.meet__navigation {
+  width: clamp(1px, 10.313vw, 198px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1px, 1.563vw, 30px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media only screen and (max-width: 992px) {
+  .meet__navigation {
+    width: 100%;
+    top: clamp(121px, 37.813vw, 37.813vw);
+    justify-content: space-between;
+  }
+}
+.meet__navigation .swiper-button-prev,
+.meet__navigation .swiper-button-next {
+  margin: 0;
+  position: static;
+  width: clamp(1px, 3.125vw, 60px);
+  height: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__navigation .swiper-button-prev,
+.meet__navigation .swiper-button-next {
+    width: clamp(32px, 10vw, 10vw);
+    height: clamp(32px, 10vw, 10vw);
+  }
+}
+.meet__navigation .swiper-button-prev:after,
+.meet__navigation .swiper-button-next:after {
+  display: none;
+}
+.meet__navigation .swiper-button-prev img,
+.meet__navigation .swiper-button-next img {
+  width: clamp(1px, 3.125vw, 60px);
+  height: clamp(1px, 3.125vw, 60px);
+}
+@media only screen and (max-width: 992px) {
+  .meet__navigation .swiper-button-prev img,
+.meet__navigation .swiper-button-next img {
+    width: clamp(32px, 10vw, 10vw);
+    height: clamp(32px, 10vw, 10vw);
+  }
+}
+.meet__navigation .swiper-button-prev:hover,
+.meet__navigation .swiper-button-next:hover {
+  cursor: pointer;
+}
+.meet__navigation .swiper-button-prev {
+  align-self: baseline;
+}
+.meet__navigation .swiper-button-next {
+  align-self: flex-end;
+}

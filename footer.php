@@ -47,35 +47,30 @@
             <ul class="footer__slogan">
                 <li class="footer__slogan-item">
                     <p>DON` T</p>
-                    <div class="footer__slogan-img footer__slogan-img-first">
-                        <picture>
-                            <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.webp" type="image/webp"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg" alt="slogan img">
-                        </picture>
+                    <div class="footer__slogan-img footer__slogan-img-first"><img
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
+                                alt="slogan img">
                     </div>
                     <p> WORRY</p>
                 </li>
                 <li class="footer__slogan-item">
-                    <div class="footer__slogan-img footer__slogan-img-second">
-                        <picture>
-                            <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.webp" type="image/webp"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg" alt="slogan img">
-                        </picture>
+                    <div class="footer__slogan-img footer__slogan-img-second"><img
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
+                                alt="slogan img">
+                        
                     </div>
                     <p>WE`LL DEAL </p>
-                    <div class="footer__slogan-img footer__slogan-img-second-two">
-                        <picture>
-                            <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.webp" type="image/webp"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg" alt="slogan img">
-                        </picture>
+                    <div class="footer__slogan-img footer__slogan-img-second-two"><img
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
+                                alt="slogan img">
+                        
                     </div>
                 </li>
                 <li class="footer__slogan-item">
-                    <div class="footer__slogan-img footer__slogan-img-third">
-                        <picture>
-                            <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.webp" type="image/webp"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg" alt="slogan img">
-                        </picture>
+                    <div class="footer__slogan-img footer__slogan-img-third"><img
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
+                                alt="slogan img">
+                        
                     </div>
                     <p>WITH THIS</p>
 
@@ -93,7 +88,7 @@
                     <li class="mobile__nav-item"><a href="#contacts">Контакти</a></li>
                 </ul>
                 <div class="mobile__lang-switch">
-                    <span class="mobile__ukr">Укр</span>
+                    <span class="mobile__ukr active__lang">Укр</span>
                     <span>/</span>
                     <span class="mobile__eng">Eng</span>
                 </div>
@@ -104,35 +99,31 @@
                 <ul class="footer__slogan mobile__slogan">
                     <li class="footer__slogan-item">
                         <p>DON` T</p>
-                        <div class="footer__slogan-img footer__slogan-img-first">
-                            <picture>
-                                <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.webp" type="image/webp"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg" alt="slogan img">
-                            </picture>
+                        <div class="footer__slogan-img footer__slogan-img-first"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
+                                    alt="slogan img">
+                            
                         </div>
                         <p> WORRY</p>
                     </li>
                     <li class="footer__slogan-item">
-                        <div class="footer__slogan-img footer__slogan-img-second">
-                            <picture>
-                                <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.webp" type="image/webp"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg" alt="slogan img">
-                            </picture>
+                        <div class="footer__slogan-img footer__slogan-img-second"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
+                                    alt="slogan img">
+                            
                         </div>
                         <p>WE`LL DEAL </p>
-                        <div class="footer__slogan-img footer__slogan-img-second-two">
-                            <picture>
-                                <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.webp" type="image/webp"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg" alt="slogan img">
-                            </picture>
+                        <div class="footer__slogan-img footer__slogan-img-second-two"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
+                                    alt="slogan img">
+                            
                         </div>
                     </li>
                     <li class="footer__slogan-item">
-                        <div class="footer__slogan-img footer__slogan-img-third">
-                            <picture>
-                                <source srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.webp" type="image/webp"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg" alt="slogan img">
-                            </picture>
+                        <div class="footer__slogan-img footer__slogan-img-third"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
+                                    alt="slogan img">
+                            
                         </div>
                         <p>WITH THIS</p>
 
@@ -242,15 +233,22 @@
                     </div>
                     <div class="poppup__group">
                         <label class="poppup__group-title">
-                            <input type="text" placeholder="Ваше Ім’я"></label>
+                            <input class="form__input-name" required type="text" placeholder="Ваше Ім’я"></label>
+                        <div class="poppup__errors"><span class="poppup__name-error">Обов’язкове поле для
+                                заповнення!</span></div>
                     </div>
                     <div class="poppup__group">
                         <label class="poppup__group-title">
-                            <input type="text" placeholder="Номер телефону"></label>
+                            <input class="form__input-tel" required type="text" placeholder="Номер телефону"></label>
+                        <div class="poppup__errors"><span class="poppup__tel-error">Введіть у форматі +КОД_КРАЇНИ
+                                XXXXXXXXXX</span></div>
                     </div>
                     <div class="poppup__group">
                         <label class="poppup__group-title">
-                            <input type="email" placeholder="Email"></label>
+                            <input class="form__input-mail" required type="email" placeholder="Email"></label>
+                        <div class="poppup__errors"><span class="poppup__mail-error">Введіть коректну електронну поштову
+                                адресу</span></div>
+
                     </div>
                     <div class="poppup__group poppup__textarea">
                         <label class="poppup__group-title"><span class="poppup__textarea-title">Коротко опишіть ваш
@@ -302,51 +300,12 @@
     </div>
 </div>
 
-<script src="js/libs/jquery-3.6.0.min.js"></script>
 
-<script src="js/libs/swiper-bundle.min.js"></script>
-<script src="js/modules/video.js"></script>
-<script src="js/modules/anchor.js"></script>
-<script src="js/modules/slider.js"></script>
-<script src="js/libs/gsap.min.js"></script>
-<script src="js/libs/ScrollTrigger.min.js"></script>
-<script src="js/libs/split-tyme.min.js"></script>
-<script src="./js/app.js"></script>
-<script>
+<script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/split-tyme.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/ScrollTrigger.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/gsap.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/swiper-bundle.min.js"></script>
 
-    const sloganEl = document.querySelector(".slogan__text");
-    const aboutEl = document.querySelector('.about__info')
-    const sloganText = new SplitType(sloganEl, { types: 'words, chars' });
-    const aboutText = new SplitType(aboutEl, { types: 'words, chars' });
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(sloganText.chars, {
-        scrollTrigger: {
-            trigger: sloganEl,
-            start: "top 60%",
-            end: "top 20%",
-            scrub: true,
-            markers: false,
-        },
-        opacity: 0.2,
-        stagger: 0.05
-    });
-
-    gsap.from(aboutText.chars, {
-        scrollTrigger: {
-            trigger: aboutEl,
-            start: "top 60%",
-            end: "top 20%",
-            scrub: true,
-            markers: false,
-        },
-        opacity: 0.2,
-        stagger: 0.05
-    });
-
-
-</script>
 <?php wp_footer(); ?>
 </body>
 

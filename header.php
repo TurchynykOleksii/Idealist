@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idealist</title>
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.ico" />
+    <link rel="Shortcut Icon" type="image/x-icon"
+        href="<?php echo get_template_directory_uri(); ?>/build/img/icons/favicon.ico" />
+    <link rel="Shortcut Icon" type="image/x-icon"
+        href="<?php echo get_template_directory_uri(); ?>/build/css/style.css" />
+    <link rel="Shortcut Icon" type="image/x-icon"
+        href="<?php echo get_template_directory_uri(); ?>/build/css/libs/swiper.css" />
 
-    <link rel="stylesheet" href="css/libs/swiper.min.css">
     <?php wp_head();?>
 </head>
 
@@ -32,7 +35,7 @@
                         </ul>
                     </nav>
                     <div class="header__lang-switch">
-                        <span class="header__ukr">Укр</span>
+                        <span class="header__ukr active__lang">Укр</span>
                         <span>/</span>
                         <span class="header__eng">Eng</span>
                     </div>
@@ -65,7 +68,8 @@
                         <div class="banner__info-left">
                             <h1 class="banner__title-left">Юридичний захист</h1>
                             <p class="banner__subtitle-left">Гарантуємо спокій та впевненість у кожному рішенні</p>
-                            <div class="banner__rating">
+                            <a href="https://www.google.com/maps/place/IDEALIST%7C+%D0%90%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B5+%D0%BE%D0%B1'%D1%94%D0%B4%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F+%22%D0%86%D0%94%D0%95%D0%90%D0%9B%D0%86%D0%A1%D0%A2%22/@49.8291844,24.0127997,17z/data=!4m8!3m7!1s0x473add8ea9f6df9f:0x1cac574b49d779ee!8m2!3d49.8291844!4d24.0127997!9m1!1b1!16s%2Fg%2F11spn32svr?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+                                class="banner__rating">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/google-ic.svg"
                                     alt="google images">
                                 <div class="banner__rating-info">
@@ -73,7 +77,7 @@
                                     <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/stars.svg"
                                         alt="rating stars">
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="banner__info-right">
                             <div class="banner__info-wrap">
@@ -98,28 +102,34 @@
                         <p class="banner__slogan">нам довіряють</p>
                         <ul class="banner__list">
                             <li class="banner__item">
+                                <a href="#">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/parallel.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                             <li class="banner__item">
+                                <a href="https://pbc.lviv.ua/">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/pbc.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                             <li class="banner__item">
+                                <a href="https://kykil.com/">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/kykil.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                             <li class="banner__item">
+                                <a href="https://www.instagram.com/erci.piercing?igsh=YXh1OWlob3NobWR1">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/ercy.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                             <li class="banner__item">
+                                <a href="https://ngn.com.ua/">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/ngn.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                             <li class="banner__item">
+                                <a href="https://www.instagram.com/tramway.production?igsh=ejZ6amlyMGRmdmg1">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/way.svg"
-                                    alt="company icons">
+                                    alt="company icons"></a>
                             </li>
                         </ul>
                     </div>

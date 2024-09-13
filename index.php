@@ -47,7 +47,7 @@
 </section>
 
 
-<section class="services">
+<section class="services" id="services">
     <div class="container">
         <div class="services__inner">
             <div class="services__left-wrap">
@@ -359,14 +359,10 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <div class="meet__photo">
-                            <picture>
-                                <source
-                                    srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.webp"
-                                    type="image/webp"><img
+                        <div class="meet__photo"><img
                                     src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
                                     alt="Kyryshko">
-                            </picture>
+                            
                         </div>
                         <ul class="meet__list">
                             <li class="meet__item">
@@ -397,14 +393,10 @@
                         </ul>
                     </div>
                     <div class="swiper-slide">
-                        <div class="meet__photo">
-                            <picture>
-                                <source
-                                    srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.webp"
-                                    type="image/webp"><img
+                        <div class="meet__photo"><img
                                     src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
                                     alt="Kyryshko">
-                            </picture>
+                            
                         </div>
                         <ul class="meet__list">
                             <li class="meet__item">
@@ -435,14 +427,10 @@
                         </ul>
                     </div>
                     <div class="swiper-slide">
-                        <div class="meet__photo">
-                            <picture>
-                                <source
-                                    srcset="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.webp"
-                                    type="image/webp"><img
+                        <div class="meet__photo"><img
                                     src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
                                     alt="Kyryshko">
-                            </picture>
+                            
                         </div>
                         <ul class="meet__list">
                             <li class="meet__item">
