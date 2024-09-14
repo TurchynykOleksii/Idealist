@@ -432,8 +432,9 @@ form label {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .mobile__lang-switch span.active__lang,
-.header__lang-switch span.active__lang{
+.header__lang-switch span.active__lang {
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -453,8 +454,9 @@ form label {
 
 .banner__wrap {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: clamp(1px, 5.99vw, 115px);
+    margin-bottom: clamp(1px, 6.979vw, 134px);
 }
 
 @media only screen and (max-width: 992px) {
@@ -504,10 +506,10 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .banner__title-left:after {
-        width: clamp(32px, 10vw, 10vw);
-        height: clamp(32px, 10vw, 10vw);
+        width: clamp(32px, 3.478vw, 3.478vw);
+        height: clamp(29px, 3.152vw, 3.152vw);
         right: clamp(144px, 45vw, 45vw);
-        bottom: clamp(-45px, -15.625vw, -15.625vw);
+        bottom: clamp(-100px, -10.87vw, -10.87vw);
     }
 }
 
@@ -647,7 +649,6 @@ form label {
     margin-left: auto;
     display: flex;
     margin-top: clamp(1px, 7.396vw, 142px);
-    margin-bottom: clamp(1px, 6.979vw, 134px);
     padding: clamp(1px, 1.302vw, 25px) clamp(1px, 6.25vw, 120px);
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     font-weight: 500;
@@ -661,12 +662,14 @@ form label {
 .banner__btn:hover {
     gap: clamp(1px, 1.25vw, 24px);
 }
+
 .banner__btn::after {
     transition: opacity 300ms;
     opacity: 0;
     font-size: clamp(1px, 1.875vw, 36px);
     content: "+";
 }
+
 .banner__btn:hover::after {
     opacity: 1;
 }
@@ -676,14 +679,16 @@ form label {
 .banner__btn:hover {
     cursor: pointer;
 }
-.banner__btn:hover:after{
+
+.banner__btn:hover:after {
     opacity: 1;
-} 
+}
+
 @media only screen and (max-width: 992px) {
     .banner__btn {
         display: block;
         margin: 0 auto;
-        padding: clamp(16px, 5vw, 5vw) clamp(39px, 12.188vw, 12.188vw);
+        padding: clamp(16px, 5vw, 5vw) clamp(5px, 0.543vw, 0.543vw);
         font-size: clamp(16px, 5vw, 5vw);
         width: clamp(288px, 90vw, 90vw);
     }
@@ -879,6 +884,38 @@ form label {
 .trust__item:last-child img {
     width: clamp(79px, 24.688vw, 24.688vw);
     height: clamp(41px, 12.812vw, 12.812vw);
+}
+
+@media only screen and (max-width: 992px) {
+    .trust__item:first-child img {
+        width: clamp(120px, 13.043vw, 13.043vw);
+        height: clamp(50px, 5.435vw, 5.435vw);
+    }
+
+    .trust__item:nth-child(2) img {
+        width: clamp(70px, 21.875vw, 21.875vw);
+        height: clamp(37px, 11.563vw, 11.563vw);
+    }
+
+    .trust__item:nth-child(3) img {
+        width: clamp(120px, 13.043vw, 13.043vw);
+        height: clamp(50px, 5.435vw, 5.435vw);
+    }
+
+    .trust__item:nth-child(4) img {
+        width: clamp(64px, 20vw, 20vw);
+        height: clamp(30px, 9.375vw, 9.375vw);
+    }
+
+    .trust__item:nth-child(5) img {
+        width: clamp(120px, 13.043vw, 13.043vw);
+        height: clamp(50px, 5.435vw, 5.435vw);
+    }
+
+    .trust__item:last-child img {
+        width: clamp(79px, 24.688vw, 24.688vw);
+        height: clamp(41px, 12.812vw, 12.812vw);
+    }
 }
 
 .slogan {
@@ -1147,6 +1184,10 @@ form label {
     padding-top: clamp(1px, 5.208vw, 100px);
 }
 
+.services__area-item.active-after::after {
+    display: none;
+}
+
 .services__area-item {
     margin-bottom: clamp(1px, 2.08333vw, 40px);
     overflow: hidden;
@@ -1175,7 +1216,7 @@ form label {
     display: block;
     height: 1px;
     background-color: #7c7e71;
-    /* transform: translateX(-100%); */
+    transform: translateX(-100%);
     transition: transform 600ms ease-in-out 300ms;
 }
 
@@ -1249,8 +1290,8 @@ form label {
 @media only screen and (max-width: 992px) {
     .services__info-list li:before {
         flex-shrink: 0;
-        width: clamp(14px, 4.375vw, 4.375vw);
-        height: clamp(14px, 4.375vw, 4.375vw);
+        width: clamp(24px, 2.609vw, 2.609vw);
+        height: clamp(24px, 2.609vw, 2.609vw);
     }
 }
 
@@ -1339,7 +1380,7 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .services__subareas-list {
-        gap: clamp(8px, 2.5vw, 2.5vw);
+        gap: 0 clamp(8px, 2.5vw, 2.5vw);
         padding-bottom: clamp(40px, 12.5vw, 12.5vw);
     }
 }
@@ -1639,6 +1680,7 @@ form label {
     transform: translateX(0);
 }
 
+/*animac*/
 .about__anim-line::after {
     content: "";
     display: block;
@@ -1934,7 +1976,8 @@ form label {
 .meet__list {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 5.365vw, 103px);
+    justify-content: space-between;
+    gap: 20px;
     padding: clamp(1px, 2.917vw, 56px);
     position: absolute;
     right: 0;
@@ -1948,8 +1991,10 @@ form label {
     .meet__list {
         position: static;
         width: clamp(288px, 90vw, 90vw);
-        height: clamp(309px, 96.563vw, 96.563vw);
-        gap: unset;
+        /* height: clamp(330px, 35.87vw, 35.87vw);
+         */
+        height: 100%;
+        gap: clamp(16px, 1.739vw, 1.739vw);
     }
 }
 
@@ -1959,6 +2004,16 @@ form label {
     gap: clamp(1px, 1.25vw, 24px);
 }
 
+.meet__slogan-text {
+    font-size: clamp(1px, 1.25vw, 24px);
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.meet__item:first-child {
+    margin-bottom: clamp(1px, 8.177vw, 157px);
+}
+
 @media only screen and (max-width: 992px) {
     .meet__item:first-child {
         flex-direction: column;
@@ -1966,6 +2021,10 @@ form label {
 }
 
 @media only screen and (max-width: 992px) {
+    .meet__item:first-child {
+        margin-bottom: 0;
+    }
+
     .meet__item:nth-child(2) {
         margin-top: clamp(46px, 5vw, 5vw);
         margin-bottom: clamp(16px, 1.739vw, 1.739vw);
@@ -1991,13 +2050,13 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .meet__slogan {
+        padding-left: 15px;
         max-width: fit-content;
+        gap: 5px;
     }
 }
 
-.meet__slogan p {
-    line-height: 120%;
-}
+
 
 .meet__slogan strong {
     font-weight: 600;
@@ -2007,17 +2066,21 @@ form label {
     position: absolute;
     top: -40px;
     left: 0;
-    content: '"';
-    color: black;
-    font-size: clamp(1px, 3.125vw, 60px);
-    max-width: fit-content;
-    transform: rotate(180deg);
+    content: '';
+    width: clamp(1px, 1.615vw, 31px);
+    height: clamp(1px, 1.615vw, 31px);
     line-height: 1;
+    background-image: url('../img/icons/backquote.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 992px) {
     .meet__slogan:before {
-        font-size: clamp(28px, 3.043vw, 3.043vw);
+        top: -30px;
+        width: clamp(15px, 1.63vw, 1.63vw);
+        height: clamp(15px, 1.63vw, 1.63vw);
     }
 }
 
@@ -2059,6 +2122,10 @@ form label {
 }
 
 @media only screen and (max-width: 992px) {
+    .meet__slogan-text {
+        font-size: clamp(14px, 4.375vw, 4.375vw);
+    }
+
     .meet__xp {
         margin-top: 12px;
         display: flex;
@@ -2072,18 +2139,23 @@ form label {
 .meet__intrest p {
     font-weight: 500;
     font-size: clamp(1px, 1.25vw, 24px);
+    line-height: normal;
 }
 
 @media only screen and (max-width: 992px) {
 
     .meet__educating p,
     .meet__intrest p {
-        font-size: clamp(14px, 1.411vw, 1.411vw);
+        font-size: clamp(14px, 4.375vw, 4.375vw);
     }
 }
 
+.meet__educating {
+    flex-shrink: 0;
+}
+
 .meet__educating p {
-    color: #7c7e71;
+    color: #7C7E71;
 }
 
 .meet__intrest {
@@ -2092,7 +2164,7 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .meet__intrest {
-        max-width: clamp(250px, 27.174vw, 27.174vw);
+        max-width: clamp(300px, 32.609vw, 32.609vw);
     }
 }
 
@@ -2235,12 +2307,14 @@ form label {
     gap: clamp(1px, 1.25vw, 24px);
     cursor: pointer;
 }
+
 .ready__consultation::after {
     transition: opacity 300ms;
     opacity: 0;
     font-size: clamp(1px, 1.875vw, 36px);
     content: "+";
 }
+
 .ready__consultation:hover::after {
     opacity: 1;
 }
@@ -2357,12 +2431,14 @@ form label {
 }
 
 .footer__adress-item a {
-    font-weight: 500;
+    font-weight: 400;
     font-size: clamp(1px, 1.25vw, 24px);
     line-height: 1.2;
     text-align: center;
 }
-
+.footer__adress-item.hide__pc a{
+    font-weight: 500;
+} 
 @media only screen and (max-width: 992px) {
     .footer__adress-item a {
         font-size: clamp(16px, 5vw, 5vw);
@@ -2372,7 +2448,7 @@ form label {
 }
 
 .footer__btn {
-    padding-bottom: clamp(1px,0.625vw,12px);
+    padding-bottom: clamp(1px, 0.625vw, 12px);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -2383,8 +2459,10 @@ form label {
     line-height: 1.2;
     text-align: center;
 }
-
-.footer__btn:before{
+.footer__item a{
+    font-weight: 500;
+}
+.footer__btn:before {
     content: '';
     display: block;
     position: absolute;
@@ -2394,9 +2472,11 @@ form label {
     background-color: #D0C0AA;
     transition: width 250ms ease-in-out;
 }
-.footer__btn:hover:before{
+
+.footer__btn:hover:before {
     width: 100%;
 }
+
 @media only screen and (max-width: 992px) {
     .footer__btn {
         padding-bottom: clamp(14px, 4.375vw, 4.375vw);
@@ -2667,6 +2747,7 @@ form label {
 
 .mobile__social a {
     font-size: clamp(16px, 5vw, 5vw);
+    font-weight: 500;
 }
 
 .mobile__social:before {

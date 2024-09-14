@@ -145,47 +145,43 @@ $(document).ready(function () {
 	);
 });
 
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     const target1 = entry.target.querySelector(".services__title");
-//     const target2 = entry.target.querySelector(".services__area-item");
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			// Логика для добавления классов при пересечении
+			entry.target.classList.add('in-view');
 
-//     if (entry.isIntersecting) {
-//       target1.classList.add("in-view");
-//       target2.classList.add("in-view");
-//       return; // if we added the class, exit the function
-//     }
+			const target1 = entry.target.querySelector('.services__title');
+			const target2 = entry.target.querySelector('.services__area-item');
 
-//     // We're not intersecting, so remove the class!
-//     target1.classList.remove("in-view");
-//     target2.classList.remove("in-view");
-//   });
-// });
-
-// observer.observe(document.querySelector(".services"));
-
-// Create the observer like the examples above
-const observer = new IntersectionObserver(
-	(entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('in-view');
-				return;
+			if (target1 && target2) {
+				target1.classList.add('in-view');
+				target2.classList.add('in-view');
 			}
 
+		} else {
+			// Логика для удаления классов при выходе из зоны пересечения
 			entry.target.classList.remove('in-view');
-		});
-	},
-	{threshold: 1.0}
-);
 
-// Get multiple elements instead of a single one using "querySelectorAll"
-const targets = document.querySelectorAll('.serives__area-item');
-const targets2 = document.querySelectorAll('.about__anim-line');
+			const target1 = entry.target.querySelector('.services__title');
+			const target2 = entry.target.querySelector('.services__area-item');
+
+			if (target1 && target2) {
+				target1.classList.remove('in-view');
+				target2.classList.remove('in-view');
+			}
+		}
+	});
+});
+
+// Наблюдение за элементами
+const targets = document.querySelectorAll('.services__area-item, .about__anim-line, .services__title, .about__title');
+
+targets.forEach((element) => observer.observe(element));
+
 
 // Loop over the elements and add each one to the observer
 targets.forEach((element) => observer.observe(element));
-targets2.forEach((element) => observer.observe(element));
 observer.observe(document.querySelector('.services__title'));
 observer.observe(document.querySelector('.about__title'));
 
@@ -227,6 +223,7 @@ accordionItems.forEach((item) => {
 			.querySelector('.services__accordion-item')
 			.classList.toggle('services__accordion');
 		item.querySelector('.services__icon').classList.toggle('services__icon-up');
+        document.querySelector('.services__area-item').classList.toggle('active-after')
 	});
 });
 
@@ -252,6 +249,7 @@ poppupServiceTitleEl.addEventListener('click', () => {
 });
 
 const bannerBtnEl = document.querySelector('.banner__btn');
+const serviceBtnEl = document.querySelector('.services__btn')
 const overlayEl = document.querySelector('.overlay');
 const poppupEl = document.querySelector('.poppup');
 const poppupCloseEl = document.querySelector('.poppup__close');
@@ -283,6 +281,17 @@ getConsultation.addEventListener('click', () => {
 });
 
 writeBtnEl.addEventListener('click', () => {
+	if (overlayEl.classList.contains('overlay__hide')) {
+		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+	} else {
+		document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+	}
+
+	overlayEl.classList.toggle('overlay__hide');
+	poppupEl.classList.toggle('poppup__hide');
+});
+
+serviceBtnEl.addEventListener('click', () => {
 	if (overlayEl.classList.contains('overlay__hide')) {
 		document.getElementsByTagName('html')[0].classList.add('body-noscroll');
 	} else {
@@ -327,8 +336,22 @@ function hoverTextSHow(el) {
 	el.nextElementSibling.style.zIndex = '3';
 }
 
-hoursEl.addEventListener('click', () => hoverTextSHow(hoursEl));
-coastEl.addEventListener('click', () => hoverTextSHow(coastEl));
+const mediaQuery = window.matchMedia('(max-width: 992px)');
+
+function handleScreenChange(e) {
+	if (e.matches) {
+		hoursEl.addEventListener('click', () => hoverTextSHow(hoursEl));
+		coastEl.addEventListener('click', () => hoverTextSHow(coastEl));
+	} else {
+		hoursEl.removeEventListener('click', () => hoverTextSHow(hoursEl));
+		coastEl.removeEventListener('click', () => hoverTextSHow(coastEl));
+	}
+}
+
+handleScreenChange(mediaQuery);
+
+mediaQuery.addEventListener('change', handleScreenChange);
+
 
 detailsCross.forEach((cross) => {
 	cross.addEventListener('click', () => {

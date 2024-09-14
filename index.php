@@ -262,6 +262,9 @@
                         <a href="#">Instagram</a>
                     </li>
                     <li class="about__social-item">
+                        <a href="#">Telegram</a>
+                    </li>
+                    <li class="about__social-item">
                         <a href="#">LinkedIn</a>
                     </li>
                 </ul>
@@ -335,6 +338,9 @@
                     <ul class="about__social mob">
                         <li class="about__social-item">
                             <a href="#">Instagram</a>
+                        </li>
+                        <li class="about__social-item">
+                            <a href="#">Telegram</a>
                         </li>
                         <li class="about__social-item">
                             <a href="#">LinkedIn</a>

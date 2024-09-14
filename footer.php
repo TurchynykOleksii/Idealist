@@ -9,6 +9,9 @@
                         <a href="#">Instagram</a>
                     </li>
                     <li class="footer__item">
+                        <a href="#">Telegram</a>
+                    </li>
+                    <li class="footer__item">
                         <a href="#">LinkedIn</a>
                     </li>
                 </ul>
@@ -37,6 +40,9 @@
                     </li>
                     <li class="footer__adress-item hide__pc">
                         <a href="#">Instagram</a>
+                    </li>
+                    <li class="footer__adress-item hide__pc">
+                        <a href="#">Telegram</a>
                     </li>
                     <li class="footer__adress-item hide__pc">
                         <a href="#">LinkedIn</a>
@@ -94,6 +100,7 @@
                 </div>
                 <ul class="mobile__social">
                     <li class="mobile__social-item"><a href="#">Instagram</a></li>
+                    <li class="mobile__social-item"><a href="#">Telegram</a></li>
                     <li class="mobile__social-item"><a href="#">LinkedIn</a></li>
                 </ul>
                 <ul class="footer__slogan mobile__slogan">
