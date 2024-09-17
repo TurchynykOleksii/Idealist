@@ -35,9 +35,9 @@
                         </ul>
                     </nav>
                     <div class="header__lang-switch">
-                        <span class="header__ukr active__lang">Укр</span>
+                        <a href="#" class="header__ukr active__lang">Укр</a>
                         <span>/</span>
-                        <span class="header__eng">Eng</span>
+                        <a href="#" class="header__eng">Eng</a>
                     </div>
                     <button class="header__burger-menu">
                         <svg class="mobile__burger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"

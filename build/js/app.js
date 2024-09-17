@@ -177,11 +177,11 @@ const observer = new IntersectionObserver((entries) => {
 // Наблюдение за элементами
 const targets = document.querySelectorAll('.services__area-item, .about__anim-line, .services__title, .about__title');
 
-targets.forEach((element) => observer.observe(element));
+targets?.forEach((element) => observer.observe(element));
 
 
 // Loop over the elements and add each one to the observer
-targets.forEach((element) => observer.observe(element));
+targets?.forEach((element) => observer.observe(element));
 observer.observe(document.querySelector('.services__title'));
 observer.observe(document.querySelector('.about__title'));
 
@@ -211,11 +211,12 @@ mobileMenuItems.forEach((menuItem) => {
 
 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-targets.forEach((item) => {
+targets?.forEach((item) => {
 	item.addEventListener('click', () => {
 		item.querySelector('.services__info').classList.toggle('hide-info');
 	});
 });
+
 
 accordionItems.forEach((item) => {
 	item.addEventListener('click', () => {
@@ -241,10 +242,10 @@ function visibleAccordion(accordionParent, rotate) {
 	}
 }
 
-poppupFormatTitleEl.addEventListener('click', () => {
+poppupFormatTitleEl?.addEventListener('click', () => {
 	visibleAccordion(poppupFormatEl, poppupFormatTitleEl);
 });
-poppupServiceTitleEl.addEventListener('click', () => {
+poppupServiceTitleEl?.addEventListener('click', () => {
 	visibleAccordion(poppupServiceEl, poppupServiceTitleEl);
 });
 
@@ -401,4 +402,25 @@ emailInputEl.addEventListener('blur', () => {
 	} else {
 		mailErrorEl.classList.remove('show-error');
 	}
+});
+
+let scrollToTop = 0;
+const header = document.querySelector('.header'); 
+const mobileMenuElSc = document.querySelector('.mobile__menu');
+
+mobileMenuElSc.addEventListener('scroll', function() {
+    let scrollTop = mobileMenuElSc.scrollTop; 
+
+    console.log(mobileMenuElSc.getBoundingClientRect().top);
+    console.log(mobileMenuElSc.offsetHeight);
+
+    if (scrollTop >= scrollToTop) {
+
+        header.classList.add('headerAutoHide');
+    } else {
+   
+        header.classList.remove('headerAutoHide');
+    }
+
+    scrollToTop = scrollTop <= 0 ? 0 : scrollTop; 
 });

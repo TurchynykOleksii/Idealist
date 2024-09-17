@@ -19,12 +19,16 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/logo.svg" alt="idealist logo">
                 </a>
                 <ul class="footer__menu">
+                    <li class="footer__item hide__mob " style="opacity:0;">
+                        <a href="#">Про нас </a>
+                    </li>
                     <li class="footer__item">
                         <a href="#">Послуги</a>
                     </li>
                     <li class="footer__item">
                         <a href="#">Про нас </a>
                     </li>
+
                 </ul>
             </div>
             <div class="footer__info">
@@ -54,29 +58,29 @@
                 <li class="footer__slogan-item">
                     <p>DON` T</p>
                     <div class="footer__slogan-img footer__slogan-img-first"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
-                                alt="slogan img">
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
+                            alt="slogan img">
                     </div>
                     <p> WORRY</p>
                 </li>
                 <li class="footer__slogan-item">
                     <div class="footer__slogan-img footer__slogan-img-second"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
-                                alt="slogan img">
-                        
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
+                            alt="slogan img">
+
                     </div>
                     <p>WE`LL DEAL </p>
                     <div class="footer__slogan-img footer__slogan-img-second-two"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
-                                alt="slogan img">
-                        
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
+                            alt="slogan img">
+
                     </div>
                 </li>
                 <li class="footer__slogan-item">
                     <div class="footer__slogan-img footer__slogan-img-third"><img
-                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
-                                alt="slogan img">
-                        
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
+                            alt="slogan img">
+
                     </div>
                     <p>WITH THIS</p>
 
@@ -107,30 +111,30 @@
                     <li class="footer__slogan-item">
                         <p>DON` T</p>
                         <div class="footer__slogan-img footer__slogan-img-first"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
-                                    alt="slogan img">
-                            
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
+                                alt="slogan img">
+
                         </div>
                         <p> WORRY</p>
                     </li>
                     <li class="footer__slogan-item">
                         <div class="footer__slogan-img footer__slogan-img-second"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
-                                    alt="slogan img">
-                            
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
+                                alt="slogan img">
+
                         </div>
                         <p>WE`LL DEAL </p>
                         <div class="footer__slogan-img footer__slogan-img-second-two"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
-                                    alt="slogan img">
-                            
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
+                                alt="slogan img">
+
                         </div>
                     </li>
                     <li class="footer__slogan-item">
                         <div class="footer__slogan-img footer__slogan-img-third"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
-                                    alt="slogan img">
-                            
+                                src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
+                                alt="slogan img">
+
                         </div>
                         <p>WITH THIS</p>
 
@@ -198,7 +202,8 @@
             </div>
             <div class="poppup__content">
                 <p class="poppup__content-title">Оберіть</p>
-                <form class="poppup__form">
+                <?php echo  do_shortcode( '[contact-form-7 id="6040091" title="poppup form"]' )?>
+                <!-- <form class="poppup__form">
                     <div class="poppup__group poppup__service">
                         <label class="poppup__group-title poppup__service-service"><span>Послугу</span><svg
                                 class="poppup__rotate" width="14" height="9" viewBox="0 0 14 9" fill="none"
@@ -268,7 +273,7 @@
                             <input type="submit" value="Записатись на консультацію">
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
 

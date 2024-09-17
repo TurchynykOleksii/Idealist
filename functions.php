@@ -9,7 +9,13 @@
 	include_once 'functions-parts/_hooks.php';
 	include_once 'functions-parts/_custom-functions.php';
 
-
+    
+    add_filter('wpcf7_form_elements', function($content) {
+        $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    
+        return $content;
+    });
+    
 # 2. Удаление "мусора"
 	remove_action('wp_head', 'feed_links_extra', 3); // убирает ссылки на rss категорий
 	remove_action('wp_head', 'feed_links', 2); // минус ссылки на основной rss и комментарии

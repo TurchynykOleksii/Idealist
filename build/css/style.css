@@ -326,6 +326,7 @@ form label {
 .header {
     margin-bottom: clamp(1px, 9.167vw, 176px);
     z-index: 3;
+    transition: transform 350ms ease;
 }
 
 @media only screen and (max-width: 992px) {
@@ -422,7 +423,8 @@ form label {
     }
 }
 
-.header__lang-switch span {
+.header__lang-switch span,
+.header__lang-switch a {
     font-weight: 700;
     font-size: clamp(16px, 1.042vw, 20px);
     letter-spacing: -0.04em;
@@ -434,7 +436,9 @@ form label {
 }
 
 .mobile__lang-switch span.active__lang,
-.header__lang-switch span.active__lang {
+.header__lang-switch span.active__lang,
+.mobile__lang-switch a.active__lang,
+.header__lang-switch a.active__lang {
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -649,7 +653,7 @@ form label {
     margin-left: auto;
     display: flex;
     margin-top: clamp(1px, 7.396vw, 142px);
-    padding: clamp(1px, 1.302vw, 25px) clamp(1px, 6.25vw, 120px);
+    padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.208vw, 100px);
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     font-weight: 500;
     font-size: clamp(1px, 1.25vw, 24px);
@@ -799,6 +803,14 @@ form label {
     display: flex;
     align-items: center;
     gap: clamp(1px, 3.802vw, 73px);
+}
+
+.banner__item {
+    min-width: clamp(1px, 7.813vw, 150px);
+}
+
+.banner__item a {
+    display: block;
 }
 
 .banner__item img {
@@ -1256,6 +1268,7 @@ form label {
 @media only screen and (max-width: 992px) {
     .services__info-list {
         max-width: none;
+        padding-bottom: clamp(20px, 2.016vw, 2.016vw);
     }
 }
 
@@ -2335,7 +2348,7 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .footer {
-        padding-top: clamp(60px, 18.75vw, 18.75vw);
+        padding-top: clamp(40px, 4.032vw, 4.032vw);
         padding-bottom: clamp(16px, 5vw, 5vw);
     }
 }
@@ -2355,12 +2368,14 @@ form label {
 @media only screen and (max-width: 992px) {
     .footer__menus {
         flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
     }
 }
 
 @media only screen and (max-width: 992px) {
     .footer__logo {
-        margin-bottom: clamp(44px, 13.75vw, 13.75vw);
+        margin-bottom: clamp(44px, 4.435vw, 4.435vw);
     }
 }
 
@@ -2381,8 +2396,12 @@ form label {
     display: flex;
     align-items: center;
     gap: clamp(1px, 1.25vw, 24px);
+    flex-shrink: 0;
 }
 
+.footer__menu a {
+    color: #B6B6B6;
+}
 @media only screen and (max-width: 992px) {
     .footer__social {
         display: none;
@@ -2391,7 +2410,7 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .footer__menu {
-        margin-bottom: clamp(44px, 13.75vw, 13.75vw);
+        margin-bottom: clamp(44px, 4.435vw, 4.435vw);
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -2436,9 +2455,16 @@ form label {
     line-height: 1.2;
     text-align: center;
 }
-.footer__adress-item.hide__pc a{
+
+.footer__adress-item.hide__pc a {
     font-weight: 500;
-} 
+}
+
+.screen-reader-response,
+.wpcf7-response-output {
+    display: none;
+}
+
 @media only screen and (max-width: 992px) {
     .footer__adress-item a {
         font-size: clamp(16px, 5vw, 5vw);
@@ -2459,9 +2485,11 @@ form label {
     line-height: 1.2;
     text-align: center;
 }
-.footer__item a{
+
+.footer__item a {
     font-weight: 500;
 }
+
 .footer__btn:before {
     content: '';
     display: block;
@@ -2680,10 +2708,12 @@ form label {
 .hide__pc {
     display: none;
 }
-
 @media only screen and (max-width: 992px) {
     .hide__pc {
         display: block;
+    }
+    .hide__mob {
+        display: none;
     }
 }
 
@@ -2710,6 +2740,11 @@ form label {
     display: flex;
     flex-direction: column;
     gap: clamp(18px, 5.625vw, 5.625vw);
+}
+@media only screen and (min-width: 720px) and (max-width: 992px) {
+    .header.headerAutoHide{
+        transform: translateY(-200%);
+    }
 }
 
 .mobile__nav-item a {
@@ -2989,7 +3024,7 @@ form label {
 }
 
 .poppup__group textarea {
-    min-height: clamp(1px, 8.281vw, 159px);
+    max-height: clamp(1px, 8.281vw, 159px);
 }
 
 @media only screen and (max-width: 992px) {
@@ -3018,8 +3053,8 @@ form label {
     }
 }
 
-.poppup__form-service .options,
-.poppup__form-format .options {
+.poppup__form-service .options .wpcf7-radio,
+.poppup__form-format .options .wpcf7-radio {
     padding-top: clamp(1px, 1.042vw, 20px);
     display: flex;
     flex-direction: column;
@@ -3029,34 +3064,45 @@ form label {
 
 @media only screen and (max-width: 992px) {
 
-    .poppup__form-service .options,
-    .poppup__form-format .options {
+    .poppup__form-service .options .wpcf7-radio,
+    .poppup__form-format .options .wpcf7-radio {
         padding-top: clamp(12px, 1.21vw, 1.21vw);
     }
 }
 
-.poppup__form-service .options label,
-.poppup__form-format .options label {
+.poppup__form-service .options .wpcf7-radio label,
+.poppup__form-format .options .wpcf7-radio label {
     display: flex;
     gap: 12px;
 }
 
-.poppup__form-service .options label:hover,
-.poppup__form-format .options label:hover {
+.poppup__form-service .options .wpcf7-radio label:hover,
+.poppup__form-format .options .wpcf7-radio label:hover {
     cursor: pointer;
 }
 
-.poppup__form-service .options label span,
-.poppup__form-format .options label span {
+.poppup__form-service .options .wpcf7-radio label span,
+.poppup__form-format .options .wpcf7-radio label span {
     font-size: clamp(1px, 1.042vw, 20px);
 }
 
 @media only screen and (max-width: 992px) {
 
-    .poppup__form-service .options label span,
-    .poppup__form-format .options label span {
+    .poppup__form-service .options .wpcf7-radio label span,
+    .poppup__form-format .options .wpcf7-radio label span {
         font-size: clamp(14px, 1.411vw, 1.411vw);
     }
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+    width: 100%;
+    /* или другой размер по ширине */
+    height: auto;
+    /* или задайте конкретную высоту */
+    min-height: 100px;
+    /* минимальная высота, если необходимо */
+    resize: vertical;
+    /* для того, чтобы пользователь мог изменять высоту */
 }
 
 .poppup__rotate.rotate__btn {
@@ -3141,6 +3187,7 @@ form label {
     .poppup__textarea textarea {
         padding: clamp(6px, 0.652vw, 0.652vw);
         font-size: clamp(14px, 1.522vw, 1.522vw);
+        max-height: clamp(107px, 10.786vw, 10.786vw);
     }
 }
 
