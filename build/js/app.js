@@ -411,10 +411,7 @@ const mobileMenuElSc = document.querySelector('.mobile__menu');
 mobileMenuElSc.addEventListener('scroll', function() {
     let scrollTop = mobileMenuElSc.scrollTop; 
 
-    console.log(mobileMenuElSc.getBoundingClientRect().top);
-    console.log(mobileMenuElSc.offsetHeight);
-
-    if (scrollTop >= scrollToTop) {
+    if (scrollTop > 50) {
 
         header.classList.add('headerAutoHide');
     } else {
