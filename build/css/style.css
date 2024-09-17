@@ -326,7 +326,7 @@ form label {
 .header {
     margin-bottom: clamp(1px, 9.167vw, 176px);
     z-index: 3;
-    transition: transform 350ms ease;
+    transition: transform 450ms ease;
 }
 
 @media only screen and (max-width: 992px) {
