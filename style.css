@@ -373,7 +373,7 @@ form label {
     }
 }
 
-.header__item a {
+.header__list li a {
     padding: 12px clamp(1px, 1.042vw, 20px);
     font-weight: 600;
     font-size: clamp(16px, 1.042vw, 20px);

@@ -1,30 +1,22 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$IDS = get_the_ID();
+?>
 
 <section class="trust">
     <div class="container">
         <div class="trust__inner">
-            <h3 class="banner__slogan">нам довіряють</h3>
+            <h3 class="banner__slogan"><?= get_post_meta($IDS,'banner_slogan',true);?></h3>
             <ul class="trust__list">
+                <?php   $banner_list = get_post_meta($IDS,"banner_company",true); 
+
+                        for($i=0; $i<$banner_list; $i++):
+                        $banner_icn = get_post_meta($IDS,"banner_company_" . $i .'_banner_logo',true);
+                        $banner_url = get_post_meta($IDS,"banner_company_" . $i .'_banner_url',true);?>
                 <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/parallel.svg"
-                        alt="company icons">
+                    <a href="<?= $banner_url['url']; ?>">
+                        <?=wp_get_attachment_image( $banner_icn, 'full'); ?></a>
                 </li>
-                <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/pbc.svg" alt="company icons">
-                </li>
-                <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/kykil.svg"
-                        alt="company icons">
-                </li>
-                <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/ercy.svg" alt="company icons">
-                </li>
-                <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/ngn.svg" alt="company icons">
-                </li>
-                <li class="trust__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/way.svg" alt="company icons">
-                </li>
+                <?php endfor;?>
             </ul>
         </div>
     </div>
@@ -34,13 +26,7 @@
         <div class="slogan__inner">
             <h6 class="hidden">Слоган</h6>
             <div class="slogan__text">
-                <div class="slogan__slag">slag</div>
-                <span>Розуміємо виклики</span> , з якими <br class="desc-br" />
-                стикаються власники
-                <span>малого та </span>
-                <span>середнього</span>
-                <span>бізнесу</span>
-                , і готові допомогти зробити ваш бізнес кращим
+                <?= get_post_meta($IDS,'slogan_text',true);?>
             </div>
         </div>
     </div>
@@ -52,194 +38,63 @@
         <div class="services__inner">
             <div class="services__left-wrap">
                 <h6 class="services__title">
-                    <span class="services__title-animation">послуги</span>
+                    <span class="services__title-animation"><?= get_post_meta($IDS,'services_title',true);?></span>
                 </h6>
                 <p class="services__slogan">
-                    робимо юридичні послуги доступними, зрозумілими та ефективними
+                    <?= get_post_meta($IDS,'services__slogan',true);?>
                 </p>
                 <button class="services__btn">Записатись</button>
             </div>
             <div class="services__right-wrap">
                 <ul class="services__areas-list">
+                    <?php $serviceList = get_post_meta($IDS,'services_list',true);
+                    for($i=0; $i<$serviceList; $i++):?>
                     <li class="services__area-item">
                         <div class="services__area-title">
-                            <p>Юридичний супровід бізнесу </p>
+                            <p><?= get_post_meta($IDS,'services_list_'.$i.'_services_title',true)?></p>
+                            <?php if(get_post_meta($IDS,'services_list_'. $i .'_services_accordion',true) > 0):?>
                             <div class="services__icon">
                                 <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/accordion-arrow.svg"
                                     alt="">
                             </div>
+                            <?php endif; ?>
                         </div>
 
                         <ul class="services__subareas-list">
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Податкове право</p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Трудове право</p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Господарське право</p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Корпоративне право</p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Охорона праці</p>
-                            </li>
+                            <?php if($serviceSubarea = get_post_meta($IDS,'services_list_'. $i. '_services_subareas',true)):
+                            for($j=0; $j<$serviceSubarea;$j++):?>
                             <li class="services__subarea-item">
                                 <p class="services__subarea-title">
-                                    Абонентське обслуговування
+                                    <?= get_post_meta($IDS,'services_list_'. $i. '_services_subareas_'. $j. '_service_subtitle',true);?>
                                 </p>
                             </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Аудит підприємства</p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">Кадрове діловодство</p>
-                            </li>
+                            <?php endfor;
+                                endif;?>
                         </ul>
+                        <?php if($servicesAccordion = get_post_meta($IDS,'services_list_'. $i .'_services_accordion',true)):?>
                         <div class="services__accordion-item">
                             <ul class="services__accordion-list">
+                                <?php for($k=0; $k<$servicesAccordion;$k++):?>
                                 <li class="services__info-item">
-                                    <p class="services__info-headline">Господарське право</p>
+                                    <p class="services__info-headline">
+                                        <?= get_post_meta($IDS,'services_list_'. $i .'_services_accordion_' .$k.'_services_headline',true);?>
+                                    </p>
                                     <ul class="services__info-list">
-                                        <li>Стягнення заборгованості з контрагентів</li>
-                                        <li>Супровід договорної діяльності</li>
-                                        <li>Перевірка фінансових спроможностей контрагента</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Корпоративне право</p>
-                                    <ul class="services__info-list">
-                                        <li>Партнерська угода</li>
-                                        <li>Аудит статутних документів</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Податкове право</p>
-                                    <ul class="services__info-list">
-                                        <li>Спори з податковою</li>
-                                        <li>Оскарження податкових-повідомлень рішень</li>
-                                        <li>Підготовка документів для розблокування податкових накладних</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Трудове право</p>
-                                    <ul class="services__info-list">
-                                        <li>Кадровий аудит</li>
-                                        <li>Ведення кадрового діловодства</li>
-                                        <li>Трудові контракти</li>
-                                        <li>Розробка договорів про нерозголошення конфіденційної інформації та
-                                            комерційної таємниці</li>
-                                        <li>Супровід трудові спори</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Аудит підприємства</p>
-                                    <ul class="services__info-list">
-                                        <li>Пакетні послуги </li>
-                                        <li>Аналіз бізнес струткури</li>
-                                        <li>Аудит фінансової безпеки</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Кадрове діловодство</p>
-                                    <ul class="services__info-list">
-                                        <li>Аудит кадрового діловодства</li>
-                                        <li>Розробка юридичних документів документообігу кадрового діловодства
-                                        </li>
+                                        <?php if($serviceListInfo = get_post_meta($IDS,'services_list_'.$i.'_services_accordion_'.$k.'_services_lists', true)) ;
+                                    for($l=0;$l<$serviceListInfo;$l++):?>
 
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Охорона праці</p>
-                                    <ul class="services__info-list">
-                                        <li>Підготовка документів для отримання дозвільної документації при
-                                            виконанні
-                                            робіт підвищенної небезпеки</li>
-                                        <li>Аудит підприємств з питань охорони праці</li>
-                                    </ul>
-                                </li>
-                                <li class="services__info-item">
-                                    <p class="services__info-headline">Інтелектуальне право</p>
-                                    <ul class="services__info-list">
-                                        <li>Захист торгової марки (від створення до усунення компаній-підробок)
+                                        <li><?= get_post_meta($IDS,'services_list_'.$i.'_services_accordion_'.$k.'_services_lists_'.$l.'_services_info', true)?>
                                         </li>
-                                        <li>Розробка або аналіз договорів у сфері інтелектуальної власності</li>
+                                        <?php endfor;?>
                                     </ul>
                                 </li>
+                                <?php endfor;?>
                             </ul>
 
                         </div>
+                        <?php endif;?>
                     </li>
-                    <li class="services__area-item">
-                        <div class="services__area-title">
-                            <p>Захист / супровід партнерства</p>
-                        </div>
-                        <ul class="services__subareas-list">
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Перед партнерська медіація
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Систематизація діючого партнерства
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Допомога та супровід виходу з партнерства в бізнесі
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Захист інтересів партнерів при створенні партнерського бізнесу
-                                </p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="services__area-item">
-                        <div class="services__area-title">
-                            <p>Захист майна власника бізнесу</p>
-                        </div>
-                        <ul class="services__subareas-list">
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Аудит майнового стану власника бізнесу
-                                </p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="services__area-item">
-                        <div class="services__area-title">
-                            <p>
-                                Захист шлюбних відносин власника бізнесу
-                            </p>
-                        </div>
-                        <ul class="services__subareas-list">
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Аудит майнових прав подружжя
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Оцінка ризиків при спадкуванні майна власника бізнесу
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Супровід процесу одруження
-                                </p>
-                            </li>
-                            <li class="services__subarea-item">
-                                <p class="services__subarea-title">
-                                    Супровід процесу розірвання шлюбу
-                                </p>
-                            </li>
-                        </ul>
-                    </li>
+                    <?php endfor; ?>
                 </ul>
                 <button class="services__btn-mob">Записатись</button>
             </div>
@@ -250,101 +105,103 @@
     <div class="container">
         <div class="about__inner">
             <div class="about__left">
+                <?php if($aboutTitle = get_post_meta($IDS,'about_title',true)):?>
                 <h6 class="about__title">
-                    <span class="about__title-animation">про нас</span>
+                    <span class="about__title-animation"><?= $aboutTitle; ?></span>
                 </h6>
+                <?php endif;
+                 if($aboutSubtext = get_post_meta($IDS,'about_subtext',true)):?>
                 <p class="about__subtext">
                     Забудь про складні процедури та приховані умови — ми завжди на твоєму
                     боці
                 </p>
+                <?php endif;?>
                 <ul class="about__social desc">
+                    <?php if($instagramLink = get_field('instagram_link', 'option')):?>
                     <li class="about__social-item">
-                        <a href="#">Instagram</a>
+                        <a href="<?= esc_url($instagramLink['url']); ?>" target="_blank">
+                            <?= esc_html($instagramLink['title']); ?></a>
                     </li>
+                    <?php endif;
+                    if($telegramLink = get_field('telegram_link', 'option')):?>
                     <li class="about__social-item">
-                        <a href="#">Telegram</a>
+                        <a href="<?= esc_url($telegramLink['url']); ?>" target="_blank">
+                            <?= esc_html($telegramLink['title']); ?></a>
                     </li>
+                    <?php endif;
+                     if($linkedinLink = get_field('linkedin-link', 'option')):?>
                     <li class="about__social-item">
-                        <a href="#">LinkedIn</a>
+                        <a href="<?= esc_url($linkedinLink['url']); ?>" target="_blank">
+                            <?= esc_html($linkedinLink['title']); ?>
+                        </a>
                     </li>
+                    <?php endif;?>
                 </ul>
             </div>
+
             <div class="about__right">
-                <p class="about__info">
-                    <span>Ми —</span> креативна та динамічна
-                    <span>команда</span>
-                    <span>юристів,</span>
-                    яка розуміє потреби підприємців. Дбаємо про те,
-                    <span>щоб</span>
-                    <span>Ви</span>
-                    <span>могли</span>
-                    <span>розвивати</span>
-                    <span>свій</span>
-                    <span>бізнес,</span>
-                    не турбуючись про юридичні складнощі.
-                </p>
+                <?php if($aboutInfo = get_post_meta($IDS,'about_info',true)):
+                    echo $aboutInfo;
+                endif;?>
                 <div class="about__anim-line desc"></div>
                 <div class="about__consult">
                     <h6 class="about__subtitle">проводимо консультації</h6>
                     <div class="about__anim-line mob"></div>
                     <ul class="about__list">
+                        <?php if($aboutListItem = get_post_meta($IDS,'about_list',true)):
+                            for($i=0; $i<$aboutListItem;$i++):?>
                         <li class="about__item">
                             <div class="about__item-inner">
                                 <div class="about__item-head">
-                                    <strong>Офлайн</strong>
+                                    <strong><?= get_post_meta($IDS,'about_list_'.$i.'_about_head',true)?></strong>
+                                    <?php if ( $image = get_post_meta( $IDS, 'about_list_' . $i . '_about_icon', true ) ): ?>
                                     <div class="about__icon">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/location-icon.svg"
-                                            alt="icon location" />
+                                        <?=wp_get_attachment_image( $image, 'full' ); ?>
                                     </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="about__headline">
-                                    <p>Львів, вул. Академіка Андрія Сахарова, 42, офіс 414</p>
+                                    <p><?= get_post_meta($IDS,'about_list_'.$i.'_about_headline',true)?></p>
                                 </div>
                             </div>
                             <div class="about__anim-line"></div>
                         </li>
-                        <li class="about__item">
-                            <div class="about__item-inner">
-                                <div class="about__item-head">
-                                    <strong>Онлайн</strong>
-                                    <div class="about__icon">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/online-icon.svg"
-                                            alt="icon online" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="about__headline">
-                                <p>Забезпечимо зручність та гнучкість для кожного клієнта</p>
-                            </div>
-                            <div class="about__anim-line"></div>
-                        </li>
+                        <?php endfor; endif; ?>
                         <li class="about__item">
                             <div class="about__item-head">
-                                <strong>Тривалість </strong>
+                                <strong><?= get_post_meta($IDS,'about_time',true)?> </strong>
                                 <div class="about__icon">
-                                    <strong>до 1 години </strong>
+                                    <strong><?= get_post_meta($IDS,'about_hour',true)?></strong>
                                 </div>
                             </div>
                             <div class="about__headline">
                                 <p>
-                                    Ми цінуємо чесність. Якщо під час з’ясування вашого запиту
-                                    виявиться, що ми не можемо вам допомогти, ми не проводимо
-                                    консультацію і не даємо марних надій.
+                                    <?= get_post_meta($IDS,'about_descr',true)?>
                                 </p>
                             </div>
                         </li>
                     </ul>
                     <div class="about__anim-line mob"></div>
                     <ul class="about__social mob">
+                        <?php if($instagramLink = get_field('instagram_link', 'option')):?>
                         <li class="about__social-item">
-                            <a href="#">Instagram</a>
+                            <a href="<?= esc_url($instagramLink['url']); ?>" target="_blank">
+                                <?= esc_html($instagramLink['title']); ?></a>
                         </li>
+                        <?php endif;
+                    if($telegramLink = get_field('telegram_link', 'option')):?>
                         <li class="about__social-item">
-                            <a href="#">Telegram</a>
+                            <a href="<?= esc_url($telegramLink['url']); ?>" target="_blank">
+                                <?= esc_html($telegramLink['title']); ?></a>
                         </li>
+                        <?php endif;
+                     if($linkedinLink = get_field('linkedin-link', 'option')):?>
                         <li class="about__social-item">
-                            <a href="#">LinkedIn</a>
+                            <a href="<?= esc_url($linkedinLink['url']); ?>" target="_blank">
+                                <?= esc_html($linkedinLink['title']); ?>
+                            </a>
                         </li>
+                        <?php endif;?>
                     </ul>
                 </div>
                 <div class="about__anim-line"></div>
@@ -360,112 +217,54 @@
             <div class="meet__subtitle">
                 <p>Ті, хто стоять за</p> Вашим захистом
             </div>
+            <?php if($swiper = get_post_meta($IDS,'swiper',true)): ?>
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
+                    <?php for($i=0; $i<$swiper; $i++):?>
                     <div class="swiper-slide">
-                        <div class="meet__photo"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
-                                    alt="Kyryshko">
-                            
+                        <?php if($swiperImg = get_post_meta($IDS,'swiper_'.$i.'_meet_photo',true)):?>
+                        <div class="meet__photo">
+                            <?=wp_get_attachment_image( $swiperImg, 'full' ); ?>
                         </div>
+                        <?php endif; ?>
                         <ul class="meet__list">
                             <li class="meet__item">
+                                <?php if($swiperName = get_post_meta($IDS,'swiper_'.$i.'_meet_name',true)):?>
                                 <div class="meet__name">
-                                    <p class="meet__persone">Кraиришко Оксана</p>
+                                    <p class="meet__persone"><?= $swiperName; ?></p>
                                 </div>
+                                <?php endif; 
+                                 if($swiperSpec = get_post_meta($IDS,'swiper_'.$i.'_meet_xp',true)):?>
                                 <p class="meet__xp">
-                                    <strong>твій сімейний юрист</strong> з 2018 року
+                                    <?= $swiperSpec; ?>
                                 </p>
+                                <?php endif; ?>
                             </li>
                             <li class="meet__item">
                                 <div class="meet__slogan">
-                                    <p class="meet__slogan-text">Я розумію, наскільки важливо для моїх клієнтів
-                                        бути
-                                        впевненими в тому, що їхні особисті справи залишаться між нами. </p>
-                                    <p class="meet__slogan-text"><strong>Моя мета</strong> – створити атмосферу,
-                                        в якій кожен відчує себе почутим і зрозумілим.</p>
+                                    <?php if($swiperSpec = get_post_meta($IDS,'swiper_'.$i.'_meet__slogan',true)):
+                                        echo $swiperSpec; 
+                                     endif; ?>
                                 </div>
                             </li>
                             <li class="meet__item">
+                            <?php if($swiperEduc = get_post_meta($IDS,'swiper_'.$i.'_meet_educating',true)):?>
                                 <div class="meet__educating">
-                                    <p>/ Освіта</p>
+                                    <p><?= $swiperEduc; ?></p>
                                 </div>
+                            <?endif;
+                            if($swiperIntrest = get_post_meta($IDS,'swiper_'.$i.'_meet_intrest',true)):?>
                                 <div class="meet__intrest">
-                                    <p>Національний університет «Одеська юридична академія” </p>
+                                    <p><?= $swiperIntrest; ?></p>
                                 </div>
+                                <?endif;?>
                             </li>
                         </ul>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="meet__photo"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
-                                    alt="Kyryshko">
-                            
-                        </div>
-                        <ul class="meet__list">
-                            <li class="meet__item">
-                                <div class="meet__name">
-                                    <p class="meet__persone">Кaaиришко Оксана</p>
-                                </div>
-                                <p class="meet__xp">
-                                    <strong>твій сімейний юрист</strong> з 2018 року
-                                </p>
-                            </li>
-                            <li class="meet__item">
-                                <div class="meet__slogan">
-                                    <p class="meet__slogan-text">Я розумію, наскільки важливо для моїх клієнтів
-                                        бути
-                                        впевненими в тому, що їхні особисті справи залишаться між нами. </p>
-                                    <p class="meet__slogan-text"><strong>Моя мета</strong> – створити атмосферу,
-                                        в якій кожен відчує себе почутим і зрозумілим.</p>
-                                </div>
-                            </li>
-                            <li class="meet__item">
-                                <div class="meet__educating">
-                                    <p>/ Освіта</p>
-                                </div>
-                                <div class="meet__intrest">
-                                    <p>Національний університет «Одеська юридична академія” </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="meet__photo"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/build/img/general/slider.jpg"
-                                    alt="Kyryshko">
-                            
-                        </div>
-                        <ul class="meet__list">
-                            <li class="meet__item">
-                                <div class="meet__name">
-                                    <p class="meet__persone">Кaиришко Оксана</p>
-                                </div>
-                                <p class="meet__xp">
-                                    <strong>твій сімейний юрист</strong> з 2018 року
-                                </p>
-                            </li>
-                            <li class="meet__item">
-                                <div class="meet__slogan">
-                                    <p class="meet__slogan-text">Я розумію, наскільки важливо для моїх клієнтів
-                                        бути
-                                        впевненими в тому, що їхні особисті справи залишаться між нами. </p>
-                                    <p class="meet__slogan-text"><strong>Моя мета</strong> – створити атмосферу,
-                                        в якій кожен відчує себе почутим і зрозумілим.</p>
-                                </div>
-                            </li>
-                            <li class="meet__item">
-                                <div class="meet__educating">
-                                    <p>/ Освіта</p>
-                                </div>
-                                <div class="meet__intrest">
-                                    <p>Національний університет «Одеська юридична академія” </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php endfor; ?>
+                   
                 </div>
 
                 <div class="meet__navigation">
@@ -481,6 +280,7 @@
                 </div>
 
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -489,10 +289,14 @@
         <div class="ready__inner">
             <h6 class="hidden">Що ми готові</h6>
             <div class="ready__info">
+                <?php if($readyText = get_post_meta($IDS,'ready_text',true)):?>
                 <p class="ready__text">
-                    Ми готові показати вам, як зробити юридичні питання простими і зрозумілими
+                    <?= $readyText; ?>
                 </p>
-                <button class="ready__consultation">Отримати консультацію</button>
+                <?php endif; ?>
+                <?php if($readyBtn = get_post_meta($IDS,'ready_consultation',true)):?>
+                <button class="ready__consultation"><?= $readyBtn; ?></button>
+                <?php endif; ?>
             </div>
         </div>
     </div>

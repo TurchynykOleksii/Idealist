@@ -368,7 +368,7 @@ form label {
     }
 }
 
-.header__item a {
+.header__list a {
     padding: 12px clamp(1px, 1.042vw, 20px);
     font-weight: 600;
     font-size: clamp(16px, 1.042vw, 20px);
@@ -423,8 +423,8 @@ form label {
     }
 }
 
-.header__lang-switch span,
-.header__lang-switch a {
+.header__lang-switch a,
+.header__lang-switch span {
     font-weight: 700;
     font-size: clamp(16px, 1.042vw, 20px);
     letter-spacing: -0.04em;
@@ -435,8 +435,8 @@ form label {
     -webkit-text-fill-color: transparent;
 }
 
-.mobile__lang-switch span.active__lang,
-.header__lang-switch span.active__lang,
+.mobile__lang-switch a.active__lang,
+.header__lang-switch a.active__lang,
 .mobile__lang-switch a.active__lang,
 .header__lang-switch a.active__lang {
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
@@ -459,7 +459,8 @@ form label {
 .banner__wrap {
     display: flex;
     align-items: flex-end;
-    gap: clamp(1px, 5.99vw, 115px);
+    gap: clamp(1px,1.042vw,20px);
+    justify-content: space-between;
     margin-bottom: clamp(1px, 6.979vw, 134px);
 }
 
@@ -530,9 +531,12 @@ form label {
         gap: clamp(20px, 6.25vw, 6.25vw);
     }
 }
-
+.banner__info-right {
+    margin-right: clamp(1px,1.094vw,21px);
+}
 @media only screen and (max-width: 992px) {
     .banner__info-right {
+        margin-right: 0;
         width: 100%;
     }
 }
@@ -652,7 +656,7 @@ form label {
     gap: 0;
     margin-left: auto;
     display: flex;
-    margin-top: clamp(1px, 7.396vw, 142px);
+    margin-top: clamp(1px, 6.51vw, 125px);
     padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.208vw, 100px);
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     font-weight: 500;
@@ -817,7 +821,7 @@ form label {
     max-width: 100%;
 }
 
-.banner__item:first-child {
+.banner__item:first-child  {
     width: clamp(1px, 7.813vw, 150px);
 }
 
@@ -1313,7 +1317,12 @@ form label {
     flex-direction: column;
     gap: clamp(1px, 4.167vw, 80px);
 }
-
+@media only screen and (max-width: 992px) {
+    .services__accordion-list {
+        
+        gap: clamp(20px, 2.016vw, 2.016vw);
+    }
+}
 .services__info-item {
     position: relative;
     display: flex;
@@ -1336,7 +1345,7 @@ form label {
     content: "";
     position: absolute;
     left: 0;
-    bottom: clamp(-40px, -2.083vw, 1px);
+    bottom: clamp(-20px, -2.016vw, 1px);
     background-color: rgba(81, 81, 81, 0.5);
     display: block;
     width: 100%;
@@ -1975,8 +1984,18 @@ form label {
     overflow: hidden;
 }
 
+.meet__photo img{
+    width: clamp(1px, 65.573vw, 1259px);
+    height: clamp(1px, 59.844vw, 1149px);
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 992px) {
     .meet__photo {
+        width: clamp(288px, 90vw, 90vw);
+        height: clamp(262px, 81.875vw, 81.875vw);
+    }
+    .meet__photo img{
         width: clamp(288px, 90vw, 90vw);
         height: clamp(262px, 81.875vw, 81.875vw);
     }
@@ -2708,6 +2727,9 @@ form label {
 .hide__pc {
     display: none;
 }
+.hide__mob {
+    opacity: 0;
+}
 @media only screen and (max-width: 992px) {
     .hide__pc {
         display: block;
@@ -2747,7 +2769,7 @@ form label {
     }
 }
 
-.mobile__nav-item a {
+.mobile__nav li a {
     font-size: clamp(16px, 5vw, 5vw);
 }
 
@@ -2756,6 +2778,7 @@ form label {
     max-width: fit-content;
 }
 
+.mobile__lang-switch a,
 .mobile__lang-switch span {
     font-size: clamp(16px, 5vw, 5vw);
     font-weight: 600;
@@ -2858,7 +2881,7 @@ form label {
 
 @media only screen and (max-width: 992px) {
     .poppup {
-        width: clamp(288px, 29.032vw, 29.032vw);
+        width: clamp(326px, 32.863vw, 32.863vw);
 
     }
 }

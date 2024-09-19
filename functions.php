@@ -10,11 +10,7 @@
 	include_once 'functions-parts/_custom-functions.php';
 
     
-    add_filter('wpcf7_form_elements', function($content) {
-        $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
     
-        return $content;
-    });
     
 # 2. Удаление "мусора"
 	remove_action('wp_head', 'feed_links_extra', 3); // убирает ссылки на rss категорий
@@ -288,7 +284,7 @@
 
 # 9. Прочее
 	# Страница опций ACF PRO
-	// if (function_exists('acf_add_options_page')) acf_add_options_page();
+	if (function_exists('acf_add_options_page')) acf_add_options_page();
 
 
 	# ACF Map activation
@@ -335,3 +331,9 @@
 	//     return $post_link;
 	// }
 	// add_filter( 'post_type_link', 'wpa_show_permalinks', 1, 2 );
+
+    add_filter('wpcf7_form_elements', function($content) {
+        $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    
+        return $content;
+    });

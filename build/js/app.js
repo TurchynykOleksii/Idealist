@@ -213,7 +213,7 @@ mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
 targets?.forEach((item) => {
 	item.addEventListener('click', () => {
-		item.querySelector('.services__info').classList.toggle('hide-info');
+		item.querySelector('.services__info')?.classList.toggle('hide-info');
 	});
 });
 
@@ -222,7 +222,7 @@ accordionItems.forEach((item) => {
 	item.addEventListener('click', () => {
 		item
 			.querySelector('.services__accordion-item')
-			.classList.toggle('services__accordion');
+			?.classList.toggle('services__accordion');
 		item.querySelector('.services__icon').classList.toggle('services__icon-up');
         document.querySelector('.services__area-item').classList.toggle('active-after')
 	});
@@ -390,17 +390,17 @@ nameInputEl.addEventListener('blur', () => {
 
 telInputEl.addEventListener('blur', () => {
 	if (!telPattern.test(telInputEl.value.trim())) {
-		telErrorEl.classList.add('show-error');
+		telErrorEl?.classList.add('show-error');
 	} else {
-		telErrorEl.classList.remove('show-error');
+		telErrorEl?.classList.remove('show-error');
 	}
 });
 
 emailInputEl.addEventListener('blur', () => {
 	if (!emailPattern.test(emailInputEl.value.trim())) {
-		mailErrorEl.classList.add('show-error');
+		mailErrorEl?.classList.add('show-error');
 	} else {
-		mailErrorEl.classList.remove('show-error');
+		mailErrorEl?.classList.remove('show-error');
 	}
 });
 

@@ -1,5 +1,5 @@
 </main>
-
+<?php $IDS = get_the_ID()?>
 <footer class="footer" id="contacts">
     <div class="container">
         <div class="footer__inner">
@@ -18,38 +18,55 @@
                 <a href="/" class="footer__logo">
                     <img src="<?php echo get_template_directory_uri(); ?>/build/img/icons/logo.svg" alt="idealist logo">
                 </a>
-                <ul class="footer__menu">
-                    <li class="footer__item hide__mob " style="opacity:0;">
-                        <a href="#">Про нас </a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="#">Послуги</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="#">Про нас </a>
-                    </li>
-
-                </ul>
+                <?php wp_nav_menu(array(
+                            'theme_location' => 'footer_menu',
+                            'menu' => 'header_new_spi',
+                            'container' => 'ul',
+                            'container_class' => '',
+                            'container_id' => '',
+                            'menu_class' => 'footer__menu',
+                            'menu_id' => 'footer__menu',
+                            'echo' => true,
+                            'fallback_cb' => 'wp_page_menu',
+                            'before' => '',
+                            'after' => '',
+                            'link_before' => '',
+                            'link_after' => '',
+                            'depth' => 0,
+                            'walker' => '',
+                        ));?>
             </div>
             <div class="footer__info">
                 <ul class="footer__adress">
+                    <?php if($mobileNumber = get_field('mobile_number', 'option')):?>
                     <li class="footer__adress-item">
-                        <a href="tel:+380509762547">+38 050 976 25 47</a>
+                        <a href="<?= esc_url($mobileNumber['url']); ?>" target="_blank">
+                            <?= esc_html($mobileNumber['title']); ?></a>
                     </li>
+                    <?php endif; ?>
+                    <?php if($adress = get_field('address', 'option')):?>
                     <li class="footer__adress-item">
-                        <a href="#">вул. Сахарова, буд. 42, офіс 414, м. Львів, 79013</a>
+                        <a href="<?= esc_url($adress['url']); ?>" target="_blank">
+                            <?= esc_html($adress['title']); ?></a>
                     </li>
+                    <?php endif; ?>
+                    <?php if($email = get_field('email', 'option')):?>
                     <li class="footer__adress-item">
-                        <a href="mailto:office@idealistlaw.com">office@idealistlaw.com</a>
+                        <a href="<?= esc_url($email['url']); ?>" target="_blank">
+                            <?= esc_html($email['title']); ?></a>
+                    </li>
+                    <?php endif; ?>
+                    <li class="footer__adress-item hide__pc">
+                        <?php $instagramLink = get_field('instagram_link', 'option');?>
+                        <a href="<?= $instagramLink['url'];?>"><?= $instagramLink['title'];?></a>
                     </li>
                     <li class="footer__adress-item hide__pc">
-                        <a href="#">Instagram</a>
+                        <?php $telegramLink = get_field('telegram_link', 'option');?>
+                        <a href="<?= $telegramLink['url'];?>"><?= $telegramLink['title'];?></a>
                     </li>
                     <li class="footer__adress-item hide__pc">
-                        <a href="#">Telegram</a>
-                    </li>
-                    <li class="footer__adress-item hide__pc">
-                        <a href="#">LinkedIn</a>
+                        <?php $linkedinLink = get_field('linkedin-link', 'option');?>
+                        <a href="<?= $linkedinLink['url'];?>"><?= $linkedinLink['title'];?></a>
                     </li>
                 </ul>
                 <button class="footer__btn">Записатись на консультацію</button>
@@ -87,25 +104,67 @@
                 </li>
             </ul>
             <div class="footer__copy">
-                <p class="footer__policy">Політика конфіденційності <span>2024</span></p>
-                <p class="footer__by">Design by <a href="#">Babych</a></p>
-                <a href="#" class="footer__up">Подивитись спочатку</a>
+                <?php if($footerPolicy = get_post_meta($IDS,'footer_policy',true)):?>
+                <p class="footer__policy"><?= $footerPolicy; ?></p>
+                <?php endif; 
+                 if($linkBy = get_post_meta($IDS,'footer_by',true)):?>
+                <p class="footer__by">Design by <a href="<?= $linkBy['url']; ?>"><?= $linkBy['title']; ?></a></p>
+                <?php endif; 
+                if($btnUp = get_post_meta($IDS,'footer_up',true)):?>
+                <a href="<?= $btnUp['url']; ?>" class="footer__up"><?= $btnUp['title']; ?></a>
+                <?php endif; ?>
             </div>
             <div class="mobile__menu hide__menu">
-                <ul class="mobile__nav">
-                    <li class="mobile__nav-item"><a href="#services">Послуги</a></li>
-                    <li class="mobile__nav-item"><a href="#about">Про нас </a></li>
-                    <li class="mobile__nav-item"><a href="#contacts">Контакти</a></li>
-                </ul>
+                <?php wp_nav_menu(array(
+                            'theme_location' => 'footer_menu',
+                            'menu' => 'header_new_spi',
+                            'container' => 'ul',
+                            'container_class' => '',
+                            'container_id' => '',
+                            'menu_class' => 'mobile__nav',
+                            'menu_id' => 'mobile__nav',
+                            'echo' => true,
+                            'fallback_cb' => 'wp_page_menu',
+                            'before' => '',
+                            'after' => '',
+                            'link_before' => '',
+                            'link_after' => '',
+                            'depth' => 0,
+                            'walker' => '',
+                        ));?>
+                <?php if($switchLangView = get_field('view_hide','option')):?>
                 <div class="mobile__lang-switch">
-                    <span class="mobile__ukr active__lang">Укр</span>
+                    <?php if($ukrLang = get_field('header_ukr','option')):?>
+                    <a href="<?= $ukrLang['url']?>"
+                        class="mobile__ukr <?= in_array('home', get_body_class()) ? 'active__lang' : ''; ?>"><?= $ukrLang['title']?></a>
+                    <?php endif; ?>
                     <span>/</span>
-                    <span class="mobile__eng">Eng</span>
+                    <?php if($engLang = get_field('header_eng','option')):?>
+                    <a href="<?= $engLang['url']?>"
+                        class="mobile__eng <?= !in_array('home', get_body_class()) ? 'active__lang' : '';?>"><?= $engLang['title']?></a>
+                    <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 <ul class="mobile__social">
-                    <li class="mobile__social-item"><a href="#">Instagram</a></li>
-                    <li class="mobile__social-item"><a href="#">Telegram</a></li>
-                    <li class="mobile__social-item"><a href="#">LinkedIn</a></li>
+                    <?php if($instagramLink = get_field('instagram_link', 'option')):?>
+                    <li class="mobile__social-item">
+                        <a href="<?= esc_url($instagramLink['url']); ?>" target="_blank">
+                            <?= esc_html($instagramLink['title']); ?></a>
+                    </li>
+                    <?php endif;
+                    if($telegramLink = get_field('telegram_link', 'option')):?>
+                    <li class="mobile__social-item">
+                        <a href="<?= esc_url($telegramLink['url']); ?>" target="_blank">
+                            <?= esc_html($telegramLink['title']); ?></a>
+                    </li>
+                    <?php endif;
+                     if($linkedinLink = get_field('linkedin-link', 'option')):?>
+                    <li class="mobile__social-item">
+                        <a href="<?= esc_url($linkedinLink['url']); ?>" target="_blank">
+                            <?= esc_html($linkedinLink['title']); ?>
+                        </a>
+                    </li>
+                    <?php endif;?>
                 </ul>
                 <ul class="footer__slogan mobile__slogan">
                     <li class="footer__slogan-item">
