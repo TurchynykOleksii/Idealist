@@ -255,8 +255,8 @@ const serviceBtnEl = document.querySelector('.services__btn');
 const overlayEl = document.querySelector('.overlay');
 const poppupEl = document.querySelector('.poppup');
 const poppupCloseEl = document.querySelector('.poppup__close');
-const thxPoppupCloseBtn = document.querySelector('.thank__poppup-close')
-const thxPoppupEl = document.querySelector('.thank__poppup')
+const thxPoppupCloseBtn = document.querySelector('.thank__poppup-close');
+const thxPoppupEl = document.querySelector('.thank__poppup');
 
 const writeBtnEl = document.querySelector('.services__btn-mob');
 const getConsultation = document.querySelector('.ready__consultation');
@@ -384,19 +384,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	const telPattern = /^\+380\d{9}$/;
 	const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
 
-	
 	function validateFields() {
 		let isValid = true;
 
-		
-		if (nameInputEl.value.length < 2 || !namePattern.test(nameInputEl.value.trim())) {
+		if (
+			nameInputEl.value.length < 2 ||
+			!namePattern.test(nameInputEl.value.trim())
+		) {
 			nameErrorEl?.classList.add('show-error');
 			isValid = false;
 		} else {
 			nameErrorEl?.classList.remove('show-error');
 		}
 
-		
 		if (!telPattern.test(telInputEl.value.trim())) {
 			telErrorEl?.classList.add('show-error');
 			isValid = false;
@@ -404,7 +404,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			telErrorEl?.classList.remove('show-error');
 		}
 
-		
 		if (!emailPattern.test(emailInputEl.value.trim())) {
 			mailErrorEl?.classList.add('show-error');
 			isValid = false;
@@ -414,23 +413,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (isValid) {
 			cfBtnEl.disabled = false;
-			cfBtnWrap.style.backgroundColor = '#162a24'; 
+			cfBtnWrap.style.backgroundColor = '#162a24';
 		} else {
 			cfBtnEl.disabled = true;
-			cfBtnWrap.style.backgroundColor = '#646464'; 
+			cfBtnWrap.style.backgroundColor = '#646464';
 		}
 	}
 
-	
 	nameInputEl.addEventListener('input', validateFields);
 	telInputEl.addEventListener('input', validateFields);
 	emailInputEl.addEventListener('input', validateFields);
 
-	
 	formEl.addEventListener('submit', function (event) {
 		validateFields();
 		if (cfBtnEl.disabled) {
-			event.preventDefault(); 
+			event.preventDefault();
 		} else {
 			formEl.addEventListener('wpcf7submit', function () {
 				poppupEl.classList.add('poppup__hide');
@@ -449,13 +446,16 @@ document.addEventListener('DOMContentLoaded', function () {
 					overlayEl.classList.add('overlay__hide');
 				}, 3500);
 				setTimeout(() => {
-					document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+					document
+						.getElementsByTagName('html')[0]
+						.classList.remove('body-noscroll');
+					cfBtnEl.disabled = true;
+					cfBtnWrap.style.backgroundColor = '#646464';
 				}, 3800);
 			});
 		}
 	});
 });
-
 
 let scrollToTop = 0;
 const header = document.querySelector('.header');
@@ -475,9 +475,8 @@ mobileMenuElSc.addEventListener('scroll', function () {
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-
-thxPoppupCloseBtn.addEventListener('click', ()=>{
-    overlayEl.classList.add('overlay__hide');
+thxPoppupCloseBtn.addEventListener('click', () => {
+	overlayEl.classList.add('overlay__hide');
 	thxPoppupEl.classList.add('poppup__hide');
 	document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
-})
+});
