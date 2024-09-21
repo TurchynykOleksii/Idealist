@@ -206,63 +206,63 @@
 <div class="overlay overlay__hide">
     <div class="poppup poppup__hide">
         <div class="poppup__wrap">
-                <button class="poppup__close">
-                    <svg class="poppup__close-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                            stroke-linejoin="round" />
-                        <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <div class="poppup__header">
-                    <div class="poppup__header-wrap">
-                        <h6 class="poppup__title">Привіт</h6>
-                        <p class="poppup__slogan">Ми раді допомогти вам з юридичними питаннями</p>
-                        <p class="poppup__text">Ця форма запису створена, щоб ви могли швидко залишити запит на
-                            консультацію
-                        </p>
-                        <div class="details">
-                            <div class="details__wrap">
-                                <p class="details__hours"><strong>Тривалість</strong> до 1 години</p>
-                                <div class="details__hover-text"><svg class="details__close-icon" viewBox="0 0 40 40"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                                            stroke-linejoin="round" />
-                                        <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                                            stroke-linejoin="round" />
-                                    </svg>Ми за чесність. Якщо у поцесі з’ясування запиту для
-                                    консультації, ми зясуємо, що не можемо вам допомогти, ми не проводимо консультацію і
-                                    не
-                                    подаємо марних надій.</div>
-                            </div>
-                            <div class="details__wrap">
-                                <p class="details__coasts"><strong>Вартість</strong> 2000 грн</p>
-                                <div class="details__hover-text"><svg class="details__close-icon" viewBox="0 0 40 40"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                                            stroke-linejoin="round" />
-                                        <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
-                                            stroke-linejoin="round" />
-                                    </svg>Якщо у вас виникнуть додаткові запитання, ми продовжимо
-                                    консультацію та надамо відповіді на всі ваші запитання</div>
-                            </div>
+            <button class="poppup__close">
+                <svg class="poppup__close-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                        stroke-linejoin="round" />
+                    <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="poppup__header">
+                <div class="poppup__header-wrap">
+                    <h6 class="poppup__title">Привіт</h6>
+                    <p class="poppup__slogan">Ми раді допомогти вам з юридичними питаннями</p>
+                    <p class="poppup__text">Ця форма запису створена, щоб ви могли швидко залишити запит на
+                        консультацію
+                    </p>
+                    <div class="details">
+                        <div class="details__wrap">
+                            <p class="details__hours"><strong>Тривалість</strong> до 1 години</p>
+                            <div class="details__hover-text"><svg class="details__close-icon" viewBox="0 0 40 40"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                                        stroke-linejoin="round" />
+                                </svg>Ми за чесність. Якщо у поцесі з’ясування запиту для
+                                консультації, ми зясуємо, що не можемо вам допомогти, ми не проводимо консультацію і
+                                не
+                                подаємо марних надій.</div>
+                        </div>
+                        <div class="details__wrap">
+                            <p class="details__coasts"><strong>Вартість</strong> 2000 грн</p>
+                            <div class="details__hover-text"><svg class="details__close-icon" viewBox="0 0 40 40"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30 10L10 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 10L30 30" stroke="black" stroke-width="4" stroke-linecap="square"
+                                        stroke-linejoin="round" />
+                                </svg>Якщо у вас виникнуть додаткові запитання, ми продовжимо
+                                консультацію та надамо відповіді на всі ваші запитання</div>
                         </div>
                     </div>
-                    <div class="schedule">
-                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 22.5C17.5228 22.5 22 18.0228 22 12.5C22 6.97715 17.5228 2.5 12 2.5C6.47715 2.5 2 6.97715 2 12.5C2 18.0228 6.47715 22.5 12 22.5Z"
-                                stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12 6.5V12.5L16 14.5" stroke="black" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <p>пн - пт / 10.00 - 18.00 / (GMT+3)</p>
-                    </div>
                 </div>
-                <div class="poppup__content">
-                    <p class="poppup__content-title">Оберіть</p>
-                    <?php echo  do_shortcode( '[contact-form-7 id="6040091" title="poppup form"]' )?>
-                    <!-- <form class="poppup__form">
+                <div class="schedule">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22.5C17.5228 22.5 22 18.0228 22 12.5C22 6.97715 17.5228 2.5 12 2.5C6.47715 2.5 2 6.97715 2 12.5C2 18.0228 6.47715 22.5 12 22.5Z"
+                            stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 6.5V12.5L16 14.5" stroke="black" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>пн - пт / 10.00 - 18.00 / (GMT+3)</p>
+                </div>
+            </div>
+            <div class="poppup__content">
+                <p class="poppup__content-title">Оберіть</p>
+                <?php echo  do_shortcode( '[contact-form-7 id="6040091" title="poppup form"]' )?>
+                <!-- <form class="poppup__form">
                     <div class="poppup__group poppup__service">
                         <label class="poppup__group-title poppup__service-service"><span>Послугу</span><svg
                                 class="poppup__rotate" width="14" height="9" viewBox="0 0 14 9" fill="none"
@@ -333,9 +333,9 @@
                         </div>
                     </div>
                 </form> -->
-                </div>
             </div>
-        
+        </div>
+
     </div>
     <div class="thank__poppup poppup__hide">
         <div class="thank__poppup-wrap">
@@ -367,6 +367,47 @@
                 </svg>
                 <p>пн - пт / 10.00 - 18.00 / (GMT+3)</p>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="preloader">
+    <div class="container">
+        <div class="preloader__wrap">
+            <ul class="preloader__slogan mobile__slogan">
+                <li class="preloader-item">
+                    <p class="text">DON` T</p>
+                    <div class="preloader-img preloader-img-first "><img
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
+                            alt="slogan img">
+
+                    </div>
+                    <p class="text"> WORRY</p>
+                </li>
+                <li class="preloader-item">
+                    <div class="preloader-img preloader-img-second"><img
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2.jpg"
+                            alt="slogan img">
+
+                    </div>
+                    <p class="text">WE`LL DEAL </p>
+                    <div class="preloader-img preloader-img-second-two"><img
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer2-2.jpg"
+                            alt="slogan img">
+
+                    </div>
+                </li>
+                <li class="preloader-item">
+                    <div class="preloader-img preloader-img-third"><img
+                            src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer3.jpg"
+                            alt="slogan img">
+
+                    </div>
+                    <p class="text">WITH THIS</p>
+
+                </li>
+            </ul>
+            <div class="preloader__timer">00</div>
         </div>
     </div>
 </div>

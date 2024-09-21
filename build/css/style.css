@@ -355,7 +355,7 @@ form label {
 
 .header__list {
     display: flex;
-    gap: clamp(1px, 4.792vw, 92px);
+    gap: clamp(1px, 5vw, 96px);
 }
 
 .header__nav {
@@ -370,7 +370,7 @@ form label {
 
 .header__list a {
     display: inline-block;
-    padding: clamp(1px,0.625vw,12px) clamp(1px, 1.042vw, 20px);
+    padding: clamp(1px, 0.625vw, 12px) clamp(1px, 1.042vw, 20px);
     font-weight: 600;
     font-size: clamp(16px, 1.042vw, 20px);
     letter-spacing: -0.02em;
@@ -472,10 +472,12 @@ form label {
         gap: clamp(45px, 14.063vw, 14.063vw);
     }
 }
+
 .banner__title-left div,
-.banner__title-right span div{
+.banner__title-right span div {
     display: inline-block;
 }
+
 .banner__title-left,
 .banner__title-left div,
 .banner__title-right div,
@@ -664,7 +666,7 @@ form label {
     gap: 0;
     margin-left: auto;
     display: flex;
-    margin-top: clamp(1px, 7.187vw, 138px);
+    margin-top: clamp(1px, 8.229vw, 158px);
     padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.208vw, 100px);
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     font-weight: 500;
@@ -1360,11 +1362,13 @@ form label {
     width: 100%;
     height: 1px;
 }
+
 @media only screen and (max-width: 992px) {
     .services__info-item:before {
         bottom: clamp(-60px, -6.061vw, 1px);
     }
 }
+
 .services__info-headline {
     font-weight: 600;
     font-size: clamp(1px, 1.667vw, 32px);
@@ -2368,7 +2372,7 @@ form label {
 @media only screen and (max-width: 992px) {
     .ready__consultation {
         padding: clamp(16px, 5vw, 5vw) clamp(41px, 12.812vw, 12.812vw);
-        
+
         font-size: clamp(16px, 5vw, 5vw);
     }
 }
@@ -2656,7 +2660,12 @@ form label {
     }
 }
 
-.footer__slogan {
+.preloader * {
+    color: white;
+}
+
+.footer__slogan,
+.preloader__slogan {
     margin-bottom: clamp(1px, 3.073vw, 59px);
     display: flex;
     flex-direction: column;
@@ -2669,7 +2678,8 @@ form label {
     }
 }
 
-.footer__slogan-item {
+.footer__slogan-item,
+.preloader-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2677,7 +2687,9 @@ form label {
     gap: clamp(1px, 1.6vw, 36px);
 }
 
-.footer__slogan-item p {
+.footer__slogan-item p,
+.preloader-item p,
+.preloader-item span {
     font-weight: 600;
     font-size: clamp(1px, 8.75vw, 168px);
     letter-spacing: -0.04em;
@@ -2686,54 +2698,68 @@ form label {
 }
 
 @media only screen and (max-width: 992px) {
-    .footer__slogan-item p {
+
+    .footer__slogan-item p,
+    .preloader-item p {
         font-size: clamp(28px, 8.75vw, 8.75vw);
     }
 }
 
-.footer__slogan-img-first img {
+.footer__slogan-img-first img,
+.preloader-img-first img {
     width: clamp(1px, 29.948vw, 575px);
     height: clamp(1px, 6.458vw, 124px);
 }
 
 @media only screen and (max-width: 992px) {
-    .footer__slogan-img-first img {
+
+    .footer__slogan-img-first img,
+    .preloader-img-first img {
         width: clamp(90px, 28.125vw, 28.125vw);
         height: clamp(20px, 6.25vw, 6.25vw);
     }
 }
 
-.footer__slogan-img-second img {
+.footer__slogan-img-second img,
+.preloader-img-second img {
     width: clamp(1px, 13.177vw, 253px);
     height: clamp(1px, 6.458vw, 124px);
 }
 
 @media only screen and (max-width: 992px) {
-    .footer__slogan-img-second img {
+
+    .footer__slogan-img-second img,
+    .preloader-img-second img {
         width: clamp(40px, 12.5vw, 12.5vw);
         height: clamp(20px, 6.25vw, 6.25vw);
     }
 }
 
-.footer__slogan-img-second-two img {
+.footer__slogan-img-second-two img,
+.preloader-img-second-two img {
     width: clamp(1px, 23.438vw, 450px);
     height: clamp(1px, 6.458vw, 124px);
 }
 
 @media only screen and (max-width: 992px) {
-    .footer__slogan-img-second-two img {
+
+    .footer__slogan-img-second-two img,
+    .preloader-img-second-two img {
         width: clamp(68px, 21.25vw, 21.25vw);
         height: clamp(20px, 6.25vw, 6.25vw);
     }
 }
 
-.footer__slogan-img-third img {
+.footer__slogan-img-third img,
+.preloader-img-third img {
     width: clamp(1px, 47.031vw, 903px);
     height: clamp(1px, 6.458vw, 124px);
 }
 
 @media only screen and (max-width: 992px) {
-    .footer__slogan-img-third img {
+
+    .footer__slogan-img-third img,
+    .preloader-img-third img {
         width: clamp(140px, 43.75vw, 43.75vw);
         height: clamp(20px, 6.25vw, 6.25vw);
     }
@@ -3005,7 +3031,11 @@ form label {
     line-height: 120%;
     color: #3b3b3b;
 }
-input[type='text'],input[type='email'],input[type='tel'],textarea{
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
     max-width: 100%;
     width: 100%;
 }
@@ -3060,6 +3090,7 @@ input[type='text'],input[type='email'],input[type='tel'],textarea{
     .poppup__group-title span {
         gap: clamp(216px, 1.613vw, 1.613vw);
     }
+
     .poppup__group-title {
         max-width: 100%;
     }
@@ -3475,9 +3506,11 @@ textarea.wpcf7-form-control.wpcf7-textarea {
     opacity: 1;
     transform: translateY(0);
 }
+
 .thank__content p {
     font-size: clamp(1px, 1.25vw, 24px);
 }
+
 .thank__title {
     position: relative;
     margin-bottom: clamp(1px, 3.125vw, 60px);
@@ -3498,9 +3531,10 @@ textarea.wpcf7-form-control.wpcf7-textarea {
     background-size: cover;
     background-position: center;
 }
+
 @media only screen and (max-width: 992px) {
     .thank__poppup {
-        padding:  clamp(10px,1.008vw,1.008vw) clamp(20px,2.016vw,2.016vw);
+        padding: clamp(10px, 1.008vw, 1.008vw) clamp(20px, 2.016vw, 2.016vw);
         position: relative;
         width: clamp(288px, 29.032vw, 29.032vw);
         background-color: #fff;
@@ -3508,6 +3542,7 @@ textarea.wpcf7-form-control.wpcf7-textarea {
         opacity: 1;
         transform: translateY(0);
     }
+
     .thank__title {
         margin-bottom: clamp(24px, 1.25vw, 1.25vw);
         display: flex;
@@ -3614,4 +3649,91 @@ textarea.wpcf7-form-control.wpcf7-textarea {
     position: absolute;
     width: 100%;
     height: clamp(1px, 1.25vw, 24px);
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #162a24;
+    z-index: 5;
+}
+
+.preloader .container,
+.preloader .preloader__wrap {
+    height: 100%;
+}
+
+.preloader__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* animation preloader text */
+
+.text span {
+    opacity: 0;
+    transition: opacity 0.2s ease,transform 0.5s ease;
+    transform: translateY(50px);
+    display: inline-block;
+}
+
+.text span.fade {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.preloader-img {
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 1s ease, transform 1s ease; 
+    width: 100%; 
+    height: auto;
+    display: block;
+    visibility: visible; 
+}
+
+.preloader-img.fade {
+    opacity: 1;
+    transform: translateY(0); 
+}
+.preloader.timer-start{
+    background-color: black;
+    transition: background-color 0.5s ease; 
+}
+.preloader__wrap.timer-start .preloader {
+    background-color: black;
+    transition: background-color 0.5s ease; /* Плавный переход цвета */
+}
+
+.preloader__timer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    font-weight: 600;
+    font-size: clamp(1px, 8.75vw, 168px);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    transition: opacity 250ms linear;
+}
+
+.preloader__timer--active {
+    opacity: 1; /* Прогресс от 0% до 100% */
+}
+
+/* Изменение background-color для preloader */
+.preloader__wrap.timer-start .preloader {
+    background-color: black;
+    transition: background-color 0.5s ease; /* Плавный переход цвета */
+}
+
+/* Анимация для ухода preloader вверх */
+.end__preloader {
+    transform: translateY(-100%);
+    transition: transform 1s ease; /* Плавный уход вверх */
 }
