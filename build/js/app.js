@@ -481,7 +481,6 @@ thxPoppupCloseBtn.addEventListener('click', () => {
 	document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
 });
 
-
 //animation text preloader
 const texts = document.querySelectorAll('.text');
 const images = document.querySelectorAll('.preloader-img');
@@ -489,95 +488,92 @@ const preloaderWrap = document.querySelector('.preloader__wrap');
 const preloader = document.querySelector('.preloader');
 const preloaderTimer = document.querySelector('.preloader__timer');
 
-let isCounting = false; 
+let isCounting = false;
 
-texts.forEach(text => {
-    const strText = text.textContent;
-    const splitText = strText.split("");
-    text.textContent = "";
+texts.forEach((text) => {
+	const strText = text.textContent;
+	const splitText = strText.split('');
+	text.textContent = '';
 
-    splitText.forEach(char => {
-        const charSpan = document.createElement('span');
-        charSpan.textContent = char;
-        text.appendChild(charSpan);
-    });
+	splitText.forEach((char) => {
+		const charSpan = document.createElement('span');
+		charSpan.textContent = char;
+		text.appendChild(charSpan);
+	});
 
-    let charIndex = 0;
-    let timer = setInterval(onTick, 50);
+	let charIndex = 0;
+	let timer = setInterval(onTick, 50);
 
-    function onTick() {
-        const span = text.querySelectorAll('span')[charIndex];
-        if (span) {
-            span.classList.add('fade');
-            charIndex++;
-        }
+	function onTick() {
+		const span = text.querySelectorAll('span')[charIndex];
+		if (span) {
+			span.classList.add('fade');
+			charIndex++;
+		}
 
-        if (charIndex === splitText.length && images.length > 0) {
-            images.forEach((img, index) => {
-                setTimeout(() => {
-                    img.classList.add('fade');
-                }, index * 100);
-            });
+		if (charIndex === splitText.length) {
+			complete();
+		}
+	}
 
-            setTimeout(reverseAnimation, 3000);
-        }
+	function complete() {
+		clearInterval(timer);
+		timer = null;
+	}
 
-        if (charIndex === splitText.length) {
-            complete();
-            return;
-        }
-    }
+	startProgressBar();
+	images.forEach((img, index) => {
+		setTimeout(() => {
+			img.classList.add('fade');
+		}, index * 100);
+	});
 
-    function complete() {
-        clearInterval(timer);
-        timer = null;
-    }
+	setTimeout(reverseAnimation, 2500);
 
-    function reverseAnimation() {
-        preloaderWrap.classList.add('timer-start');
+	function reverseAnimation() {
+		preloaderWrap.classList.add('timer-start');
 
-        [...text.querySelectorAll('span')].reverse().forEach((span, index) => {
-            setTimeout(() => {
-                span.classList.remove('fade');
-            }, index * 50);
-        });
+		[...text.querySelectorAll('span')].reverse().forEach((span, index) => {
+			setTimeout(() => {
+				span.classList.remove('fade');
+			}, index * 50);
+		});
 
-        [...images].reverse().forEach((img, index) => {
-            setTimeout(() => {
-                img.classList.remove('fade');
-            }, index * 100);
-        });
+		[...images].reverse().forEach((img, index) => {
+			setTimeout(() => {
+				img.classList.remove('fade');
+			}, index * 100);
+		});
 
-        preloader.style.backgroundColor = 'black';
+		preloader.style.backgroundColor = 'black';
+	}
 
-        setTimeout(startProgressBar, 1000);
-    }
+	function startProgressBar() {
+		if (isCounting) return;
 
-    function startProgressBar() {
-        if (isCounting) return; 
+		isCounting = true;
 
-        isCounting = true; 
+		preloaderTimer.classList.add('preloader__timer--active');
 
-        preloaderTimer.classList.add('preloader__timer--active');
+		let progress = 0;
+		const duration = 3500;
+		const increment = 100 / (duration / 50);
+
+		const interval = setInterval(() => {
+			if (progress <= 100) {
+				preloaderTimer.textContent = Math.floor(progress) + '%';
+				progress += increment;
+			} else {
+				clearInterval(interval);
+				preloaderTimer.textContent = '100%';
+				preloader.classList.add('end__preloader');
+				isCounting = false;
+                document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+			}
+		}, 50);
+		if (!preloader.classList.contains('end__preloader')) {
+			document.getElementsByTagName('html')[0].classList.add('body-noscroll');
+		}
         
-        let progress = 0;
-        const duration = 1500; 
-        const increment = 100 / (duration / 50); 
-
-        const interval = setInterval(() => {
-            if (progress <= 100) {
-                preloaderTimer.textContent = Math.floor(progress) + "%"; 
-                progress += increment; 
-            } else {
-                clearInterval(interval);
-                preloaderTimer.textContent = "100%"; 
-                preloader.classList.add('end__preloader');
-                isCounting = false; // Сбрасываем флаг после завершения
-            }
-        }, 50);
-    }
+	}
 });
-
-
-
-

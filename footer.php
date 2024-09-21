@@ -409,7 +409,9 @@
             </ul>
             <div class="preloader__timer">00</div>
         </div>
+        
     </div>
+
 </div>
 
 
