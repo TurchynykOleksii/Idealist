@@ -78,7 +78,7 @@
                             src="<?php echo get_template_directory_uri(); ?>/build/img/general/footer1.jpg"
                             alt="slogan img">
                     </div>
-                    <p> WORRY</p>
+                    <p>WORRY</p>
                 </li>
                 <li class="footer__slogan-item">
                     <div class="footer__slogan-img footer__slogan-img-second"><img
@@ -407,7 +407,7 @@
 
                 </li>
             </ul>
-            <div class="preloader__timer">00</div>
+            <!-- <div class="preloader__timer">00</div> -->
         </div>
         
     </div>

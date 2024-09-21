@@ -3704,7 +3704,7 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 }
 .preloader.timer-start{
     background-color: black;
-    transition: background-color 0.5s ease; 
+    transition: background-color 0.8s ease; 
 }
 .preloader__wrap.timer-start .preloader {
     background-color: black;

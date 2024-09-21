@@ -491,89 +491,73 @@ const preloaderTimer = document.querySelector('.preloader__timer');
 let isCounting = false;
 
 texts.forEach((text) => {
-	const strText = text.textContent;
-	const splitText = strText.split('');
-	text.textContent = '';
+    const strText = text.textContent;
+    const splitText = strText.split('');
+    text.textContent = '';
 
-	splitText.forEach((char) => {
-		const charSpan = document.createElement('span');
-		charSpan.textContent = char;
-		text.appendChild(charSpan);
-	});
+    splitText.forEach((char) => {
+        const charSpan = document.createElement('span');
+        charSpan.textContent = char;
+        text.appendChild(charSpan);
+    });
 
-	let charIndex = 0;
-	let timer = setInterval(onTick, 50);
+    let charIndex = 0;
+    let timer = setInterval(onTick, 50); // Интервал для анимации текста
 
-	function onTick() {
-		const span = text.querySelectorAll('span')[charIndex];
-		if (span) {
-			span.classList.add('fade');
-			charIndex++;
-		}
+    function onTick() {
+        const span = text.querySelectorAll('span')[charIndex];
+        if (span) {
+            span.classList.add('fade');
+            charIndex++;
+        }
 
-		if (charIndex === splitText.length) {
-			complete();
-		}
-	}
+        if (charIndex === splitText.length) {
+            complete(); // Останавливаем таймер, когда все символы анимированы
+        }
+    }
 
-	function complete() {
-		clearInterval(timer);
-		timer = null;
-	}
+    function complete() {
+        clearInterval(timer); // Останавливаем таймер
+        timer = null;
+    }
 
-	startProgressBar();
-	images.forEach((img, index) => {
-		setTimeout(() => {
-			img.classList.add('fade');
-		}, index * 100);
-	});
+    // Анимация изображений без учета процентов
+    images.forEach((img, index) => {
+        setTimeout(() => {
+            img.classList.add('fade'); // Добавляем анимацию изображениям
+        }, index * 100);
+    });
 
-	setTimeout(reverseAnimation, 2500);
+    // Запуск обратной анимации после паузы (например, 2500ms)
+    setTimeout(reverseAnimation, 2500);
 
-	function reverseAnimation() {
-		preloaderWrap.classList.add('timer-start');
+    function reverseAnimation() {
+        preloaderWrap.classList.add('timer-start'); // Запускаем обратную анимацию
 
-		[...text.querySelectorAll('span')].reverse().forEach((span, index) => {
-			setTimeout(() => {
-				span.classList.remove('fade');
-			}, index * 50);
-		});
+        // Обратная анимация текста
+        [...text.querySelectorAll('span')].reverse().forEach((span, index) => {
+            setTimeout(() => {
+                span.classList.remove('fade');
+            }, index * 50);
+        });
 
-		[...images].reverse().forEach((img, index) => {
-			setTimeout(() => {
-				img.classList.remove('fade');
-			}, index * 100);
-		});
+        // Обратная анимация изображений
+        [...images].reverse().forEach((img, index) => {
+            setTimeout(() => {
+                img.classList.remove('fade');
+            }, index * 100);
+        });
 
-		preloader.style.backgroundColor = 'black';
-	}
+        // Изменяем фон прелоадера
+        preloader.style.backgroundColor = 'black';
+    }
 
-	function startProgressBar() {
-		if (isCounting) return;
+    // Удаление скролла на странице во время загрузки
+    document.getElementsByTagName('html')[0].classList.add('body-noscroll');
 
-		isCounting = true;
-
-		preloaderTimer.classList.add('preloader__timer--active');
-
-		let progress = 0;
-		const duration = 3500;
-		const increment = 100 / (duration / 50);
-
-		const interval = setInterval(() => {
-			if (progress <= 100) {
-				preloaderTimer.textContent = Math.floor(progress) + '%';
-				progress += increment;
-			} else {
-				clearInterval(interval);
-				preloaderTimer.textContent = '100%';
-				preloader.classList.add('end__preloader');
-				isCounting = false;
-                document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
-			}
-		}, 50);
-		if (!preloader.classList.contains('end__preloader')) {
-			document.getElementsByTagName('html')[0].classList.add('body-noscroll');
-		}
-        
-	}
+    // По завершении всех анимаций убираем класс блокировки скролла
+    setTimeout(() => {
+        preloader.classList.add('end__preloader');
+        document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+    }, 3500); // Длительность прелоадера можно корректировать
 });
