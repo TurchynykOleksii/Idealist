@@ -89,7 +89,7 @@
                 <div class="banner__inner">
                     <div class="banner__wrap">
                         <div class="banner__info-left">
-                            <h1 class="banner__title-left"><?= get_post_meta($ID,'title_left',true)?></h1>
+                            <h1  class="banner__title-left text"><?= get_post_meta($ID,'title_left',true)?></h1>
                             <p class="banner__subtitle-left"><?= get_post_meta($ID,'left_subtitle',true)?></p>
                             <a href="https://www.google.com/maps/place/IDEALIST%7C+%D0%90%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B5+%D0%BE%D0%B1'%D1%94%D0%B4%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F+%22%D0%86%D0%94%D0%95%D0%90%D0%9B%D0%86%D0%A1%D0%A2%22/@49.8291844,24.0127997,17z/data=!4m8!3m7!1s0x473add8ea9f6df9f:0x1cac574b49d779ee!8m2!3d49.8291844!4d24.0127997!9m1!1b1!16s%2Fg%2F11spn32svr?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D"
                                 class="banner__rating">
@@ -104,7 +104,7 @@
                         </div>
                         <div class="banner__info-right">
                             <div class="banner__info-wrap">
-                                <h2 class="banner__title-right"><?= get_post_meta($ID,'title_right',true)?></h2>
+                                <h2 class="banner__title-right "><?= get_post_meta($ID,'title_right',true)?></h2>
                                 <p class="banner__subtitle-right"><?= get_post_meta($ID,'right_subtitle',true)?></p>
                             </div>
                             <a href="<?= get_post_meta($ID,'google_link',true)['url'];?>" class="banner__rating-mob">

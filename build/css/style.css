@@ -26,7 +26,7 @@
     font-family: Inter;
     font-display: swap;
     src: url("../fonts/InterTight-Black.woff2") format("woff2"), url("../fonts/InterTight-Black.woff") format("woff");
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -355,7 +355,7 @@ form label {
 
 .header__list {
     display: flex;
-    gap: clamp(1px, 1.042vw, 20px);
+    gap: clamp(1px, 4.792vw, 92px);
 }
 
 .header__nav {
@@ -369,7 +369,8 @@ form label {
 }
 
 .header__list a {
-    padding: 12px clamp(1px, 1.042vw, 20px);
+    display: inline-block;
+    padding: clamp(1px,0.625vw,12px) clamp(1px, 1.042vw, 20px);
     font-weight: 600;
     font-size: clamp(16px, 1.042vw, 20px);
     letter-spacing: -0.02em;
@@ -425,7 +426,7 @@ form label {
 
 .header__lang-switch a,
 .header__lang-switch span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(16px, 1.042vw, 20px);
     letter-spacing: -0.04em;
     text-transform: uppercase;
@@ -459,7 +460,7 @@ form label {
 .banner__wrap {
     display: flex;
     align-items: flex-end;
-    gap: clamp(1px,1.042vw,20px);
+    gap: clamp(1px, 1.042vw, 20px);
     justify-content: space-between;
     margin-bottom: clamp(1px, 6.979vw, 134px);
 }
@@ -471,8 +472,13 @@ form label {
         gap: clamp(45px, 14.063vw, 14.063vw);
     }
 }
-
+.banner__title-left div,
+.banner__title-right span div{
+    display: inline-block;
+}
 .banner__title-left,
+.banner__title-left div,
+.banner__title-right div,
 .banner__title-right,
 .banner__title-right>span {
     font-weight: 500;
@@ -531,9 +537,11 @@ form label {
         gap: clamp(20px, 6.25vw, 6.25vw);
     }
 }
+
 .banner__info-right {
-    margin-right: clamp(1px,1.094vw,21px);
+    margin-right: clamp(1px, 1.094vw, 21px);
 }
+
 @media only screen and (max-width: 992px) {
     .banner__info-right {
         margin-right: 0;
@@ -574,7 +582,7 @@ form label {
 }
 
 .banner__title-right span:last-child {
-    margin-top: clamp(-20px, -1.042vw, 1px);
+    margin-top: clamp(-40px, -2.083vw, 1px);
     margin-left: auto;
 }
 
@@ -588,7 +596,7 @@ form label {
 
 .banner__subtitle-left span,
 .banner__subtitle-right span {
-    font-weight: 700;
+    font-weight: 600;
     color: #fff;
     font-size: clamp(1px, 1.25vw, 24px);
 }
@@ -656,7 +664,7 @@ form label {
     gap: 0;
     margin-left: auto;
     display: flex;
-    margin-top: clamp(1px, 6.51vw, 125px);
+    margin-top: clamp(1px, 7.187vw, 138px);
     padding: clamp(1px, 1.302vw, 25px) clamp(1px, 5.208vw, 100px);
     background: linear-gradient(57deg, #d0c0aa 0%, #d1c2ac 27.5%, #b7a58b 56.5%, #8a775a 85%, #6e5e41 100%);
     font-weight: 500;
@@ -821,7 +829,7 @@ form label {
     max-width: 100%;
 }
 
-.banner__item:first-child  {
+.banner__item:first-child {
     width: clamp(1px, 7.813vw, 150px);
 }
 
@@ -1272,7 +1280,6 @@ form label {
 @media only screen and (max-width: 992px) {
     .services__info-list {
         max-width: none;
-        padding-bottom: clamp(20px, 2.016vw, 2.016vw);
     }
 }
 
@@ -1315,14 +1322,16 @@ form label {
 .services__accordion-list {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 4.167vw, 80px);
+    gap: clamp(1px, 5vw, 96px);
 }
+
 @media only screen and (max-width: 992px) {
     .services__accordion-list {
-        
-        gap: clamp(20px, 2.016vw, 2.016vw);
+
+        gap: clamp(40px, 4.04vw, 4.04vw);
     }
 }
+
 .services__info-item {
     position: relative;
     display: flex;
@@ -1345,13 +1354,17 @@ form label {
     content: "";
     position: absolute;
     left: 0;
-    bottom: clamp(-20px, -2.016vw, 1px);
+    bottom: clamp(-43px, -2.24vw, 1px);
     background-color: rgba(81, 81, 81, 0.5);
     display: block;
     width: 100%;
     height: 1px;
 }
-
+@media only screen and (max-width: 992px) {
+    .services__info-item:before {
+        bottom: clamp(-60px, -6.061vw, 1px);
+    }
+}
 .services__info-headline {
     font-weight: 600;
     font-size: clamp(1px, 1.667vw, 32px);
@@ -1622,7 +1635,7 @@ form label {
 }
 
 .about__social a {
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
     font-size: clamp(1px, 1.042vw, 20px);
 }
@@ -1660,7 +1673,7 @@ form label {
 }
 
 .about__info span {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .about__info {
@@ -1984,7 +1997,7 @@ form label {
     overflow: hidden;
 }
 
-.meet__photo img{
+.meet__photo img {
     width: clamp(1px, 65.573vw, 1259px);
     height: clamp(1px, 59.844vw, 1149px);
     object-fit: cover;
@@ -1995,7 +2008,8 @@ form label {
         width: clamp(288px, 90vw, 90vw);
         height: clamp(262px, 81.875vw, 81.875vw);
     }
-    .meet__photo img{
+
+    .meet__photo img {
         width: clamp(288px, 90vw, 90vw);
         height: clamp(262px, 81.875vw, 81.875vw);
     }
@@ -2354,7 +2368,7 @@ form label {
 @media only screen and (max-width: 992px) {
     .ready__consultation {
         padding: clamp(16px, 5vw, 5vw) clamp(41px, 12.812vw, 12.812vw);
-        margin-bottom: clamp(80px, 25vw, 25vw);
+        
         font-size: clamp(16px, 5vw, 5vw);
     }
 }
@@ -2421,6 +2435,7 @@ form label {
 .footer__menu a {
     color: #B6B6B6;
 }
+
 @media only screen and (max-width: 992px) {
     .footer__social {
         display: none;
@@ -2499,7 +2514,7 @@ form label {
     gap: 8px;
     background-color: transparent;
     border: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(1px, 1.042vw, 20px);
     line-height: 1.2;
     text-align: center;
@@ -2727,13 +2742,16 @@ form label {
 .hide__pc {
     display: none;
 }
+
 .hide__mob {
     opacity: 0;
 }
+
 @media only screen and (max-width: 992px) {
     .hide__pc {
         display: block;
     }
+
     .hide__mob {
         display: none;
     }
@@ -2763,8 +2781,9 @@ form label {
     flex-direction: column;
     gap: clamp(18px, 5.625vw, 5.625vw);
 }
+
 @media only screen and (min-width: 720px) and (max-width: 992px) {
-    .header.headerAutoHide{
+    .header.headerAutoHide {
         transform: translateY(-200%);
     }
 }
@@ -2854,20 +2873,20 @@ form label {
 }
 
 .overlay.overlay__hide {
-    display: none;
+    z-index: -2;
     opacity: 0;
 }
 
 .poppup {
+    padding: clamp(1px, 7.5vw, 144px) clamp(1px, 3.281vw, 63px) clamp(1px, 4.375vw, 84px) clamp(1px, 3.281vw, 63px);
     overflow-x: hidden;
-    max-height: 100vh;
+    max-height: 100dvh;
     position: absolute;
     width: clamp(1px, 93.75vw, 1800px);
     background-color: #fff;
+    transition: opacity 550ms ease, transform 550ms ease;
     opacity: 1;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: top 250ms ease, opacity 250ms ease;
+    transform: translateY(0);
 }
 
 .poppup:hover {
@@ -2876,26 +2895,28 @@ form label {
 
 .poppup.poppup__hide {
     opacity: 0;
-    top: -200%;
+    transform: translateY(-200%);
 }
 
 @media only screen and (max-width: 992px) {
     .poppup {
-        width: clamp(326px, 32.863vw, 32.863vw);
+        height: 100vh;
+        padding: clamp(20px, 2.016vw, 2.016vw) clamp(10px, 1.008vw, 1.008vw);
+        height: calc(var(--vh, 1dvh) * 100);
+        width: clamp(345px, 34.778vw, 34.778vw);
 
     }
 }
 
 .poppup__wrap {
-    padding: clamp(1px, 7.5vw, 144px) clamp(1px, 3.281vw, 63px) clamp(1px, 4.375vw, 84px) clamp(1px, 3.281vw, 63px);
     display: flex;
     gap: clamp(1px, 12.396vw, 238px);
+    position: static;
 }
 
 @media only screen and (max-width: 992px) {
     .poppup__wrap {
         flex-direction: column;
-        padding: clamp(20px, 2.016vw, 2.016vw) clamp(10px, 1.008vw, 1.008vw);
         gap: clamp(12px, 1.21vw, 1.21vw);
     }
 }
@@ -2943,7 +2964,7 @@ form label {
     display: flex;
     align-items: center;
     gap: clamp(1px, 2.24vw, 43px);
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(1px, 4.167vw, 80px);
 }
 
@@ -2983,6 +3004,10 @@ form label {
     font-size: clamp(1px, 1.25vw, 24px);
     line-height: 120%;
     color: #3b3b3b;
+}
+input[type='text'],input[type='email'],input[type='tel'],textarea{
+    max-width: 100%;
+    width: 100%;
 }
 
 @media only screen and (max-width: 992px) {
@@ -3034,6 +3059,9 @@ form label {
 @media only screen and (max-width: 992px) {
     .poppup__group-title span {
         gap: clamp(216px, 1.613vw, 1.613vw);
+    }
+    .poppup__group-title {
+        max-width: 100%;
     }
 }
 
@@ -3167,6 +3195,9 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 }
 
 @media only screen and (max-width: 992px) {
+    .poppup__submit {
+        padding-bottom: 0;
+    }
 
     .poppup__textarea input,
     .poppup__submit input {
@@ -3210,7 +3241,7 @@ textarea.wpcf7-form-control.wpcf7-textarea {
     .poppup__textarea textarea {
         padding: clamp(6px, 0.652vw, 0.652vw);
         font-size: clamp(14px, 1.522vw, 1.522vw);
-        max-height: clamp(107px, 10.786vw, 10.786vw);
+        max-height: clamp(100px, 10.081vw, 10.081vw);
     }
 }
 
@@ -3436,15 +3467,77 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 }
 
 .thank__poppup {
-    padding: clamp(1px, 3.33vw, 64px);
+    padding: clamp(1px, 3.33vw, 64px) clamp(1px, 1.667vw, 32px);
     position: relative;
     width: clamp(288px, 29.032vw, 29.032vw);
     background-color: #fff;
+    transition: opacity 550ms ease, transform 550ms ease;
+    opacity: 1;
+    transform: translateY(0);
 }
+.thank__content p {
+    font-size: clamp(1px, 1.25vw, 24px);
+}
+.thank__title {
+    position: relative;
+    margin-bottom: clamp(1px, 3.125vw, 60px);
+    display: flex;
+    align-items: center;
+    gap: clamp(1px, 2.24vw, 43px);
+    font-weight: 600;
+    font-size: clamp(1px, 4.167vw, 80px);
+}
+
+.thank__title:after {
+    content: "";
+    display: block;
+    width: clamp(1px, 3.33vw, 64px);
+    height: clamp(1px, 3.021vw, 58px);
+    background-image: url("../img/icons/logo-poppup.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media only screen and (max-width: 992px) {
+    .thank__poppup {
+        padding:  clamp(10px,1.008vw,1.008vw) clamp(20px,2.016vw,2.016vw);
+        position: relative;
+        width: clamp(288px, 29.032vw, 29.032vw);
+        background-color: #fff;
+        transition: opacity 550ms ease, transform 550ms ease;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .thank__title {
+        margin-bottom: clamp(24px, 1.25vw, 1.25vw);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(32px, 3.226vw, 3.226vw);
+    }
+
+    .thank__title:after {
+        width: clamp(34px, 1.771vw, 1.771vw);
+        height: clamp(32px, 1.667vw, 1.667vw);
+        background-image: url("../img/icons/logo-poppup.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .thank__content p {
+        margin-bottom: clamp(12px, 3.75vw, 3.75vw);
+        font-size: clamp(16px, 1.613vw, 1.613vw);
+    }
+}
+
+
+
+
 
 .thank__poppup.poppup__hide {
     opacity: 0;
-    top: -200%;
+    transform: translateY(-200%);
 }
 
 @media only screen and (max-width: 992px) {
@@ -3477,8 +3570,8 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 
 .thank__poppup-close {
     position: absolute;
-    top: clamp(1px, 3.33vw, 64px);
-    right: clamp(1px, 3.33vw, 64px);
+    top: clamp(1px, 1.042vw, 20px);
+    right: clamp(1px, 1.042vw, 20px);
     background-color: transparent;
     border: none;
     z-index: 3;

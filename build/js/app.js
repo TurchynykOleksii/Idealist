@@ -158,7 +158,6 @@ const observer = new IntersectionObserver((entries) => {
 				target1.classList.add('in-view');
 				target2.classList.add('in-view');
 			}
-
 		} else {
 			// Логика для удаления классов при выходе из зоны пересечения
 			entry.target.classList.remove('in-view');
@@ -175,10 +174,11 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // Наблюдение за элементами
-const targets = document.querySelectorAll('.services__area-item, .about__anim-line, .services__title, .about__title');
+const targets = document.querySelectorAll(
+	'.services__area-item, .about__anim-line, .services__title, .about__title'
+);
 
 targets?.forEach((element) => observer.observe(element));
-
 
 // Loop over the elements and add each one to the observer
 targets?.forEach((element) => observer.observe(element));
@@ -217,14 +217,15 @@ targets?.forEach((item) => {
 	});
 });
 
-
 accordionItems.forEach((item) => {
 	item.addEventListener('click', () => {
 		item
 			.querySelector('.services__accordion-item')
 			?.classList.toggle('services__accordion');
 		item.querySelector('.services__icon').classList.toggle('services__icon-up');
-        document.querySelector('.services__area-item').classList.toggle('active-after')
+		document
+			.querySelector('.services__area-item')
+			.classList.toggle('active-after');
 	});
 });
 
@@ -250,10 +251,12 @@ poppupServiceTitleEl?.addEventListener('click', () => {
 });
 
 const bannerBtnEl = document.querySelector('.banner__btn');
-const serviceBtnEl = document.querySelector('.services__btn')
+const serviceBtnEl = document.querySelector('.services__btn');
 const overlayEl = document.querySelector('.overlay');
 const poppupEl = document.querySelector('.poppup');
 const poppupCloseEl = document.querySelector('.poppup__close');
+const thxPoppupCloseBtn = document.querySelector('.thank__poppup-close')
+const thxPoppupEl = document.querySelector('.thank__poppup')
 
 const writeBtnEl = document.querySelector('.services__btn-mob');
 const getConsultation = document.querySelector('.ready__consultation');
@@ -353,7 +356,6 @@ handleScreenChange(mediaQuery);
 
 mediaQuery.addEventListener('change', handleScreenChange);
 
-
 detailsCross.forEach((cross) => {
 	cross.addEventListener('click', () => {
 		hoursEl.nextElementSibling.style.opacity = '0';
@@ -362,62 +364,120 @@ detailsCross.forEach((cross) => {
 		hoursEl.nextElementSibling.style.zIndex = '-2';
 	});
 });
+const cfBtnEl = document.querySelector('.wpcf7-submit');
+const cfBtnWrap = document.querySelector('.poppup__btn-submit');
 
-const nameErrorEl = document.querySelector('.poppup__name-error');
-const mailErrorEl = document.querySelector('.poppup__mail-error');
-const telErrorEl = document.querySelector('.poppup__tel-error');
+cfBtnEl.disabled = true;
+cfBtnWrap.style.backgroundColor = '#646464';
 
-const nameInputEl = document.querySelector('.form__input-name');
-const telInputEl = document.querySelector('.form__input-tel');
-const emailInputEl = document.querySelector('.form__input-mail');
+document.addEventListener('DOMContentLoaded', function () {
+	const formEl = document.querySelector('.wpcf7 form');
+	const nameInputEl = document.querySelector('.form__input-name');
+	const telInputEl = document.querySelector('.form__input-tel');
+	const emailInputEl = document.querySelector('.form__input-mail');
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const nameErrorEl = document.querySelector('.poppup__name-error');
+	const mailErrorEl = document.querySelector('.poppup__mail-error');
+	const telErrorEl = document.querySelector('.poppup__tel-error');
 
-const telPattern = /^\+380\d{9}$/;
+	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const telPattern = /^\+380\d{9}$/;
+	const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
 
-const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
+	
+	function validateFields() {
+		let isValid = true;
 
-nameInputEl.addEventListener('blur', () => {
-	if (
-		nameInputEl.value.length < 2 ||
-		!namePattern.test(nameInputEl.value.trim())
-	) {
-		nameErrorEl.classList.add('show-error');
-	} else {
-		nameErrorEl.classList.remove('show-error');
+		
+		if (nameInputEl.value.length < 2 || !namePattern.test(nameInputEl.value.trim())) {
+			nameErrorEl?.classList.add('show-error');
+			isValid = false;
+		} else {
+			nameErrorEl?.classList.remove('show-error');
+		}
+
+		
+		if (!telPattern.test(telInputEl.value.trim())) {
+			telErrorEl?.classList.add('show-error');
+			isValid = false;
+		} else {
+			telErrorEl?.classList.remove('show-error');
+		}
+
+		
+		if (!emailPattern.test(emailInputEl.value.trim())) {
+			mailErrorEl?.classList.add('show-error');
+			isValid = false;
+		} else {
+			mailErrorEl?.classList.remove('show-error');
+		}
+
+		if (isValid) {
+			cfBtnEl.disabled = false;
+			cfBtnWrap.style.backgroundColor = '#162a24'; 
+		} else {
+			cfBtnEl.disabled = true;
+			cfBtnWrap.style.backgroundColor = '#646464'; 
+		}
 	}
+
+	
+	nameInputEl.addEventListener('input', validateFields);
+	telInputEl.addEventListener('input', validateFields);
+	emailInputEl.addEventListener('input', validateFields);
+
+	
+	formEl.addEventListener('submit', function (event) {
+		validateFields();
+		if (cfBtnEl.disabled) {
+			event.preventDefault(); 
+		} else {
+			formEl.addEventListener('wpcf7submit', function () {
+				poppupEl.classList.add('poppup__hide');
+				setTimeout(() => {
+					document
+						.querySelector('.thank__poppup')
+						.classList.remove('poppup__hide');
+				}, 1000);
+
+				setTimeout(() => {
+					document
+						.querySelector('.thank__poppup')
+						.classList.add('poppup__hide');
+				}, 3000);
+				setTimeout(() => {
+					overlayEl.classList.add('overlay__hide');
+				}, 3500);
+				setTimeout(() => {
+					document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+				}, 3800);
+			});
+		}
+	});
 });
 
-telInputEl.addEventListener('blur', () => {
-	if (!telPattern.test(telInputEl.value.trim())) {
-		telErrorEl?.classList.add('show-error');
-	} else {
-		telErrorEl?.classList.remove('show-error');
-	}
-});
-
-emailInputEl.addEventListener('blur', () => {
-	if (!emailPattern.test(emailInputEl.value.trim())) {
-		mailErrorEl?.classList.add('show-error');
-	} else {
-		mailErrorEl?.classList.remove('show-error');
-	}
-});
 
 let scrollToTop = 0;
-const header = document.querySelector('.header'); 
+const header = document.querySelector('.header');
 const mobileMenuElSc = document.querySelector('.mobile__menu');
 
-mobileMenuElSc.addEventListener('scroll', function() {
-    let scrollTop = mobileMenuElSc.scrollTop; 
+mobileMenuElSc.addEventListener('scroll', function () {
+	let scrollTop = mobileMenuElSc.scrollTop;
 
-    if (scrollTop > 50) {
+	if (scrollTop > 50) {
+		header.classList.add('headerAutoHide');
+	} else {
+		header.classList.remove('headerAutoHide');
+	}
 
-        header.classList.add('headerAutoHide');
-    } else {
-   
-        header.classList.remove('headerAutoHide');
-    }
-
-    scrollToTop = scrollTop <= 0 ? 0 : scrollTop; 
+	scrollToTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+thxPoppupCloseBtn.addEventListener('click', ()=>{
+    overlayEl.classList.add('overlay__hide');
+	thxPoppupEl.classList.add('poppup__hide');
+	document.getElementsByTagName('html')[0].classList.remove('body-noscroll');
+})
