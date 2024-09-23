@@ -116,7 +116,7 @@
             </div>
             <div class="mobile__menu hide__menu">
                 <?php wp_nav_menu(array(
-                            'theme_location' => 'footer_menu',
+                            'theme_location' => 'header_menu',
                             'menu' => 'header_new_spi',
                             'container' => 'ul',
                             'container_class' => '',

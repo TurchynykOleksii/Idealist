@@ -12,6 +12,7 @@
         href="<?php echo get_template_directory_uri(); ?>/build/css/style.css" />
     <link rel="Shortcut Icon" type="image/x-icon"
         href="<?php echo get_template_directory_uri(); ?>/build/css/libs/swiper.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <?php wp_head();
     $ID = get_the_ID();?>

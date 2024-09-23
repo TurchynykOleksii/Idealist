@@ -1,7 +1,7 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/InterTight-Regular.woff2") format("woff2"), url("../fonts/InterTight-Regular.woff") format("woff");
+    src: url("../fonts/Inter_24pt-Regular.woff2") format("woff2"), url("../fonts/Inter_24pt-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/InterTight-Medium.woff2") format("woff2"), url("../fonts/InterTight-Medium.woff") format("woff");
+    src: url("../fonts/Inter_24pt-Medium.woff2") format("woff2"), url("../fonts/Inter_24pt-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/InterTight-Bold.woff2") format("woff2"), url("../fonts/InterTight-Bold.woff") format("woff");
+    src: url("../fonts/Inter_18pt-Bold.woff2") format("woff2"), url("../fonts/Inter_18pt-Bold.woff") format("woff");
     font-weight: 600;
     font-style: normal;
 }
@@ -25,7 +25,7 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/InterTight-Black.woff2") format("woff2"), url("../fonts/InterTight-Black.woff") format("woff");
+    src: url("../fonts/Inter_18pt-Black.woff2") format("woff2"), url("../fonts/Inter_18pt-Black.woff") format("woff");
     font-weight: 600;
     font-style: normal;
 }
@@ -376,11 +376,11 @@ form label {
     letter-spacing: -0.02em;
     text-transform: capitalize;
     color: #fff;
-    transition: background 650ms ease-in-out, color 250ms ease-in-out;
+    transition: background 350ms ease-in-out, color 250ms ease-in-out;
 
 }
 
-.header__item a:hover {
+.header__list a:hover {
     color: #000;
     background: linear-gradient(59deg, #D0C0AA 1.61%, #D1C2AC 26.57%, #B7A58B 52.89%, #8A775A 78.76%, #6E5E41 92.38%), #FFF;
 }
