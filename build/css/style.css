@@ -600,7 +600,7 @@ form label {
 .banner__subtitle-right span {
     font-weight: 600;
     color: #fff;
-    font-size: clamp(1px, 1.25vw, 24px);
+    font-size: clamp(1px, 1.146vw, 22px);
 }
 
 .banner__subtitle-left {
@@ -623,7 +623,7 @@ form label {
 @media only screen and (max-width: 992px) {
     .banner__subtitle-right {
         position: static;
-        width: clamp(234px, 73.125vw, 73.125vw);
+        width: clamp(245px, 76.563vw, 76.563vw);
         font-size: clamp(16px, 5vw, 5vw);
         text-align: right;
     }
